@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><title>Body OS 4.0</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#0d141e;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-background": "#dce3f2", "inverse-on-surface": "#2a313c", "tertiary-fixed-dim": "#9dd841", "surface-container-low": "#151c27", "inverse-surface": "#dce3f2", "on-primary-fixed": "#1a1b20", "error": "#ffb4ab", "on-primary-container": "#7d7d83", "tertiary-container": "#0a1500", "on-secondary-container": "#395a00", "outline": "#919095", "on-primary-fixed-variant": "#46464c", "surface-bright": "#333a45", "primary-fixed": "#e3e1e9", "inverse-primary": "#5e5e64", "surface": "#0d141e", "surface-container-highest": "#2e3541", "secondary-fixed-dim": "#91db04", "on-tertiary-fixed": "#121f00", "background": "#0d141e", "surface-dim": "#0d141e", "on-secondary": "#213600", "tertiary": "#9dd841", "secondary-container": "#8ed800", "tertiary-fixed": "#b8f55b", "on-surface-variant": "#c7c6cb", "secondary-fixed": "#abf834", "on-error-container": "#ffdad6", "surface-container-lowest": "#070e19", "surface-container-high": "#232a35", "on-secondary-fixed": "#112000", "primary-fixed-dim": "#c7c6cd", "on-error": "#690005", "on-tertiary-container": "#5c8a00", "secondary": "#a8f530", "primary-container": "#111217", "surface-tint": "#c7c6cd", "surface-variant": "#2e3541", "error-container": "#93000a", "surface-container": "#19202b", "primary": "#c7c6cd", "on-surface": "#dce3f2", "on-tertiary-fixed-variant": "#324f00", "on-tertiary": "#213600", "on-secondary-fixed-variant": "#314f00", "outline-variant": "#46464b", "on-primary": "#2f3036" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: {}, fontFamily: { "headline": ["Manrope"], "display": ["Manrope"], "body": ["Hanken Grotesk"], "label": ["Hanken Grotesk"] }, fontSize: {} } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body flex flex-col min-h-screen selection:bg-secondary/20 selection:text-secondary"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><img alt="Body OS fitness logo icon: sleek geometric modern muscular crest or athletic bio-digital emblem with vibrant electric lime green accent and dark ink charcoal styling on clean background. Design context: - Primary color: #111217
+- Font: manrope
+- Mode: dark
+- Roundness: rounded-md
+. The logo should be visually consistent with these brand tokens." class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UjpbyrFu4ECpMh_2XQ62KPqQ6T8MC7fotSgfPUxnIwYchTYYrhnHq9AxYnhdw2dWZgy1_947-L07uATMWgMrhSnOANBplN5GMQDdVXt7U-PcFfSkyvVJtq6rQnMoCIgRCLa3RIILcbxyJ7cKIoZSiXD8QKK5XYgv-eUOB2ax1jRmqESlklSlLOXhYwcUJPnXIJcygimVWoZCF_MstL6ewOPmbA-aM1KMoXyTsvEK1eGfdiEX5K_dulz4xI"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-headline font-extrabold text-[15px] tracking-tight text-on-surface truncate">BODY OS</span><span class="px-1.5 py-0.5 rounded text-[10px] font-label font-bold uppercase tracking-wider bg-surface-container-high text-secondary">v4.0</span></div><span class="text-[11px] font-label tracking-wide text-on-surface-variant uppercase truncate">More</span></div></div><div class="flex items-center gap-1 shrink-0"><button aria-label="Telemetry Notifications" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface active:bg-surface-container-high/60 transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 ml-1 shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full px-4 pt-16 pb-28 bg-surface"><div class="flex flex-col w-full pb-10 space-y-5">
+<!-- Screen Navigation Bar / Sub-Header -->
+<div class="flex items-center justify-between pt-1 pb-1">
+<div class="flex items-center gap-3">
+<button aria-label="Go Back" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-container-highest active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-headline font-extrabold text-[19px] leading-tight text-on-surface tracking-tight">Edit Day: Legs A - Strength</h1>
+<span class="text-[10px] font-label font-bold uppercase tracking-[0.14em] text-secondary">Week 2 · Wednesday · Scheduled</span>
+</div>
+</div>
+<button aria-label="More options" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<!-- Telemetry Metadata Configuration Card -->
+<section class="bg-surface-container rounded-[20px] p-4 flex flex-col space-y-4 shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-label font-bold uppercase tracking-[0.14em] text-on-surface-variant">Day Configuration Matrix</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-highest text-secondary text-[11px] font-label font-bold tracking-wide">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+        Day Wed
+      </span>
+</div>
+<!-- Day Title Input -->
+<div class="flex flex-col gap-1.5">
+<label class="text-[11px] font-label font-semibold text-on-surface-variant tracking-wider uppercase" for="day-title-input">Protocol Name</label>
+<div class="relative flex items-center">
+<input class="w-full bg-surface-container-lowest text-on-surface font-headline font-bold text-base px-3.5 py-3 rounded-lg focus:outline-none focus:bg-surface-container-high transition-colors" id="day-title-input" type="text" value="LEGS A - STRENGTH"/>
+<button aria-label="Clear protocol name" class="absolute right-3 text-on-surface-variant hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+</div>
+</div>
+<!-- Category Selector Chips -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<label class="text-[11px] font-label font-semibold text-on-surface-variant tracking-wider uppercase">Target Focus Segment</label>
+<span class="text-[11px] font-label text-secondary font-medium">Split Tag: Primary</span>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar -mx-1 px-1">
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-secondary text-on-secondary font-headline font-bold text-[12px] shadow-sm" type="button">Legs</button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label font-medium text-[12px] transition-colors" type="button">Upper</button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label font-medium text-[12px] transition-colors" type="button">Push</button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label font-medium text-[12px] transition-colors" type="button">Pull</button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label font-medium text-[12px] transition-colors" type="button">Full Body</button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label font-medium text-[12px] transition-colors" type="button">Rest Day</button>
+</div>
+</div>
+<!-- Muscle Groups & Target RPE Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+<!-- Target Muscle Groups -->
+<div class="flex flex-col gap-2 p-3 rounded-lg bg-surface-container-low">
+<span class="text-[10px] font-label font-bold uppercase tracking-[0.12em] text-on-surface-variant">Active Muscle Vectors</span>
+<div class="flex flex-wrap gap-1.5 items-center">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface text-[11px] font-label font-semibold flex items-center gap-1">
+            Quads
+            <span class="material-symbols-outlined text-[13px] text-on-surface-variant hover:text-error cursor-pointer">close</span>
+</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface text-[11px] font-label font-semibold flex items-center gap-1">
+            Glutes
+            <span class="material-symbols-outlined text-[13px] text-on-surface-variant hover:text-error cursor-pointer">close</span>
+</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface text-[11px] font-label font-semibold flex items-center gap-1">
+            Hamstrings
+            <span class="material-symbols-outlined text-[13px] text-on-surface-variant hover:text-error cursor-pointer">close</span>
+</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface text-[11px] font-label font-semibold flex items-center gap-1">
+            Calves
+            <span class="material-symbols-outlined text-[13px] text-on-surface-variant hover:text-error cursor-pointer">close</span>
+</span>
+<button aria-label="Add muscle group" class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary hover:bg-secondary hover:text-on-secondary transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<!-- Target Session RPE -->
+<div class="flex flex-col justify-between p-3 rounded-lg bg-surface-container-low gap-2">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-label font-bold uppercase tracking-[0.12em] text-on-surface-variant">Target Strain RPE</span>
+<span class="text-[11px] font-label text-secondary font-bold">Zone: Hypertrophy</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-lowest px-3 py-1.5 rounded-lg">
+<button aria-label="Decrease RPE" class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<div class="flex flex-col items-center">
+<span class="font-headline font-extrabold text-[15px] text-on-surface tracking-tight">RPE 8.0 - 8.5</span>
+<span class="text-[9px] font-label uppercase tracking-widest text-on-surface-variant">~1.5 RIR Reserve</span>
+</div>
+<button aria-label="Increase RPE" class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Movements List Header -->
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="font-headline font-extrabold text-[17px] text-on-surface tracking-tight">Movement Sequence</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant text-[11px] font-label font-bold">5 Exercises</span>
+</div>
+<button class="text-[11px] font-label font-bold uppercase tracking-wider text-secondary flex items-center gap-1 hover:underline" type="button">
+<span class="material-symbols-outlined text-[16px]">swap_vert</span>
+      Auto-Order
+    </button>
+</div>
+<!-- Ordered Movements List -->
+<div class="flex flex-col space-y-3" id="movement-list">
+<!-- Movement 1: Goblet Squat -->
+<article class="bg-surface-container rounded-[20px] p-4 flex flex-col gap-3 relative shadow-sm group">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3">
+<button aria-label="Reorder Goblet Squat" class="cursor-grab active:cursor-grabbing text-on-surface-variant hover:text-on-surface p-1 rounded hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</button>
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-headline font-extrabold text-[12px]">
+            1
+          </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<h2 class="font-headline font-bold text-[15px] text-on-surface tracking-tight truncate">Goblet Squat</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary text-[10px] font-label font-bold">Primary</span>
+</div>
+<span class="text-[11px] font-label text-on-surface-variant">Quads · Glutes</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Remove Goblet Squat" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-error hover:bg-error/10 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Prescription Specs Pill -->
+<div class="flex flex-col gap-2 bg-surface-container-low p-3 rounded-lg">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<span class="inline-flex items-center gap-1.5 font-headline font-bold text-[13px] text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">fitness_center</span>
+            4 sets × 8–10 reps @ 24.0 kg
+          </span>
+<span class="text-[11px] font-label font-medium text-secondary">RIR 2 Reserve</span>
+</div>
+<div class="flex items-center gap-2 text-[11px] font-label text-on-surface-variant flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-semibold">Tempo 3-0-1-0</span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+            90s rest
+          </span>
+</div>
+<div class="bg-surface-container-lowest/80 px-2.5 py-1.5 rounded text-[11px] font-body text-on-surface-variant italic flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary shrink-0 mt-0.5">tips_and_updates</span>
+<span>Root midfoot firmly. Drive through heels on concentric.</span>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="flex items-center justify-between pt-1">
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Protocol ID #SQ-01</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface hover:bg-secondary hover:text-on-secondary text-[12px] font-label font-bold flex items-center gap-1.5 transition-all active:scale-95" onclick="openPrescriptionModal('Goblet Squat')" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+          Edit Prescription
+        </button>
+</div>
+</article>
+<!-- Movement 2: Dumbbell Romanian Deadlift -->
+<article class="bg-surface-container rounded-[20px] p-4 flex flex-col gap-3 relative shadow-sm group">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3">
+<button aria-label="Reorder Dumbbell RDL" class="cursor-grab active:cursor-grabbing text-on-surface-variant hover:text-on-surface p-1 rounded hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</button>
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-headline font-extrabold text-[12px]">
+            2
+          </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<h2 class="font-headline font-bold text-[15px] text-on-surface tracking-tight truncate">Dumbbell Romanian Deadlift</h2>
+</div>
+<span class="text-[11px] font-label text-on-surface-variant">Hamstrings · Glutes</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Remove Movement" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-error hover:bg-error/10 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Prescription Specs Pill -->
+<div class="flex flex-col gap-2 bg-surface-container-low p-3 rounded-lg">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<span class="inline-flex items-center gap-1.5 font-headline font-bold text-[13px] text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">fitness_center</span>
+            4 sets × 10–12 reps @ 28.0 kg
+          </span>
+<span class="text-[11px] font-label font-medium text-secondary">RIR 1 Threshold</span>
+</div>
+<div class="flex items-center gap-2 text-[11px] font-label text-on-surface-variant flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-semibold">Tempo 3-1-1-0</span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+            90s rest
+          </span>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="flex items-center justify-between pt-1">
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Protocol ID #RDL-04</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface hover:bg-secondary hover:text-on-secondary text-[12px] font-label font-bold flex items-center gap-1.5 transition-all active:scale-95" onclick="openPrescriptionModal('Dumbbell Romanian Deadlift')" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+          Edit Prescription
+        </button>
+</div>
+</article>
+<!-- Movement 3: Reverse Lunge -->
+<article class="bg-surface-container rounded-[20px] p-4 flex flex-col gap-3 relative shadow-sm group">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3">
+<button aria-label="Reorder Reverse Lunge" class="cursor-grab active:cursor-grabbing text-on-surface-variant hover:text-on-surface p-1 rounded hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</button>
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-headline font-extrabold text-[12px]">
+            3
+          </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<h2 class="font-headline font-bold text-[15px] text-on-surface tracking-tight truncate">Reverse Lunge</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant text-[10px] font-label font-semibold">Unilateral</span>
+</div>
+<span class="text-[11px] font-label text-on-surface-variant">Quads · Glutes</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Remove Movement" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-error hover:bg-error/10 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Prescription Specs Pill -->
+<div class="flex flex-col gap-2 bg-surface-container-low p-3 rounded-lg">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<span class="inline-flex items-center gap-1.5 font-headline font-bold text-[13px] text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">fitness_center</span>
+            3 sets × 8–10 reps / leg @ 16.0 kg
+          </span>
+<span class="text-[11px] font-label font-medium text-secondary">RIR 2</span>
+</div>
+<div class="flex items-center gap-2 text-[11px] font-label text-on-surface-variant flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-semibold">Tempo 2-0-1-0</span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+            60s rest
+          </span>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="flex items-center justify-between pt-1">
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Protocol ID #LNG-02</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface hover:bg-secondary hover:text-on-secondary text-[12px] font-label font-bold flex items-center gap-1.5 transition-all active:scale-95" onclick="openPrescriptionModal('Reverse Lunge')" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+          Edit Prescription
+        </button>
+</div>
+</article>
+<!-- Superset Connector Ribbon Example -->
+<div class="flex items-center justify-center my-0.5">
+<div class="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-[10px] font-label font-extrabold uppercase tracking-widest flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">link</span>
+        Superset Transition · No Rest Buffer
+      </div>
+</div>
+<!-- Movement 4: Standing Calf Raise -->
+<article class="bg-surface-container rounded-[20px] p-4 flex flex-col gap-3 relative shadow-sm group">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3">
+<button aria-label="Reorder Calf Raise" class="cursor-grab active:cursor-grabbing text-on-surface-variant hover:text-on-surface p-1 rounded hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</button>
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-headline font-extrabold text-[12px]">
+            4
+          </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<h2 class="font-headline font-bold text-[15px] text-on-surface tracking-tight truncate">Standing Calf Raise</h2>
+<span class="px-1.5 py-0.5 rounded bg-secondary/20 text-secondary text-[9px] font-label font-bold uppercase tracking-wider">Pair A</span>
+</div>
+<span class="text-[11px] font-label text-on-surface-variant">Calves (Gastrocnemius)</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Remove Movement" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-error hover:bg-error/10 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-2 bg-surface-container-low p-3 rounded-lg">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<span class="inline-flex items-center gap-1.5 font-headline font-bold text-[13px] text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">fitness_center</span>
+            3 sets × 15 reps @ 20.0 kg
+          </span>
+<span class="text-[11px] font-label text-on-surface-variant">RPE 8.0</span>
+</div>
+<div class="bg-surface-container-lowest/80 px-2.5 py-1.5 rounded text-[11px] font-body text-on-surface-variant italic flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary shrink-0 mt-0.5">tips_and_updates</span>
+<span>Full stretch at bottom, 2s peak contraction</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Protocol ID #CLF-08</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface hover:bg-secondary hover:text-on-secondary text-[12px] font-label font-bold flex items-center gap-1.5 transition-all active:scale-95" onclick="openPrescriptionModal('Standing Calf Raise')" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+          Edit Prescription
+        </button>
+</div>
+</article>
+<!-- Movement 5: Front Plank -->
+<article class="bg-surface-container rounded-[20px] p-4 flex flex-col gap-3 relative shadow-sm group">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3">
+<button aria-label="Reorder Front Plank" class="cursor-grab active:cursor-grabbing text-on-surface-variant hover:text-on-surface p-1 rounded hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</button>
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-headline font-extrabold text-[12px]">
+            5
+          </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<h2 class="font-headline font-bold text-[15px] text-on-surface tracking-tight truncate">Front Plank</h2>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[9px] font-label font-bold uppercase tracking-wider">Timed</span>
+</div>
+<span class="text-[11px] font-label text-on-surface-variant">Core Anti-Extension</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Remove Movement" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-error hover:bg-error/10 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-2 bg-surface-container-low p-3 rounded-lg">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<span class="inline-flex items-center gap-1.5 font-headline font-bold text-[13px] text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">timer</span>
+            3 sets × 45s isometric hold
+          </span>
+<span class="text-[11px] font-label font-medium text-secondary">Core Pillar</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Protocol ID #PLK-01</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface hover:bg-secondary hover:text-on-secondary text-[12px] font-label font-bold flex items-center gap-1.5 transition-all active:scale-95" onclick="openPrescriptionModal('Front Plank')" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+          Edit Prescription
+        </button>
+</div>
+</article>
+</div>
+<!-- Quick Add / Movement Creation Utility Suite -->
+<section class="flex flex-col space-y-2.5 pt-1">
+<button class="w-full h-13 py-3 px-4 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-on-surface flex items-center justify-center gap-2 font-headline font-bold text-[14px] active:scale-[0.98] transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-secondary text-[22px]">add_circle</span>
+<span>Add Movement from Library</span>
+</button>
+<div class="grid grid-cols-2 gap-2.5">
+<button class="py-2.5 px-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center gap-1.5 font-label font-bold text-[12px] active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-secondary text-[18px]">link</span>
+<span>Create Superset</span>
+</button>
+<button class="py-2.5 px-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center gap-1.5 font-label font-bold text-[12px] active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">content_copy</span>
+<span>Copy Other Day</span>
+</button>
+</div>
+</section>
+<!-- Sticky Tactical Bottom Action Dock -->
+<div class="sticky bottom-20 z-40 -mx-4 px-4 py-3 bg-surface/90 backdrop-blur-md flex items-center gap-3">
+<button aria-label="Duplicate Day Program" class="h-12 w-12 rounded-xl bg-surface-container-highest hover:bg-surface-bright text-on-surface flex items-center justify-center shrink-0 active:scale-95 transition-all" title="Duplicate Day Protocol" type="button">
+<span class="material-symbols-outlined text-[22px]">file_copy</span>
+</button>
+<button class="flex-1 h-12 rounded-xl bg-secondary hover:bg-secondary-fixed-dim text-on-secondary font-headline font-extrabold text-[15px] flex items-center justify-center gap-2 active:scale-[0.98] transition-all shadow-md" id="save-day-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">save</span>
+<span>Save Day Changes</span>
+</button>
+</div>
+<!-- Interactive Slide-over / Modal for D05 Prescription Tuning -->
+<div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-end justify-center transition-opacity" id="prescription-modal" role="dialog">
+<div class="w-full max-w-lg bg-surface-container rounded-t-[24px] p-5 flex flex-col space-y-4 shadow-xl">
+<div class="flex items-center justify-between pb-1">
+<div class="flex flex-col">
+<span class="text-[10px] font-label font-bold uppercase tracking-[0.14em] text-secondary">Prescription Protocol (D05)</span>
+<h3 class="font-headline font-bold text-[17px] text-on-surface" id="modal-title">Exercise Tuning</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center" onclick="closePrescriptionModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container-lowest p-3 rounded-lg flex flex-col">
+<span class="text-[10px] font-label text-on-surface-variant uppercase">Sets Target</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-headline font-extrabold text-[20px] text-on-surface">4</span>
+<span class="text-[11px] font-label text-secondary font-semibold">Sets</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg flex flex-col">
+<span class="text-[10px] font-label text-on-surface-variant uppercase">Rep Range</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-headline font-extrabold text-[20px] text-on-surface">8 - 10</span>
+<span class="text-[11px] font-label text-secondary font-semibold">Reps</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg flex flex-col gap-1">
+<span class="text-[10px] font-label text-on-surface-variant uppercase">Tempo Rhythm (Ecc-Pause-Con-Pause)</span>
+<span class="font-headline font-bold text-[14px] text-on-surface">3 · 0 · 1 · 0</span>
+</div>
+<div class="flex gap-2 pt-2">
+<button class="flex-1 py-3 rounded-xl bg-surface-container-highest text-on-surface font-label font-bold text-[13px]" onclick="closePrescriptionModal()" type="button">Discard</button>
+<button class="flex-1 py-3 rounded-xl bg-secondary text-on-secondary font-headline font-extrabold text-[13px]" onclick="closePrescriptionModal()" type="button">Confirm Prescription</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function openPrescriptionModal(exerciseName) {
+    const modal = document.getElementById('prescription-modal');
+    const title = document.getElementById('modal-title');
+    if (modal && title) {
+      title.textContent = exerciseName;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+  }
+
+  function closePrescriptionModal() {
+    const modal = document.getElementById('prescription-modal');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  }
+
+  document.getElementById('save-day-btn')?.addEventListener('click', function() {
+    const originalText = this.innerHTML;
+    this.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Syncing Telemetry...</span>';
+    setTimeout(() => {
+      this.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span><span>Day Saved</span>';
+      setTimeout(() => {
+        this.innerHTML = originalText;
+      }, 1600);
+    }, 600);
+  });
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]" data-active-classes="text-secondary font-semibold"><div class="flex justify-around items-center h-16 px-2"><a class="flex flex-col items-center justify-center gap-1 flex-1 h-12 text-on-surface-variant transition-colors" data-path="today" href="#"><span class="material-symbols-outlined text-[22px]">calendar_today</span><span class="text-[11px] font-label font-medium tracking-tight">Today</span></a><a class="flex flex-col items-center justify-center gap-1 flex-1 h-12 text-on-surface-variant transition-colors" data-path="train" href="#"><span class="material-symbols-outlined text-[22px]">fitness_center</span><span class="text-[11px] font-label font-medium tracking-tight">Train</span></a><a class="flex flex-col items-center justify-center gap-1 flex-1 h-12 text-on-surface-variant transition-colors" data-path="progress" href="#"><span class="material-symbols-outlined text-[22px]">monitoring</span><span class="text-[11px] font-label font-medium tracking-tight">Progress</span></a><a class="flex flex-col items-center justify-center gap-1 flex-1 h-12 text-on-surface-variant transition-colors" data-path="care" href="#"><span class="material-symbols-outlined text-[22px]">ecg_heart</span><span class="text-[11px] font-label font-medium tracking-tight">Care</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-1 flex-1 h-12 transition-colors text-secondary font-semibold" data-path="more" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="text-[11px] font-label font-medium tracking-tight">More</span></a></div></nav></body></html>

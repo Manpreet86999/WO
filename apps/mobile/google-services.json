@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "101245519292",
+    "project_id": "body-os-1b033",
+    "storage_bucket": "body-os-1b033.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101245519292:android:3654be7ec9b0d40c6d97b9",
+        "android_client_info": {
+          "package_name": "com.bodyos.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "101245519292-21mjnkbnj7b1emb7b2qfv4hhekqmp78d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bodyos.mobile",
+            "certificate_hash": "e38d4268fc893c44af52a37c4dc2ed9e26a82d49"
+          }
+        },
+        {
+          "client_id": "101245519292-u952qrgutiiidop2ae18uuq7ps7nkjs7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbQdq1BZXU2ZV2Ss4y96NFK7oy5usDb3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "101245519292-u952qrgutiiidop2ae18uuq7ps7nkjs7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

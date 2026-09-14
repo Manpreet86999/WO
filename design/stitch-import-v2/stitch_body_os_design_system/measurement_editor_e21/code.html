@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&family=Manrope:wght@200..800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Manrope:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#324f00", "secondary-fixed-dim": "#91db04", "secondary-container": "#8ed800", "surface": "#0d141e", "surface-variant": "#2e3541", "on-primary-container": "#7d7d83", "outline-variant": "#46464b", "on-primary-fixed": "#1a1b20", "primary-fixed": "#e3e1e9", "on-secondary-fixed": "#112000", "on-secondary": "#213600", "inverse-surface": "#dce3f2", "background": "#0d141e", "primary-container": "#111217", "error-container": "#93000a", "surface-container-low": "#151c27", "on-primary-fixed-variant": "#46464c", "surface-container-high": "#232a35", "tertiary-fixed-dim": "#9dd841", "tertiary-container": "#0a1500", "surface-tint": "#c7c6cd", "secondary": "#a8f530", "surface-container-highest": "#2e3541", "secondary-fixed": "#abf834", "tertiary-fixed": "#b8f55b", "inverse-on-surface": "#2a313c", "on-secondary-container": "#395a00", "primary": "#c7c6cd", "outline": "#919095", "on-error": "#690005", "primary-fixed-dim": "#c7c6cd", "surface-container": "#19202b", "on-surface-variant": "#c7c6cb", "on-tertiary-fixed": "#121f00", "inverse-primary": "#5e5e64", "on-tertiary": "#213600", "on-secondary-fixed-variant": "#314f00", "surface-container-lowest": "#070e19", "on-primary": "#2f3036", "tertiary": "#9dd841", "on-tertiary-container": "#5c8a00", "on-error-container": "#ffdad6", "surface-bright": "#333a45", "on-background": "#dce3f2", "on-surface": "#dce3f2", "error": "#ffb4ab", "surface-dim": "#0d141e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: {}, fontFamily: { "headline": ["Manrope"], "display": ["Manrope"], "body": ["Hanken Grotesk"], "label": ["Hanken Grotesk"] }, fontSize: {} } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-3"><img alt="Body OS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeWKOx9KwVkdFVhN0ua2jD2UQKolfaWQGFPO9o07-k_cQsBvghBykEEqyYvx3xw0mmgB4rka1l44rItIo5XJ-TWgyIOme3wfvu-ShqzOHKODDPNBO_OKbUOiw8RuIyDCtJFE4IfKEdckU8NsPpPDbZezQA11xNrKavHW6rBbAbn2m273QAEy29yHSQWow1RANWO7cHeyrcvOvVmjk1A7FOtr3Aj8z6Zle9sFNnlU9RzNRWkxqQjvEaIA"/><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline font-extrabold text-sm tracking-tight text-on-surface uppercase">Body OS</span><span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-secondary text-on-secondary">OS 2.4</span></div><h1 class="text-xs font-headline font-semibold text-on-surface-variant truncate max-w-[140px]">Dashboard</h1></div></div><div class="flex items-center gap-3"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors focus:outline-none"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-28"><div class="flex flex-col w-full px-4 pb-24 max-w-2xl mx-auto">
+<!-- Top Context & Navigation Bar -->
+<div class="flex items-center justify-between py-3 mb-2">
+<button aria-label="Return to Body Dashboard" class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface hover:text-secondary active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div class="flex flex-col items-center text-center px-2">
+<span class="font-headline font-extrabold text-sm tracking-tight text-on-surface uppercase">Log Biometrics</span>
+<span class="font-label text-[10px] tracking-wider text-outline uppercase font-semibold">Sovereign Physical Composition & Dimensions</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-xs font-headline font-bold text-on-surface hover:text-secondary active:scale-95 transition-all" type="button">
+      Done
+    </button>
+</div>
+<!-- Telemetry Timestamp & Protocol Banner -->
+<div class="bg-surface-container-low rounded-xl p-3 mb-4 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline text-xs font-bold text-on-surface tracking-tight">Wednesday, Sep 09, 2026</span>
+<span class="font-label text-[11px] text-outline">07:15 AM · Baseline Protocol</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/20 text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label text-[10px] font-bold uppercase tracking-wider text-on-surface">Fasted / Post-Wake</span>
+</div>
+</div>
+</div>
+<!-- Primary Core Measurements (Telemetry Bento) -->
+<div class="flex flex-col gap-3 mb-5">
+<div class="flex items-center justify-between px-1">
+<span class="font-label text-[11px] font-bold tracking-widest text-outline uppercase">Primary Core Metrics</span>
+<span class="font-label text-[10px] font-bold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">tune</span> CALIBRATED
+      </span>
+</div>
+<!-- Weight Hero Module -->
+<div class="bg-surface-container rounded-xl p-4 shadow-md flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">scale</span>
+<span class="font-headline text-xs font-bold uppercase tracking-wider text-on-surface-variant">Total Mass</span>
+</div>
+<span class="inline-flex items-center gap-1 text-[11px] font-label font-bold text-secondary bg-secondary-container/20 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">trending_down</span> -0.4 kg vs 7d ago
+        </span>
+</div>
+<div class="flex items-center justify-between gap-4">
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline font-extrabold text-4xl tracking-tight text-on-surface" id="weight-display">58.0</span>
+<span class="font-label text-sm font-semibold text-outline uppercase">kg</span>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Decrease weight" class="w-11 h-11 rounded-xl bg-surface-container-highest flex items-center justify-center text-on-surface text-lg font-bold active:scale-90 hover:text-secondary transition-all" id="weight-dec" type="button">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+<button aria-label="Increase weight" class="w-11 h-11 rounded-xl bg-surface-container-highest flex items-center justify-center text-on-surface text-lg font-bold active:scale-90 hover:text-secondary transition-all" id="weight-inc" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-300" style="width: 58%;"></div>
+</div>
+</div>
+<!-- Dual Metric Split: Body Fat % & Waist -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Body Fat % Card -->
+<div class="bg-surface-container rounded-xl p-3.5 flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label text-[10px] font-bold uppercase tracking-wider text-outline">Body Fat %</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">pie_chart</span>
+</div>
+<div class="flex items-baseline gap-1 my-1">
+<input class="w-20 bg-transparent font-headline font-extrabold text-2xl text-on-surface focus:outline-none focus:text-secondary p-0" id="bf-input" step="0.1" type="number" value="24.0"/>
+<span class="font-label text-xs font-semibold text-outline">%</span>
+</div>
+<span class="font-label text-[10px] text-outline-variant uppercase tracking-tight">US Navy Method</span>
+</div>
+<!-- Waist Card -->
+<div class="bg-surface-container rounded-xl p-3.5 flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label text-[10px] font-bold uppercase tracking-wider text-outline">Waist (Navel)</span>
+<span class="text-[10px] font-label font-bold text-secondary">-0.5 cm</span>
+</div>
+<div class="flex items-baseline gap-1 my-1">
+<input class="w-20 bg-transparent font-headline font-extrabold text-2xl text-on-surface focus:outline-none focus:text-secondary p-0" id="waist-input" step="0.5" type="number" value="71.0"/>
+<span class="font-label text-xs font-semibold text-outline">cm</span>
+</div>
+<span class="font-label text-[10px] text-outline-variant uppercase tracking-tight">Abdominal Perimeter</span>
+</div>
+</div>
+</div>
+<!-- Live Navy Equation Telemetry Engine Banner -->
+<div class="bg-surface-container-high rounded-xl p-3.5 mb-5 shadow-sm">
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-secondary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">calculate</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-headline text-xs font-bold text-on-surface">Navy Equation Active</span>
+<span class="px-1.5 py-0.2 rounded text-[9px] font-label font-extrabold uppercase bg-secondary text-on-secondary">Reliability 98.4%</span>
+</div>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">
+          Vector inputs: <span class="text-on-surface font-semibold">Neck 32.5cm</span>, <span class="text-on-surface font-semibold">Waist 71.0cm</span>, <span class="text-on-surface font-semibold">Hips 92.0cm</span> generate <span class="text-secondary font-bold">24.0% Body Fat</span> (Female profile benchmark).
+        </p>
+</div>
+</div>
+</div>
+<!-- Anthropometric Dimension Accordion Grid -->
+<div class="bg-surface-container rounded-xl p-4 mb-5 shadow-sm">
+<button class="w-full flex items-center justify-between text-left focus:outline-none group" id="toggle-dimensions" type="button">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">straighten</span>
+<div class="flex flex-col">
+<span class="font-headline text-xs font-bold uppercase tracking-wider text-on-surface group-hover:text-secondary transition-colors">Anthropometric Circumference Grid</span>
+<span class="font-label text-[10px] text-outline">Segmental Perimeter Audit</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] transition-transform duration-200" id="accordion-icon">expand_less</span>
+</button>
+<div class="flex flex-col gap-3 mt-4 pt-3" id="dimensions-body">
+<!-- Neck & Hips -->
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col gap-1">
+<span class="font-label text-[10px] uppercase tracking-wider text-outline">Neck</span>
+<div class="flex items-baseline justify-between">
+<input class="w-16 bg-transparent font-headline text-base font-bold text-on-surface focus:outline-none focus:text-secondary p-0" step="0.5" type="number" value="32.5"/>
+<span class="font-label text-[11px] text-outline">cm</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col gap-1">
+<span class="font-label text-[10px] uppercase tracking-wider text-outline">Hips (Widest)</span>
+<div class="flex items-baseline justify-between">
+<input class="w-16 bg-transparent font-headline text-base font-bold text-on-surface focus:outline-none focus:text-secondary p-0" step="0.5" type="number" value="92.0"/>
+<span class="font-label text-[11px] text-outline">cm</span>
+</div>
+</div>
+</div>
+<!-- Chest Full Width -->
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label text-[10px] uppercase tracking-wider text-outline">Chest (Nipple Line)</span>
+<span class="font-label text-[10px] text-outline-variant">Mid-Exhale Stance</span>
+</div>
+<div class="flex items-baseline gap-1">
+<input class="w-14 text-right bg-transparent font-headline text-base font-bold text-on-surface focus:outline-none focus:text-secondary p-0" step="0.5" type="number" value="86.0"/>
+<span class="font-label text-[11px] text-outline">cm</span>
+</div>
+</div>
+<!-- Bilateral Lower Extremities (Thighs) -->
+<div class="bg-surface-container-low p-3 rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label text-[10px] uppercase tracking-wider text-outline">Thighs (Sub-Gluteal)</span>
+<span class="font-label text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-secondary-container/20 text-secondary">Symmetry: Balanced (1:1)</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="flex items-center justify-between bg-surface-container px-2.5 py-1.5 rounded">
+<span class="font-label text-[11px] text-on-surface-variant font-medium">Right</span>
+<div class="flex items-baseline gap-1">
+<input class="w-12 text-right bg-transparent font-headline text-sm font-bold text-on-surface focus:outline-none p-0" step="0.5" type="number" value="52.0"/>
+<span class="text-[10px] font-label text-outline">cm</span>
+</div>
+</div>
+<div class="flex items-center justify-between bg-surface-container px-2.5 py-1.5 rounded">
+<span class="font-label text-[11px] text-on-surface-variant font-medium">Left</span>
+<div class="flex items-baseline gap-1">
+<input class="w-12 text-right bg-transparent font-headline text-sm font-bold text-on-surface focus:outline-none p-0" step="0.5" type="number" value="52.0"/>
+<span class="text-[10px] font-label text-outline">cm</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bilateral Upper Extremities (Arms) -->
+<div class="bg-surface-container-low p-3 rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label text-[10px] uppercase tracking-wider text-outline">Arms (Mid-Bicep Peak)</span>
+<span class="font-label text-[9px] font-bold uppercase tracking-wider text-outline">Neutral / Unflexed</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="flex items-center justify-between bg-surface-container px-2.5 py-1.5 rounded">
+<span class="font-label text-[11px] text-on-surface-variant font-medium">Right</span>
+<div class="flex items-baseline gap-1">
+<input class="w-12 text-right bg-transparent font-headline text-sm font-bold text-on-surface focus:outline-none p-0" step="0.5" type="number" value="27.5"/>
+<span class="text-[10px] font-label text-outline">cm</span>
+</div>
+</div>
+<div class="flex items-center justify-between bg-surface-container px-2.5 py-1.5 rounded">
+<span class="font-label text-[11px] text-on-surface-variant font-medium">Left</span>
+<div class="flex items-baseline gap-1">
+<input class="w-12 text-right bg-transparent font-headline text-sm font-bold text-on-surface focus:outline-none p-0" step="0.5" type="number" value="27.5"/>
+<span class="text-[10px] font-label text-outline">cm</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bio-Impedance & Metabolic Derived Values (Optional Expansion) -->
+<div class="bg-surface-container rounded-xl p-4 mb-5 shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">bolt</span>
+<span class="font-headline text-xs font-bold uppercase tracking-wider text-on-surface">Bio-Impedance Telemetry</span>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest text-outline">Derived / Optional</span>
+</div>
+<div class="grid grid-cols-3 gap-2.5">
+<!-- Muscle Mass -->
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col gap-1">
+<span class="font-label text-[10px] uppercase tracking-tight text-outline">Muscle Mass</span>
+<div class="flex items-baseline gap-0.5">
+<input class="w-12 bg-transparent font-headline text-sm font-bold text-on-surface focus:outline-none p-0" step="0.1" type="number" value="41.8"/>
+<span class="font-label text-[10px] text-outline">kg</span>
+</div>
+</div>
+<!-- Body Water -->
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col gap-1">
+<span class="font-label text-[10px] uppercase tracking-tight text-outline">Body Water</span>
+<div class="flex items-baseline gap-0.5">
+<input class="w-12 bg-transparent font-headline text-sm font-bold text-on-surface focus:outline-none p-0" step="0.1" type="number" value="54.2"/>
+<span class="font-label text-[10px] text-outline">%</span>
+</div>
+</div>
+<!-- BMR -->
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col gap-1">
+<span class="font-label text-[10px] uppercase tracking-tight text-outline">BMR</span>
+<div class="flex items-baseline gap-0.5">
+<input class="w-12 bg-transparent font-headline text-sm font-bold text-on-surface focus:outline-none p-0" step="1" type="number" value="1385"/>
+<span class="font-label text-[10px] text-outline">kcal</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Telemetry Field Notes -->
+<div class="bg-surface-container rounded-xl p-4 mb-6 shadow-sm flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">edit_note</span>
+<span class="font-headline text-xs font-bold uppercase tracking-wider text-on-surface">Physiological Context Note</span>
+</div>
+<textarea class="w-full bg-surface-container-low rounded-lg p-3 text-xs font-body text-on-surface placeholder:text-outline-variant focus:outline-none focus:text-on-surface resize-none leading-relaxed" placeholder="Record training soreness, hydration deviation, or circadian notes..." rows="2">Fasted reading, post-hydration baseline.</textarea>
+</div>
+<!-- Persistent Sticky Transaction Controls -->
+<div class="sticky bottom-4 z-20 w-full bg-surface-container/95 backdrop-blur-md rounded-2xl p-3 shadow-2xl flex items-center gap-3">
+<button class="w-1/3 py-3 rounded-xl bg-surface-container-high text-xs font-headline font-bold text-on-surface hover:text-error active:scale-95 transition-all" type="button">
+      Discard
+    </button>
+<button class="w-2/3 py-3 rounded-xl bg-secondary text-on-secondary flex items-center justify-center gap-2 font-headline font-extrabold text-sm shadow-md active:scale-98 transition-all hover:brightness-105" id="save-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Save & Encrypt</span>
+</button>
+</div>
+</div>
+<script>
+  (function() {
+    // Stepper Micro-Interaction
+    const weightDisplay = document.getElementById('weight-display');
+    const decBtn = document.getElementById('weight-dec');
+    const incBtn = document.getElementById('weight-inc');
+
+    if (decBtn && incBtn && weightDisplay) {
+      decBtn.addEventListener('click', () => {
+        let val = parseFloat(weightDisplay.textContent) || 58.0;
+        val = Math.max(20.0, val - 0.1);
+        weightDisplay.textContent = val.toFixed(1);
+      });
+
+      incBtn.addEventListener('click', () => {
+        let val = parseFloat(weightDisplay.textContent) || 58.0;
+        val = Math.min(300.0, val + 0.1);
+        weightDisplay.textContent = val.toFixed(1);
+      });
+    }
+
+    // Accordion Toggle Micro-Interaction
+    const toggleBtn = document.getElementById('toggle-dimensions');
+    const dimensionsBody = document.getElementById('dimensions-body');
+    const accordionIcon = document.getElementById('accordion-icon');
+
+    if (toggleBtn && dimensionsBody && accordionIcon) {
+      toggleBtn.addEventListener('click', () => {
+        const isCollapsed = dimensionsBody.classList.contains('hidden');
+        if (isCollapsed) {
+          dimensionsBody.classList.remove('hidden');
+          accordionIcon.style.transform = 'rotate(0deg)';
+        } else {
+          dimensionsBody.classList.add('hidden');
+          accordionIcon.style.transform = 'rotate(180deg)';
+        }
+      });
+    }
+
+    // Save Feedback Simulation
+    const saveBtn = document.getElementById('save-btn');
+    if (saveBtn) {
+      saveBtn.addEventListener('click', () => {
+        const originalContent = saveBtn.innerHTML;
+        saveBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">sync</span><span>Encrypting Local Block...</span>';
+        saveBtn.classList.add('pointer-events-none', 'opacity-90');
+        setTimeout(() => {
+          saveBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span><span>Encrypted to OS Storage</span>';
+          setTimeout(() => {
+            saveBtn.innerHTML = originalContent;
+            saveBtn.classList.remove('pointer-events-none', 'opacity-90');
+          }, 1500);
+        }, 800);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.3)]" data-active-classes="text-secondary font-bold"><div class="h-16 px-2 flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 transition-colors group text-secondary font-bold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="live-workout" href="#"><span class="material-symbols-outlined text-[22px]">fitness_center</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Workout</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="planner" href="#"><span class="material-symbols-outlined text-[22px]">calendar_month</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Planner</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="analytics" href="#"><span class="material-symbols-outlined text-[22px]">insights</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Analyze</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="system-hub" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">More</span></a></div></nav></body></html>

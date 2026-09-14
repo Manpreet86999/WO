@@ -1,0 +1,64 @@
+{
+  "name": "body-os",
+  "version": "4.5.4",
+  "private": true,
+  "description": "Body OS — local-first training and skincare",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "tsx watch --tsconfig tsconfig.server.json src/server/index.ts",
+    "dev:client": "vite",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vite build",
+    "build:server": "tsc -p tsconfig.server.json",
+    "build:installer": "node build-installer.cjs",
+    "start": "tsx --tsconfig tsconfig.server.json src/server/index.ts",
+    "start:prod": "node --experimental-sqlite dist/server/index.js",
+    "typecheck": "tsc -p tsconfig.server.json --noEmit && tsc -p tsconfig.client.json --noEmit",
+    "test": "node scripts/test-runner.mjs",
+    "test:e2e": "playwright test",
+    "verify": "npm run typecheck && npm test && npm run build && npm run test:e2e"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "@duckdb/node-api": "^1.5.5-r.4",
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@tanstack/react-query": "^5.102.8",
+    "chart.js": "^4.4.8",
+    "express": "^4.21.2",
+    "firebase": "^12.18.0",
+    "googleapis": "^174.0.1",
+    "idb": "^8.0.3",
+    "juice": "^12.1.2",
+    "mcp-server-sqlite": "^0.0.2",
+    "nodemailer": "^6.10.1",
+    "pdfkit": "^0.20.2",
+    "pino": "^10.3.1",
+    "puppeteer": "^25.8.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "rxjs": "^7.8.2",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.13.10",
+    "@types/nodemailer": "^6.4.17",
+    "@types/pdfkit": "^0.17.6",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "innosetup-compiler": "^6.3.1",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-win32-x64-msvc": "^4.62.2"
+  }
+}

@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId}/records/{recordId} {
+      function owner() { return request.auth != null && request.auth.uid == userId; }
+      function valid() {
+        return request.resource.data.keys().hasOnly(['entityType', 'id', 'payloadJson', 'updatedAt', 'revision', 'deviceId', 'deletedAt', 'workspace', 'payloadVersion', 'createdAt'])
+          && request.resource.data.entityType in ['week', 'librarySplit', 'session', 'readiness', 'target', 'measurement', 'habit', 'habitLog', 'cardio', 'goalCheckIn', 'weeklyReview', 'exercise', 'program', 'painLog', 'scheduledWorkout', 'profile', 'workspaceState', 'trainingConfig', 'skinProfile', 'skinProduct', 'skinRoutine', 'skinLog', 'healthReading']
+          && request.resource.data.id is string
+          && request.resource.data.payloadJson is string
+          && request.resource.data.payloadJson.size() < 900000
+          && request.resource.data.revision is int
+          && request.resource.data.revision > 0
+          && request.resource.data.updatedAt is string
+          && request.resource.data.deviceId is string
+          && (!request.resource.data.keys().hasAny(['workspace']) || request.resource.data.workspace is string)
+          && (!request.resource.data.keys().hasAny(['payloadVersion']) || (request.resource.data.payloadVersion is int && request.resource.data.payloadVersion > 0))
+          && (!request.resource.data.keys().hasAny(['createdAt']) || request.resource.data.createdAt is string);
+      }
+      allow read: if owner();
+      allow create: if owner() && valid();
+      allow update: if owner() && valid() && request.resource.data.revision > resource.data.revision
+        && request.resource.data.id == resource.data.id && request.resource.data.entityType == resource.data.entityType;
+      // Deletions sync as tombstones so offline devices can observe them.
+      allow delete: if false;
+    }
+  }
+}

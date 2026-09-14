@@ -1,0 +1,448 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=Manrope:wght@200..800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#324f00", "secondary-fixed-dim": "#91db04", "secondary-container": "#8ed800", "surface": "#0d141e", "surface-variant": "#2e3541", "on-primary-container": "#7d7d83", "outline-variant": "#46464b", "on-primary-fixed": "#1a1b20", "primary-fixed": "#e3e1e9", "on-secondary-fixed": "#112000", "on-secondary": "#213600", "inverse-surface": "#dce3f2", "background": "#0d141e", "primary-container": "#111217", "error-container": "#93000a", "surface-container-low": "#151c27", "on-primary-fixed-variant": "#46464c", "surface-container-high": "#232a35", "tertiary-fixed-dim": "#9dd841", "tertiary-container": "#0a1500", "surface-tint": "#c7c6cd", "secondary": "#a8f530", "surface-container-highest": "#2e3541", "secondary-fixed": "#abf834", "tertiary-fixed": "#b8f55b", "inverse-on-surface": "#2a313c", "on-secondary-container": "#395a00", "primary": "#c7c6cd", "outline": "#919095", "on-error": "#690005", "primary-fixed-dim": "#c7c6cd", "surface-container": "#19202b", "on-surface-variant": "#c7c6cb", "on-tertiary-fixed": "#121f00", "inverse-primary": "#5e5e64", "on-tertiary": "#213600", "on-secondary-fixed-variant": "#314f00", "surface-container-lowest": "#070e19", "on-primary": "#2f3036", "tertiary": "#9dd841", "on-tertiary-container": "#5c8a00", "on-error-container": "#ffdad6", "surface-bright": "#333a45", "on-background": "#dce3f2", "on-surface": "#dce3f2", "error": "#ffb4ab", "surface-dim": "#0d141e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: {}, fontFamily: { "headline": ["Manrope"], "display": ["Manrope"], "body": ["Hanken Grotesk"], "label": ["Hanken Grotesk"] }, fontSize: {} } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-3"><img alt="Body OS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeWKOx9KwVkdFVhN0ua2jD2UQKolfaWQGFPO9o07-k_cQsBvghBykEEqyYvx3xw0mmgB4rka1l44rItIo5XJ-TWgyIOme3wfvu-ShqzOHKODDPNBO_OKbUOiw8RuIyDCtJFE4IfKEdckU8NsPpPDbZezQA11xNrKavHW6rBbAbn2m273QAEy29yHSQWow1RANWO7cHeyrcvOvVmjk1A7FOtr3Aj8z6Zle9sFNnlU9RzNRWkxqQjvEaIA"><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline font-extrabold text-sm tracking-tight text-on-surface uppercase">Body OS</span><span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-secondary text-on-secondary">OS 2.4</span></div><h1 class="text-xs font-headline font-semibold text-on-surface-variant truncate max-w-[140px]">Dashboard</h1></div></div><div class="flex items-center gap-3"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors focus:outline-none"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-28"><div class="flex flex-col w-full px-4 space-y-4">
+<!-- Top Stats & Streak Capsule -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full text-[11px] font-label font-bold uppercase tracking-wider bg-surface-container-high text-on-surface">
+        Cycle B · Meso 2
+      </span>
+<span class="text-xs font-label text-on-surface-variant">4 Sessions Saved</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="text-xs font-headline font-extrabold text-on-surface">12 Day Streak</span>
+</div>
+</div>
+<!-- Hero / Header Block -->
+<div class="bg-surface-container p-4 rounded-xl shadow-md space-y-3">
+<div class="flex items-start justify-between">
+<div>
+<p class="text-[11px] font-label font-bold uppercase tracking-[0.14em] text-secondary">History · Logs</p>
+<h2 class="text-2xl font-headline font-extrabold text-on-surface tracking-tight mt-0.5">Records</h2>
+<p class="text-xs font-body text-on-surface-variant mt-1">Review, edit, and email verified session telemetry.</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">history</span>
+</div>
+</div>
+<!-- Segmented Filter Control -->
+<div class="flex items-center p-1 bg-surface-container-lowest rounded-full text-xs font-label">
+<button class="flex-1 py-1.5 px-3 rounded-full font-bold bg-secondary text-on-secondary transition-all shadow-sm" id="tab-sessions" onclick="switchCategory('sessions')">
+        Sessions
+      </button>
+<button class="flex-1 py-1.5 px-3 rounded-full font-medium text-on-surface-variant hover:text-on-surface transition-all" id="tab-cardio" onclick="switchCategory('cardio')">
+        Cardio
+      </button>
+<button class="flex-1 py-1.5 px-3 rounded-full font-medium text-on-surface-variant hover:text-on-surface transition-all" id="tab-habits" onclick="switchCategory('habits')">
+        Habits
+      </button>
+</div>
+</div>
+<!-- Search & Filter Controls -->
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<!-- Search Input -->
+<div class="flex-1 relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span>
+<input class="w-full bg-surface-container-low text-on-surface text-xs font-body pl-9 pr-3 py-2.5 rounded-lg focus:outline-none focus:ring-1 focus:ring-secondary placeholder:text-outline" id="search-input" oninput="handleSearch(this.value)" placeholder="Search exercise / routine..." type="text">
+</div>
+<!-- Week Select Dropdown Chip -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low text-on-surface text-xs font-label font-bold pl-3 pr-7 py-2.5 rounded-lg focus:outline-none focus:ring-1 focus:ring-secondary cursor-pointer">
+<option>Week 2</option>
+<option>Week 1</option>
+<option>All Meso</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-[16px] text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="flex items-center justify-between gap-2 text-xs">
+<!-- Date Picker Chip -->
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[16px] text-secondary">event</span>
+<span class="font-label text-[11px] font-medium">Aug 31 – Sep 03, 2026</span>
+</button>
+<!-- Quick Metrics Pill -->
+<div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-[11px] font-label font-semibold text-on-surface">4 PRs Logged</span>
+</div>
+</div>
+</div>
+<!-- Import Records Collapsible Card -->
+<div class="bg-surface-container-low p-3.5 rounded-xl shadow-sm space-y-2.5">
+<div class="flex items-center justify-between cursor-pointer" onclick="toggleImportPanel()">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-surface-container-highest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[15px]">file_upload</span>
+</div>
+<span class="text-xs font-headline font-bold text-on-surface">Import Records</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-[10px] font-label font-bold text-secondary uppercase tracking-wider">JSON Sync</span>
+<span class="material-symbols-outlined text-outline text-[18px] transition-transform" id="import-chevron">expand_more</span>
+</div>
+</div>
+<div class="space-y-2 pt-1" id="import-body">
+<p class="text-[11px] font-body text-on-surface-variant leading-relaxed">
+        Choose a Body OS backup JSON or sessions array. Duplicates are automatically deduplicated.
+      </p>
+<div class="flex items-center gap-2">
+<label class="cursor-pointer inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-highest hover:bg-surface-bright text-on-surface text-xs font-label font-semibold transition-colors">
+<span class="material-symbols-outlined text-[16px]">folder_open</span>
+<span>Choose File</span>
+<input accept=".json" class="hidden" onchange="handleFileSelected(this)" type="file">
+</label>
+<span class="text-[11px] font-body text-outline truncate max-w-[170px]" id="file-name-label">No file chosen</span>
+</div>
+</div>
+</div>
+<!-- Workout Visual Telemetry Highlights -->
+<div class="grid grid-cols-2 gap-2.5">
+<div class="bg-surface-container-low p-3 rounded-xl flex items-center gap-3">
+<div class="relative w-10 h-10 shrink-0">
+<svg class="w-10 h-10 transform -rotate-90" viewBox="0 0 36 36">
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="88, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-[10px] font-headline font-extrabold text-on-surface">88%</span>
+</div>
+</div>
+<div class="min-w-0">
+<p class="text-[10px] font-label font-bold uppercase tracking-wider text-outline">Target Adherence</p>
+<p class="text-xs font-headline font-extrabold text-on-surface truncate">24 Sets Total</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[20px]">award_star</span>
+</div>
+<div class="min-w-0">
+<p class="text-[10px] font-label font-bold uppercase tracking-wider text-outline">Top PR Set</p>
+<p class="text-xs font-headline font-extrabold text-secondary truncate">142.5 kg · Squat</p>
+</div>
+</div>
+</div>
+<!-- Records List Section -->
+<div class="space-y-2.5">
+<div class="flex items-center justify-between px-1">
+<h3 class="text-xs font-label font-bold uppercase tracking-wider text-on-surface-variant">Logged Day Sessions</h3>
+<span class="text-[11px] font-label text-secondary font-bold">Week 2 Target: 4/4</span>
+</div>
+<!-- Record Card 1 -->
+<div class="record-card bg-surface-container p-3.5 rounded-xl space-y-3 transition-transform active:scale-[0.99]" data-title="Day Mon Week 2 2026-08-31">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded text-[10px] font-headline font-extrabold tracking-wider bg-surface-container-highest text-on-surface">MON</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-label font-semibold bg-surface-container-low text-on-surface-variant">2026-08-31</span>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full text-[10px] font-label font-extrabold uppercase tracking-wide bg-secondary/15 text-secondary">
+<span class="material-symbols-outlined text-[11px]" style="font-variation-settings: 'FILL' 1;">star</span> PR
+          </span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1 rounded-md text-[11px] font-label font-bold bg-surface-container-high text-on-surface hover:bg-surface-bright transition-colors" onclick="editRecord('rec-1')">
+            Edit
+          </button>
+<button class="px-2.5 py-1 rounded-md text-[11px] font-label font-bold bg-error-container/30 text-error hover:bg-error-container/50 transition-colors" onclick="deleteRecord(this)">
+            Delete
+          </button>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-surface-container-high/40 pt-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">play_arrow</span>
+<div>
+<h4 class="text-xs font-headline font-bold text-on-surface">Day Mon · Week 2</h4>
+<p class="text-[11px] font-body text-on-surface-variant">Push Protocol • 6 completed, 0 skipped</p>
+</div>
+</div>
+<button class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-secondary" onclick="toggleCardDetails('details-1')">
+<span class="material-symbols-outlined text-[18px] transition-transform" id="chevron-details-1">expand_more</span>
+</button>
+</div>
+<!-- Collapsible Detailed Telemetry -->
+<div class="hidden pt-2 border-t border-surface-container-high/30 space-y-2" id="details-1">
+<div class="grid grid-cols-3 gap-2 text-center">
+<div class="bg-surface-container-low p-2 rounded-lg">
+<p class="text-[9px] font-label text-outline uppercase">Volume</p>
+<p class="text-xs font-headline font-extrabold text-on-surface">18,420 kg</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<p class="text-[9px] font-label text-outline uppercase">Duration</p>
+<p class="text-xs font-headline font-extrabold text-on-surface">54m 12s</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<p class="text-[9px] font-label text-outline uppercase">Strain</p>
+<p class="text-xs font-headline font-extrabold text-secondary">9.4 / 10</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Record Card 2 -->
+<div class="record-card bg-surface-container p-3.5 rounded-xl space-y-3 transition-transform active:scale-[0.99]" data-title="Day Thu Week 2 2026-09-03">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded text-[10px] font-headline font-extrabold tracking-wider bg-surface-container-highest text-on-surface">THU</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-label font-semibold bg-surface-container-low text-on-surface-variant">2026-09-03</span>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full text-[10px] font-label font-extrabold uppercase tracking-wide bg-secondary/15 text-secondary">
+<span class="material-symbols-outlined text-[11px]" style="font-variation-settings: 'FILL' 1;">star</span> PR
+          </span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1 rounded-md text-[11px] font-label font-bold bg-surface-container-high text-on-surface hover:bg-surface-bright transition-colors" onclick="editRecord('rec-2')">
+            Edit
+          </button>
+<button class="px-2.5 py-1 rounded-md text-[11px] font-label font-bold bg-error-container/30 text-error hover:bg-error-container/50 transition-colors" onclick="deleteRecord(this)">
+            Delete
+          </button>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-surface-container-high/40 pt-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">play_arrow</span>
+<div>
+<h4 class="text-xs font-headline font-bold text-on-surface">Day Thu · Week 2</h4>
+<p class="text-[11px] font-body text-on-surface-variant">Lower Focus • 7 completed, 0 skipped</p>
+</div>
+</div>
+<button class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-secondary" onclick="toggleCardDetails('details-2')">
+<span class="material-symbols-outlined text-[18px] transition-transform" id="chevron-details-2">expand_more</span>
+</button>
+</div>
+<!-- Collapsible Detailed Telemetry -->
+<div class="hidden pt-2 border-t border-surface-container-high/30 space-y-2" id="details-2">
+<div class="grid grid-cols-3 gap-2 text-center">
+<div class="bg-surface-container-low p-2 rounded-lg">
+<p class="text-[9px] font-label text-outline uppercase">Volume</p>
+<p class="text-xs font-headline font-extrabold text-on-surface">22,180 kg</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<p class="text-[9px] font-label text-outline uppercase">Duration</p>
+<p class="text-xs font-headline font-extrabold text-on-surface">62m 04s</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<p class="text-[9px] font-label text-outline uppercase">Strain</p>
+<p class="text-xs font-headline font-extrabold text-secondary">9.8 / 10</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Record Card 3 -->
+<div class="record-card bg-surface-container p-3.5 rounded-xl space-y-3 transition-transform active:scale-[0.99]" data-title="Day Tue Week 2 2026-09-01">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded text-[10px] font-headline font-extrabold tracking-wider bg-surface-container-highest text-on-surface">TUE</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-label font-semibold bg-surface-container-low text-on-surface-variant">2026-09-01</span>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full text-[10px] font-label font-extrabold uppercase tracking-wide bg-secondary/15 text-secondary">
+<span class="material-symbols-outlined text-[11px]" style="font-variation-settings: 'FILL' 1;">star</span> PR
+          </span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1 rounded-md text-[11px] font-label font-bold bg-surface-container-high text-on-surface hover:bg-surface-bright transition-colors" onclick="editRecord('rec-3')">
+            Edit
+          </button>
+<button class="px-2.5 py-1 rounded-md text-[11px] font-label font-bold bg-error-container/30 text-error hover:bg-error-container/50 transition-colors" onclick="deleteRecord(this)">
+            Delete
+          </button>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-surface-container-high/40 pt-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">play_arrow</span>
+<div>
+<h4 class="text-xs font-headline font-bold text-on-surface">Day Tue · Week 2</h4>
+<p class="text-[11px] font-body text-on-surface-variant">Pull Hypertrophy • 5 completed, 1 skipped</p>
+</div>
+</div>
+<button class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-secondary" onclick="toggleCardDetails('details-3')">
+<span class="material-symbols-outlined text-[18px] transition-transform" id="chevron-details-3">expand_more</span>
+</button>
+</div>
+<!-- Collapsible Detailed Telemetry -->
+<div class="hidden pt-2 border-t border-surface-container-high/30 space-y-2" id="details-3">
+<div class="grid grid-cols-3 gap-2 text-center">
+<div class="bg-surface-container-low p-2 rounded-lg">
+<p class="text-[9px] font-label text-outline uppercase">Volume</p>
+<p class="text-xs font-headline font-extrabold text-on-surface">14,900 kg</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<p class="text-[9px] font-label text-outline uppercase">Duration</p>
+<p class="text-xs font-headline font-extrabold text-on-surface">48m 30s</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<p class="text-[9px] font-label text-outline uppercase">Strain</p>
+<p class="text-xs font-headline font-extrabold text-secondary">8.2 / 10</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Record Card 4 -->
+<div class="record-card bg-surface-container p-3.5 rounded-xl space-y-3 transition-transform active:scale-[0.99]" data-title="Day Wed Week 2 2026-09-02">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded text-[10px] font-headline font-extrabold tracking-wider bg-surface-container-highest text-on-surface">WED</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-label font-semibold bg-surface-container-low text-on-surface-variant">2026-09-02</span>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full text-[10px] font-label font-extrabold uppercase tracking-wide bg-secondary/15 text-secondary">
+<span class="material-symbols-outlined text-[11px]" style="font-variation-settings: 'FILL' 1;">star</span> PR
+          </span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1 rounded-md text-[11px] font-label font-bold bg-surface-container-high text-on-surface hover:bg-surface-bright transition-colors" onclick="editRecord('rec-4')">
+            Edit
+          </button>
+<button class="px-2.5 py-1 rounded-md text-[11px] font-label font-bold bg-error-container/30 text-error hover:bg-error-container/50 transition-colors" onclick="deleteRecord(this)">
+            Delete
+          </button>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-surface-container-high/40 pt-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">play_arrow</span>
+<div>
+<h4 class="text-xs font-headline font-bold text-on-surface">Day Wed · Week 2</h4>
+<p class="text-[11px] font-body text-on-surface-variant">Posterior Chain • 6 completed, 0 skipped</p>
+</div>
+</div>
+<button class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-secondary" onclick="toggleCardDetails('details-4')">
+<span class="material-symbols-outlined text-[18px] transition-transform" id="chevron-details-4">expand_more</span>
+</button>
+</div>
+<!-- Collapsible Detailed Telemetry -->
+<div class="hidden pt-2 border-t border-surface-container-high/30 space-y-2" id="details-4">
+<div class="grid grid-cols-3 gap-2 text-center">
+<div class="bg-surface-container-low p-2 rounded-lg">
+<p class="text-[9px] font-label text-outline uppercase">Volume</p>
+<p class="text-xs font-headline font-extrabold text-on-surface">19,300 kg</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<p class="text-[9px] font-label text-outline uppercase">Duration</p>
+<p class="text-xs font-headline font-extrabold text-on-surface">57m 45s</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<p class="text-[9px] font-label text-outline uppercase">Strain</p>
+<p class="text-xs font-headline font-extrabold text-secondary">9.1 / 10</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Quick View Record Pill (From UI Inspiration) -->
+<div class="flex justify-end pt-1">
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-secondary text-on-secondary shadow-lg font-headline font-extrabold text-xs active:scale-95 transition-all" onclick="triggerQuickView()">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span>View Active Log</span>
+</button>
+</div>
+<!-- Bottom Action Bar -->
+<div class="pt-2 pb-6 space-y-2">
+<div class="grid grid-cols-2 gap-2.5">
+<button class="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-surface-container-high hover:bg-surface-bright text-on-surface font-headline font-bold text-xs transition-colors" onclick="exportAllCSV()">
+<span class="material-symbols-outlined text-[18px] text-secondary">download</span>
+<span>Export All CSV</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-surface-container-high hover:bg-surface-bright text-on-surface font-headline font-bold text-xs transition-colors" onclick="emailDigest()">
+<span class="material-symbols-outlined text-[18px] text-secondary">mail</span>
+<span>Email Digest</span>
+</button>
+</div>
+<p class="text-[10px] font-label text-center text-outline">
+      Body OS Telemetry Hub · Local Encrypted Database
+    </p>
+</div>
+</div>
+<script>
+  function switchCategory(cat) {
+    const tabs = ['sessions', 'cardio', 'habits'];
+    tabs.forEach(t => {
+      const el = document.getElementById('tab-' + t);
+      if (t === cat) {
+        el.className = 'flex-1 py-1.5 px-3 rounded-full font-bold bg-secondary text-on-secondary transition-all shadow-sm';
+      } else {
+        el.className = 'flex-1 py-1.5 px-3 rounded-full font-medium text-on-surface-variant hover:text-on-surface transition-all';
+      }
+    });
+  }
+
+  function toggleImportPanel() {
+    const body = document.getElementById('import-body');
+    const chevron = document.getElementById('import-chevron');
+    if (body.classList.contains('hidden')) {
+      body.classList.remove('hidden');
+      chevron.classList.remove('rotate-180');
+    } else {
+      body.classList.add('hidden');
+      chevron.classList.add('rotate-180');
+    }
+  }
+
+  function handleFileSelected(input) {
+    const label = document.getElementById('file-name-label');
+    if (input.files && input.files[0]) {
+      label.textContent = input.files[0].name;
+      label.classList.add('text-secondary');
+    }
+  }
+
+  function toggleCardDetails(id) {
+    const el = document.getElementById(id);
+    const chevron = document.getElementById('chevron-' + id);
+    if (el.classList.contains('hidden')) {
+      el.classList.remove('hidden');
+      chevron.classList.add('rotate-180');
+    } else {
+      el.classList.add('hidden');
+      chevron.classList.remove('rotate-180');
+    }
+  }
+
+  function handleSearch(term) {
+    const val = term.toLowerCase().trim();
+    const cards = document.querySelectorAll('.record-card');
+    cards.forEach(card => {
+      const data = (card.getAttribute('data-title') || '').toLowerCase();
+      if (!val || data.includes(val)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  function deleteRecord(btn) {
+    const card = btn.closest('.record-card');
+    if (card) {
+      card.style.opacity = '0';
+      card.style.transform = 'scale(0.95)';
+      setTimeout(() => card.remove(), 200);
+    }
+  }
+
+  function editRecord(id) {
+    alert('Opening editor for session ' + id);
+  }
+
+  function triggerQuickView() {
+    const firstDetails = document.getElementById('details-1');
+    const chevron = document.getElementById('chevron-details-1');
+    if (firstDetails) {
+      firstDetails.classList.remove('hidden');
+      if (chevron) chevron.classList.add('rotate-180');
+      firstDetails.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  function exportAllCSV() {
+    alert('Exporting verified day logs to body_os_records.csv...');
+  }
+
+  function emailDigest() {
+    alert('Preparing automated training telemetry digest for dispatch...');
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.3)]" data-active-classes="text-secondary font-bold"><div class="h-16 px-2 flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 transition-colors group text-secondary font-bold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="live-workout" href="#"><span class="material-symbols-outlined text-[22px]">fitness_center</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Workout</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="planner" href="#"><span class="material-symbols-outlined text-[22px]">calendar_month</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Planner</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="analytics" href="#"><span class="material-symbols-outlined text-[22px]">insights</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Analyze</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="system-hub" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">More</span></a></div></nav></body></html>

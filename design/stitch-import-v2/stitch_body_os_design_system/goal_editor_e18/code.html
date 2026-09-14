@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&family=Manrope:wght@200..800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Manrope:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#324f00", "secondary-fixed-dim": "#91db04", "secondary-container": "#8ed800", "surface": "#0d141e", "surface-variant": "#2e3541", "on-primary-container": "#7d7d83", "outline-variant": "#46464b", "on-primary-fixed": "#1a1b20", "primary-fixed": "#e3e1e9", "on-secondary-fixed": "#112000", "on-secondary": "#213600", "inverse-surface": "#dce3f2", "background": "#0d141e", "primary-container": "#111217", "error-container": "#93000a", "surface-container-low": "#151c27", "on-primary-fixed-variant": "#46464c", "surface-container-high": "#232a35", "tertiary-fixed-dim": "#9dd841", "tertiary-container": "#0a1500", "surface-tint": "#c7c6cd", "secondary": "#a8f530", "surface-container-highest": "#2e3541", "secondary-fixed": "#abf834", "tertiary-fixed": "#b8f55b", "inverse-on-surface": "#2a313c", "on-secondary-container": "#395a00", "primary": "#c7c6cd", "outline": "#919095", "on-error": "#690005", "primary-fixed-dim": "#c7c6cd", "surface-container": "#19202b", "on-surface-variant": "#c7c6cb", "on-tertiary-fixed": "#121f00", "inverse-primary": "#5e5e64", "on-tertiary": "#213600", "on-secondary-fixed-variant": "#314f00", "surface-container-lowest": "#070e19", "on-primary": "#2f3036", "tertiary": "#9dd841", "on-tertiary-container": "#5c8a00", "on-error-container": "#ffdad6", "surface-bright": "#333a45", "on-background": "#dce3f2", "on-surface": "#dce3f2", "error": "#ffb4ab", "surface-dim": "#0d141e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: {}, fontFamily: { "headline": ["Manrope"], "display": ["Manrope"], "body": ["Hanken Grotesk"], "label": ["Hanken Grotesk"] }, fontSize: {} } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-3"><img alt="Body OS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeWKOx9KwVkdFVhN0ua2jD2UQKolfaWQGFPO9o07-k_cQsBvghBykEEqyYvx3xw0mmgB4rka1l44rItIo5XJ-TWgyIOme3wfvu-ShqzOHKODDPNBO_OKbUOiw8RuIyDCtJFE4IfKEdckU8NsPpPDbZezQA11xNrKavHW6rBbAbn2m273QAEy29yHSQWow1RANWO7cHeyrcvOvVmjk1A7FOtr3Aj8z6Zle9sFNnlU9RzNRWkxqQjvEaIA"/><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline font-extrabold text-sm tracking-tight text-on-surface uppercase">Body OS</span><span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-secondary text-on-secondary">OS 2.4</span></div><h1 class="text-xs font-headline font-semibold text-on-surface-variant truncate max-w-[140px]">Dashboard</h1></div></div><div class="flex items-center gap-3"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors focus:outline-none"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-28"><div class="flex flex-col w-full px-4 space-y-6">
+<!-- Contextual Editor Header Bar -->
+<header class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-3">
+<button aria-label="Go back" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-container-highest transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div>
+<h2 class="font-headline font-extrabold text-base tracking-tight text-on-surface">Create & Edit Goal</h2>
+<p class="font-label uppercase tracking-widest text-[10px] text-primary font-bold">Biometric & Athletic Targets</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-full font-label text-xs font-semibold text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+        Cancel
+      </button>
+<button class="px-3.5 py-1.5 rounded-full font-headline text-xs font-extrabold bg-secondary text-on-secondary shadow-sm hover:opacity-95 transition-all active:scale-95" id="header-save-btn" type="button">
+        Save
+      </button>
+</div>
+</header>
+<!-- Interactive Visual Progress Preview Gauge -->
+<section class="p-5 rounded-xl bg-surface-container shadow-md flex flex-col gap-4 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] uppercase tracking-widest font-bold text-secondary">Kinetic Progress Telemetry</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-highest text-secondary text-[11px] font-label font-bold tracking-tight">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+        40% Target Delta
+      </span>
+</div>
+<div class="flex items-center gap-5">
+<!-- High-Precision Circular Arc SVG Gauge -->
+<div class="relative w-24 h-24 flex items-center justify-center shrink-0">
+<svg class="w-24 h-24 transform -rotate-90" viewbox="0 0 96 96">
+<circle class="text-surface-container-highest fill-none" cx="48" cy="48" r="40" stroke="currentColor" stroke-width="7"></circle>
+<circle class="text-secondary fill-none transition-all duration-700" cx="48" cy="48" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="150.72" stroke-linecap="round" stroke-width="7"></circle>
+</svg>
+<div class="absolute flex flex-col items-center justify-center text-center">
+<span class="font-headline text-xl font-extrabold text-on-surface leading-none">40<span class="text-xs text-secondary">%</span></span>
+<span class="font-label text-[9px] uppercase font-bold text-outline mt-0.5">Closed</span>
+</div>
+</div>
+<!-- Linear Breakdown & Metrics Delta -->
+<div class="flex-1 flex flex-col gap-2 min-w-0">
+<div class="flex items-baseline justify-between">
+<span class="font-headline text-lg font-extrabold text-on-surface">4.0 <span class="text-xs font-normal text-on-surface-variant font-body">/ 10.0 kg</span></span>
+<span class="font-label text-[11px] font-semibold text-secondary-fixed">+4.0 kg cleared</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 40%"></div>
+</div>
+<p class="font-body text-xs text-on-surface-variant leading-tight">
+          Current actual is <span class="text-on-surface font-semibold">24.0 kg</span>. Remaining gap to master is <span class="text-secondary font-bold">6.0 kg</span> by Oct 31.
+        </p>
+</div>
+</div>
+</section>
+<!-- Goal Configuration Form -->
+<form class="flex flex-col gap-6" onsubmit="event.preventDefault()">
+<!-- Goal Title Input -->
+<div class="flex flex-col gap-2">
+<label class="font-label text-[11px] uppercase tracking-wider font-bold text-on-surface-variant" for="goal-title">Goal Title</label>
+<div class="relative flex items-center">
+<input class="w-full h-12 px-4 rounded-lg bg-surface-container-high text-on-surface font-headline font-bold text-sm tracking-tight focus:outline-none focus:bg-surface-container-highest transition-all" id="goal-title" type="text" value="Goblet Squat 30kg Milestone"/>
+<span class="material-symbols-outlined text-outline absolute right-3 pointer-events-none text-[20px]">flag</span>
+</div>
+</div>
+<!-- Domain / Category Chips Selector -->
+<div class="flex flex-col gap-2">
+<span class="font-label text-[11px] uppercase tracking-wider font-bold text-on-surface-variant">Goal Domain / Objective</span>
+<div class="flex gap-2 overflow-x-auto pb-1" id="category-chip-group">
+<button class="domain-chip shrink-0 h-10 px-4 rounded-full font-label text-xs font-bold transition-all flex items-center gap-1.5 bg-secondary text-on-secondary" data-domain="strength" type="button">
+<span class="material-symbols-outlined text-[16px]">fitness_center</span>
+          Strength / Load
+        </button>
+<button class="domain-chip shrink-0 h-10 px-4 rounded-full font-label text-xs font-semibold bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-all flex items-center gap-1.5" data-domain="composition" type="button">
+<span class="material-symbols-outlined text-[16px]">accessibility_new</span>
+          Body Composition
+        </button>
+<button class="domain-chip shrink-0 h-10 px-4 rounded-full font-label text-xs font-semibold bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-all flex items-center gap-1.5" data-domain="streak" type="button">
+<span class="material-symbols-outlined text-[16px]">local_fire_department</span>
+          Consistency / Streak
+        </button>
+<button class="domain-chip shrink-0 h-10 px-4 rounded-full font-label text-xs font-semibold bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-all flex items-center gap-1.5" data-domain="conditioning" type="button">
+<span class="material-symbols-outlined text-[16px]">vital_signs</span>
+          Conditioning
+        </button>
+</div>
+</div>
+<!-- Linked Exercise & Telemetry Specs Bento -->
+<div class="p-4 rounded-xl bg-surface-container shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] uppercase tracking-widest font-bold text-on-surface-variant">Target Metric Specification</span>
+<span class="material-symbols-outlined text-outline text-[18px]">tune</span>
+</div>
+<!-- Linked Movement Dropdown -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[11px] font-semibold text-outline" for="linked-exercise">Linked Movement Pattern</label>
+<div class="relative">
+<select class="w-full h-12 px-3.5 pr-10 rounded-lg bg-surface-container-low text-on-surface font-headline font-bold text-xs appearance-none focus:outline-none focus:bg-surface-container-high" id="linked-exercise">
+<option selected="">Goblet Squat (Dumbbell)</option>
+<option>Barbell Back Squat</option>
+<option>Romanian Deadlift</option>
+<option>Bulgarian Split Squat</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Telemetry Tri-Metric Input Matrix -->
+<div class="grid grid-cols-3 gap-2.5">
+<!-- Baseline -->
+<div class="flex flex-col gap-1 p-3 rounded-lg bg-surface-container-low">
+<span class="font-label text-[10px] uppercase font-bold text-outline tracking-wider">Baseline</span>
+<span class="font-headline text-base font-extrabold text-on-surface-variant">20.0 <span class="text-[10px] font-normal font-body">kg</span></span>
+<span class="font-label text-[9px] text-outline">Initial audit</span>
+</div>
+<!-- Current Auto-Parsed PR -->
+<div class="flex flex-col gap-1 p-3 rounded-lg bg-surface-container-high">
+<div class="flex items-center justify-between">
+<span class="font-label text-[10px] uppercase font-bold text-secondary tracking-wider">Current</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<span class="font-headline text-base font-extrabold text-secondary">24.0 <span class="text-[10px] font-normal font-body text-on-surface">kg</span></span>
+<span class="font-label text-[9px] text-on-surface-variant truncate">Sep 02 PR parsed</span>
+</div>
+<!-- Objective Target -->
+<div class="flex flex-col gap-1 p-3 rounded-lg bg-surface-container-low">
+<span class="font-label text-[10px] uppercase font-bold text-on-surface-variant tracking-wider">Target</span>
+<div class="flex items-baseline gap-0.5">
+<input class="w-12 bg-transparent font-headline text-base font-extrabold text-on-surface focus:outline-none" type="text" value="30.0"/>
+<span class="text-[10px] font-normal font-body text-outline">kg</span>
+</div>
+<span class="font-label text-[9px] text-tertiary">Oct 31 Horizon</span>
+</div>
+</div>
+<!-- Measurement Unit Selector -->
+<div class="flex items-center justify-between pt-1">
+<span class="font-label text-xs font-semibold text-on-surface-variant">Metric Unit Standard</span>
+<div class="flex p-0.5 rounded-lg bg-surface-container-low">
+<button class="px-2.5 py-1 rounded-md text-[11px] font-label font-bold bg-surface-container text-secondary" type="button">Kilograms (kg)</button>
+<button class="px-2.5 py-1 rounded-md text-[11px] font-label font-semibold text-outline hover:text-on-surface" type="button">Pounds (lb)</button>
+</div>
+</div>
+</div>
+<!-- Progression Pace & Timeframe Telemetry -->
+<div class="p-4 rounded-xl bg-surface-container shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] uppercase tracking-widest font-bold text-on-surface-variant">Progression & Timeframe</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold bg-secondary-container text-on-secondary-container">8 WEEKS REMAINING</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Target Deadline -->
+<div class="flex flex-col gap-1 p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-1.5 text-outline">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span class="font-label text-[10px] uppercase font-bold">Target Date</span>
+</div>
+<span class="font-headline text-sm font-extrabold text-on-surface">October 31, 2026</span>
+<span class="font-label text-[10px] text-outline">Scheduled re-test</span>
+</div>
+<!-- Progressive Pacing -->
+<div class="flex flex-col gap-1 p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span class="font-label text-[10px] uppercase font-bold">Pacing Rate</span>
+</div>
+<span class="font-headline text-sm font-extrabold text-on-surface">0.75 kg / week</span>
+<span class="font-label text-[10px] text-outline">Progressive overload</span>
+</div>
+</div>
+<!-- Algorithmic Confidence Banner -->
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-high">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline font-bold text-xs text-on-surface">87% Projected Confidence</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<p class="font-body text-xs text-on-surface-variant mt-0.5">
+            Cadence matches your 3-day split volume. You are pacing <span class="text-secondary font-semibold">+0.12 kg/wk</span> ahead of baseline tolerance.
+          </p>
+</div>
+</div>
+</div>
+<!-- Milestone Checkpoints Roadmap -->
+<div class="p-4 rounded-xl bg-surface-container shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] uppercase tracking-widest font-bold text-on-surface-variant">Milestone Horizons</span>
+<span class="font-label text-[11px] font-bold text-outline">1 of 4 Achieved</span>
+</div>
+<div class="flex flex-col space-y-3 relative before:absolute before:left-4 before:top-3 before:bottom-3 before:w-0.5 before:bg-surface-container-highest">
+<!-- Milestone 1 - Done -->
+<div class="flex items-start gap-3 relative z-10">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex-1 flex items-center justify-between pt-1">
+<div>
+<p class="font-headline text-xs font-bold text-on-surface">22.5 kg Checkpoint</p>
+<p class="font-label text-[10px] text-outline">Completed Aug 20 • RPE 7.5</p>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold bg-surface-container-highest text-secondary">Done</span>
+</div>
+</div>
+<!-- Milestone 2 - Current / Imminent -->
+<div class="flex items-start gap-3 relative z-10">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">radio_button_checked</span>
+</div>
+<div class="flex-1 flex items-center justify-between pt-1">
+<div>
+<p class="font-headline text-xs font-extrabold text-secondary">25.0 kg — Next Horizon</p>
+<p class="font-label text-[10px] text-on-surface-variant">Due Sep 16 • Target +1.0 kg jump</p>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold bg-secondary text-on-secondary">Active</span>
+</div>
+</div>
+<!-- Milestone 3 - Upcoming -->
+<div class="flex items-start gap-3 relative z-10">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-outline flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+</div>
+<div class="flex-1 flex items-center justify-between pt-1">
+<div>
+<p class="font-headline text-xs font-medium text-outline">27.5 kg Checkpoint</p>
+<p class="font-label text-[10px] text-outline">Due Oct 07 • Transition Phase</p>
+</div>
+<span class="font-label text-[11px] text-outline">Pending</span>
+</div>
+</div>
+<!-- Milestone 4 - Ultimate Objective -->
+<div class="flex items-start gap-3 relative z-10">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-outline flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">trophy</span>
+</div>
+<div class="flex-1 flex items-center justify-between pt-1">
+<div>
+<p class="font-headline text-xs font-medium text-outline">30.0 kg Final Benchmark</p>
+<p class="font-label text-[10px] text-outline">Due Oct 31 • Peak Protocol</p>
+</div>
+<span class="font-label text-[11px] text-outline">Final</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Qualitative Intent & Technical Form Directives -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<label class="font-label text-[11px] uppercase tracking-wider font-bold text-on-surface-variant" for="goal-notes">Athletic Intent & Technical Notes</label>
+<span class="font-label text-[10px] text-outline">Telemetry Guardrails</span>
+</div>
+<textarea class="w-full p-3.5 rounded-xl bg-surface-container-high text-on-surface font-body text-xs leading-relaxed focus:outline-none focus:bg-surface-container-highest transition-all resize-none" id="goal-notes" rows="3">Focus on eccentric depth and knee stability. No rushed jump without RPE <= 8.5 validation.</textarea>
+</div>
+<!-- Sticky Bottom Confirmation CTA (Height clearance respected) -->
+<div class="pt-2 pb-2">
+<button class="w-full h-13 py-3.5 px-6 rounded-xl font-headline font-extrabold text-sm tracking-tight bg-secondary text-on-secondary shadow-lg shadow-secondary/15 flex items-center justify-center gap-2 hover:opacity-95 active:scale-[0.98] transition-all" id="save-goal-submit" type="button">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Save Goal & Commit to Target</span>
+</button>
+</div>
+</form>
+</div>
+<script>
+  // Interactive micro-interactions for Goal Domain selector
+  document.querySelectorAll('.domain-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.domain-chip').forEach(c => {
+        c.classList.remove('bg-secondary', 'text-on-secondary');
+        c.classList.add('bg-surface-container-high', 'text-on-surface');
+      });
+      chip.classList.remove('bg-surface-container-high', 'text-on-surface');
+      chip.classList.add('bg-secondary', 'text-on-secondary');
+    });
+  });
+
+  // Haptic feedback simulation on save actions
+  const triggerCommit = () => {
+    const btn = document.getElementById('save-goal-submit');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Synchronizing Target...</span>';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[20px]">task_alt</span><span>Goal Committed to OS</span>';
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      }, 1600);
+    }, 600);
+  };
+
+  document.getElementById('save-goal-submit')?.addEventListener('click', triggerCommit);
+  document.getElementById('header-save-btn')?.addEventListener('click', triggerCommit);
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.3)]" data-active-classes="text-secondary font-bold"><div class="h-16 px-2 flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 transition-colors group text-secondary font-bold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="live-workout" href="#"><span class="material-symbols-outlined text-[22px]">fitness_center</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Workout</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="planner" href="#"><span class="material-symbols-outlined text-[22px]">calendar_month</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Planner</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="analytics" href="#"><span class="material-symbols-outlined text-[22px]">insights</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Analyze</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="system-hub" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">More</span></a></div></nav></body></html>

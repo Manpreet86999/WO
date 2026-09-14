@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&family=Manrope:wght@200..800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Manrope:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#324f00", "secondary-fixed-dim": "#91db04", "secondary-container": "#8ed800", "surface": "#0d141e", "surface-variant": "#2e3541", "on-primary-container": "#7d7d83", "outline-variant": "#46464b", "on-primary-fixed": "#1a1b20", "primary-fixed": "#e3e1e9", "on-secondary-fixed": "#112000", "on-secondary": "#213600", "inverse-surface": "#dce3f2", "background": "#0d141e", "primary-container": "#111217", "error-container": "#93000a", "surface-container-low": "#151c27", "on-primary-fixed-variant": "#46464c", "surface-container-high": "#232a35", "tertiary-fixed-dim": "#9dd841", "tertiary-container": "#0a1500", "surface-tint": "#c7c6cd", "secondary": "#a8f530", "surface-container-highest": "#2e3541", "secondary-fixed": "#abf834", "tertiary-fixed": "#b8f55b", "inverse-on-surface": "#2a313c", "on-secondary-container": "#395a00", "primary": "#c7c6cd", "outline": "#919095", "on-error": "#690005", "primary-fixed-dim": "#c7c6cd", "surface-container": "#19202b", "on-surface-variant": "#c7c6cb", "on-tertiary-fixed": "#121f00", "inverse-primary": "#5e5e64", "on-tertiary": "#213600", "on-secondary-fixed-variant": "#314f00", "surface-container-lowest": "#070e19", "on-primary": "#2f3036", "tertiary": "#9dd841", "on-tertiary-container": "#5c8a00", "on-error-container": "#ffdad6", "surface-bright": "#333a45", "on-background": "#dce3f2", "on-surface": "#dce3f2", "error": "#ffb4ab", "surface-dim": "#0d141e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: {}, fontFamily: { "headline": ["Manrope"], "display": ["Manrope"], "body": ["Hanken Grotesk"], "label": ["Hanken Grotesk"] }, fontSize: {} } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-3"><img alt="Body OS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeWKOx9KwVkdFVhN0ua2jD2UQKolfaWQGFPO9o07-k_cQsBvghBykEEqyYvx3xw0mmgB4rka1l44rItIo5XJ-TWgyIOme3wfvu-ShqzOHKODDPNBO_OKbUOiw8RuIyDCtJFE4IfKEdckU8NsPpPDbZezQA11xNrKavHW6rBbAbn2m273QAEy29yHSQWow1RANWO7cHeyrcvOvVmjk1A7FOtr3Aj8z6Zle9sFNnlU9RzNRWkxqQjvEaIA"/><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline font-extrabold text-sm tracking-tight text-on-surface uppercase">Body OS</span><span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-secondary text-on-secondary">OS 2.4</span></div><h1 class="text-xs font-headline font-semibold text-on-surface-variant truncate max-w-[140px]">Dashboard</h1></div></div><div class="flex items-center gap-3"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors focus:outline-none"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-28"><div class="flex flex-col w-full px-4 pt-2 pb-8 space-y-4">
+<!-- Interactive Header Sub-bar -->
+<div class="flex items-center justify-between py-1">
+<button class="flex items-center justify-center w-9 h-9 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-bright transition-transform active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<span class="font-headline font-bold text-xs uppercase tracking-widest text-on-surface-variant">Daily Readiness</span>
+<span class="font-headline font-extrabold text-sm text-on-surface">Check-in</span>
+</div>
+<a class="font-label text-xs font-bold text-secondary hover:text-secondary-fixed transition-colors flex items-center gap-0.5" href="#">
+      Summary <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- Telemetry Step Progress Tracker -->
+<div class="bg-surface-container-low rounded-xl p-3.5 space-y-2 shadow-sm">
+<div class="flex items-center justify-between text-[11px] font-label font-bold tracking-wider uppercase">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+        Step 02 / 06
+      </span>
+<span class="text-on-surface-variant tracking-normal">Neural Drive & Vigor</span>
+<span class="font-headline text-on-surface">33%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full transition-all duration-500 ease-out" style="width: 33.33%;"></div>
+</div>
+</div>
+<!-- Main Flashcard Container -->
+<section class="bg-surface-container rounded-xl p-5 space-y-5 shadow-lg relative overflow-hidden">
+<!-- Ambient Telemetry Halo -->
+<div class="absolute -top-16 -right-16 w-48 h-48 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Metadata Badges -->
+<div class="flex items-center justify-between gap-2 flex-wrap relative z-10">
+<div class="inline-flex items-center px-2.5 py-1 rounded-full bg-surface-container-highest text-[10px] font-label font-bold tracking-widest uppercase text-on-surface-variant">
+        FLASHCARD B06
+      </div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary/15 text-secondary text-[10px] font-label font-extrabold tracking-wider uppercase">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+        Autoregulation Factor
+      </div>
+</div>
+<!-- Core Question Group -->
+<div class="space-y-1.5 relative z-10">
+<h2 class="font-headline text-lg font-extrabold tracking-tight text-on-surface leading-snug">
+        Rate your baseline mental and physical energy today.
+      </h2>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">
+        Calibrates central nervous system reserve, peak motor recruitment, and dynamic load pacing.
+      </p>
+</div>
+<!-- Live Telemetry Readout & Kinetic Gauge -->
+<div class="bg-surface-container-low rounded-xl p-4 space-y-4 relative z-10">
+<div class="flex items-end justify-between">
+<div class="space-y-0.5">
+<span class="font-label text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">CNS Readiness Index</span>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline text-4xl font-extrabold tracking-tight text-on-surface" id="scoreDisplay">7</span>
+<span class="font-headline text-base font-bold text-on-surface-variant">/ 10</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-headline text-xs font-extrabold tracking-tight shadow-sm" id="readinessBadge">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">offline_bolt</span>
+<span>High Neural Focus</span>
+</div>
+</div>
+<!-- Tactile Slider Architecture -->
+<div class="space-y-2 pt-1">
+<div class="relative flex items-center select-none py-1">
+<input aria-label="Energy score slider" class="w-full h-2 bg-surface-container-highest rounded-full appearance-none cursor-pointer accent-secondary focus:outline-none focus:ring-0" id="energySlider" max="10" min="1" step="1" type="range" value="7"/>
+</div>
+<div class="flex justify-between items-center text-[10px] font-label font-bold tracking-wider text-on-surface-variant uppercase pt-0.5">
+<span class="hover:text-on-surface transition-colors cursor-pointer" onclick="setScore(1)">1 • Exhausted</span>
+<span class="hover:text-on-surface transition-colors cursor-pointer text-center" onclick="setScore(5)">5 • Baseline</span>
+<span class="hover:text-on-surface transition-colors cursor-pointer text-right" onclick="setScore(10)">10 • Peak Drive</span>
+</div>
+</div>
+</div>
+<!-- Qualitative Modifiers (Multi-select tactile toggles) -->
+<div class="space-y-2 relative z-10">
+<div class="flex items-center justify-between">
+<span class="font-label text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">CNS Telemetry Modifiers</span>
+<span class="font-label text-[10px] text-on-surface-variant">Tap to flag</span>
+</div>
+<div class="flex flex-wrap gap-1.5" id="modifiersGroup">
+<button class="modifier-pill active px-3 py-1.5 rounded-full text-xs font-label font-bold flex items-center gap-1.5 transition-all bg-surface-bright text-secondary shadow-sm" data-modifier="" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Sharp & Focused
+        </button>
+<button class="modifier-pill px-3 py-1.5 rounded-full text-xs font-label font-medium flex items-center gap-1.5 transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface" data-modifier="" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant"></span>
+          Calm & Grounded
+        </button>
+<button class="modifier-pill px-3 py-1.5 rounded-full text-xs font-label font-medium flex items-center gap-1.5 transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface" data-modifier="" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant"></span>
+          Caffeinated / Stimulated
+        </button>
+<button class="modifier-pill px-3 py-1.5 rounded-full text-xs font-label font-medium flex items-center gap-1.5 transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface" data-modifier="" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant"></span>
+          Brain Fog
+        </button>
+<button class="modifier-pill px-3 py-1.5 rounded-full text-xs font-label font-medium flex items-center gap-1.5 transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface" data-modifier="" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant"></span>
+          Lethargic
+        </button>
+</div>
+</div>
+<!-- Autoregulation Governor Card -->
+<div class="bg-surface-container-high rounded-xl p-3.5 space-y-2 relative z-10">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-secondary/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</div>
+<span class="font-label text-[10px] font-extrabold uppercase tracking-widest text-on-surface">Autoregulation Governor</span>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-headline font-extrabold uppercase bg-secondary text-on-secondary">
+          Active Lock
+        </span>
+</div>
+<div class="flex items-baseline justify-between pt-1">
+<span class="font-body text-xs font-semibold text-on-surface-variant">Prescribed Ceiling:</span>
+<span class="font-headline text-sm font-extrabold text-secondary tracking-tight" id="governorRpe">RPE 8.5 Cap</span>
+</div>
+<p class="font-body text-[11px] text-on-surface leading-relaxed pt-0.5" id="governorNote">
+        Heavy working sets authorized. Cortical alertness permits high velocity multi-joint lifts.
+      </p>
+</div>
+<!-- Subjective Voice / Text Note Input -->
+<div class="space-y-1.5 relative z-10">
+<div class="flex items-center justify-between">
+<label class="font-label text-[10px] font-bold uppercase tracking-wider text-on-surface-variant" for="subjectiveNote">
+          Subjective Context Note
+        </label>
+<span class="text-[10px] font-label text-on-surface-variant">Auto-saved</span>
+</div>
+<div class="relative flex items-center">
+<input class="w-full bg-surface-container-lowest text-on-surface font-body text-xs rounded-lg px-3.5 py-2.5 pr-10 focus:outline-none focus:bg-surface-bright transition-colors" id="subjectiveNote" placeholder="Log physical or mental cues..." type="text" value="Feeling primed after morning mobility routine."/>
+<button aria-label="Dictate note" class="absolute right-2.5 flex items-center justify-center w-7 h-7 rounded-full text-secondary hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</button>
+</div>
+</div>
+<!-- 3-Day Historical Trend Micro-Strip -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest relative z-10">
+<div class="flex flex-col">
+<span class="font-label text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">3-Day Readiness Trend</span>
+<span class="font-headline text-xs font-extrabold text-secondary mt-0.5">82% Optimal High</span>
+</div>
+<!-- SVG Sparkline & Confidence Vector -->
+<div class="flex items-center gap-3">
+<svg aria-label="3 day sparkline" class="w-20 h-6 overflow-visible" fill="none" viewbox="0 0 80 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M 2 18 L 26 14 L 52 16 L 78 4" stroke="#46464b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M 52 16 L 78 4" stroke="#a8f530" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+<circle cx="78" cy="4" fill="#a8f530" r="3"></circle>
+</svg>
+<span class="material-symbols-outlined text-secondary text-[16px]">trending_up</span>
+</div>
+</div>
+</section>
+<!-- Navigation Action Cluster -->
+<div class="grid grid-cols-5 gap-2.5 pt-1">
+<button class="col-span-2 h-12 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-bright active:scale-[0.98] transition-all font-headline text-xs font-bold flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">west</span>
+      Previous
+    </button>
+<button class="col-span-3 h-12 rounded-lg bg-secondary text-on-secondary hover:opacity-95 active:scale-[0.98] transition-all font-headline text-xs font-extrabold tracking-wide flex items-center justify-center gap-1.5 shadow-md" type="button">
+<span>Confirm & Next</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<script>
+  (function() {
+    const slider = document.getElementById('energySlider');
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const readinessBadge = document.getElementById('readinessBadge');
+    const governorRpe = document.getElementById('governorRpe');
+    const governorNote = document.getElementById('governorNote');
+
+    const updateDisplay = (val) => {
+      scoreDisplay.textContent = val;
+      if (val >= 8) {
+        readinessBadge.innerHTML = '<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: \'FILL\' 1;">bolt</span><span>Peak Drive</span>';
+        governorRpe.textContent = 'RPE 9.5 Cap';
+        governorNote.textContent = 'High-velocity threshold. Maximum neural drive unlocks ballistic sets and PR attempts.';
+      } else if (val >= 6) {
+        readinessBadge.innerHTML = '<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: \'FILL\' 1;">offline_bolt</span><span>High Neural Focus</span>';
+        governorRpe.textContent = 'RPE 8.5 Cap';
+        governorNote.textContent = 'Heavy working sets authorized. Cortical alertness permits high velocity multi-joint lifts.';
+      } else if (val >= 4) {
+        readinessBadge.innerHTML = '<span class="material-symbols-outlined text-[14px]">tune</span><span>Moderate Capacity</span>';
+        governorRpe.textContent = 'RPE 7.5 Cap';
+        governorNote.textContent = 'Standard stimulus authorized. CNS baseline preserved; restrict forced reps beyond failure.';
+      } else {
+        readinessBadge.innerHTML = '<span class="material-symbols-outlined text-[14px]">bed</span><span>Rest & Regulate</span>';
+        governorRpe.textContent = 'RPE 6.0 Cap';
+        governorNote.textContent = 'Active CNS fatigue detected. Dynamic downshift engaged; bias tempo, flush, or mobility.';
+      }
+    };
+
+    slider.addEventListener('input', (e) => {
+      updateDisplay(parseInt(e.target.value, 10));
+    });
+
+    window.setScore = (val) => {
+      slider.value = val;
+      updateDisplay(val);
+    };
+
+    // Toggle logic for qualitative modifiers
+    const modifierButtons = document.querySelectorAll('[data-modifier]');
+    modifierButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const isActive = btn.classList.contains('active');
+        const dot = btn.querySelector('span');
+        if (isActive) {
+          btn.classList.remove('active', 'bg-surface-bright', 'text-secondary');
+          btn.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+          dot.classList.remove('bg-secondary');
+          dot.classList.add('bg-on-surface-variant');
+        } else {
+          btn.classList.add('active', 'bg-surface-bright', 'text-secondary');
+          btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+          dot.classList.add('bg-secondary');
+          dot.classList.remove('bg-on-surface-variant');
+        }
+      });
+    });
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.3)]" data-active-classes="text-secondary font-bold"><div class="h-16 px-2 flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 transition-colors group text-secondary font-bold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="live-workout" href="#"><span class="material-symbols-outlined text-[22px]">fitness_center</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Workout</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="planner" href="#"><span class="material-symbols-outlined text-[22px]">calendar_month</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Planner</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="analytics" href="#"><span class="material-symbols-outlined text-[22px]">insights</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Analyze</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="system-hub" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">More</span></a></div></nav></body></html>

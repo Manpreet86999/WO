@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&family=Manrope:wght@200..800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Manrope:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#324f00", "secondary-fixed-dim": "#91db04", "secondary-container": "#8ed800", "surface": "#0d141e", "surface-variant": "#2e3541", "on-primary-container": "#7d7d83", "outline-variant": "#46464b", "on-primary-fixed": "#1a1b20", "primary-fixed": "#e3e1e9", "on-secondary-fixed": "#112000", "on-secondary": "#213600", "inverse-surface": "#dce3f2", "background": "#0d141e", "primary-container": "#111217", "error-container": "#93000a", "surface-container-low": "#151c27", "on-primary-fixed-variant": "#46464c", "surface-container-high": "#232a35", "tertiary-fixed-dim": "#9dd841", "tertiary-container": "#0a1500", "surface-tint": "#c7c6cd", "secondary": "#a8f530", "surface-container-highest": "#2e3541", "secondary-fixed": "#abf834", "tertiary-fixed": "#b8f55b", "inverse-on-surface": "#2a313c", "on-secondary-container": "#395a00", "primary": "#c7c6cd", "outline": "#919095", "on-error": "#690005", "primary-fixed-dim": "#c7c6cd", "surface-container": "#19202b", "on-surface-variant": "#c7c6cb", "on-tertiary-fixed": "#121f00", "inverse-primary": "#5e5e64", "on-tertiary": "#213600", "on-secondary-fixed-variant": "#314f00", "surface-container-lowest": "#070e19", "on-primary": "#2f3036", "tertiary": "#9dd841", "on-tertiary-container": "#5c8a00", "on-error-container": "#ffdad6", "surface-bright": "#333a45", "on-background": "#dce3f2", "on-surface": "#dce3f2", "error": "#ffb4ab", "surface-dim": "#0d141e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: {}, fontFamily: { "headline": ["Manrope"], "display": ["Manrope"], "body": ["Hanken Grotesk"], "label": ["Hanken Grotesk"] }, fontSize: {} } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.35)]"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-2"><button aria-label="Go back" class="w-11 h-11 -ml-2 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors focus:outline-none" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline font-extrabold text-xs tracking-tight text-on-surface-variant uppercase">Body OS</span><span class="inline-flex items-center px-1.5 py-0.2 rounded-full text-[9px] font-label font-bold uppercase tracking-wider bg-secondary text-on-secondary">OS 2.4</span></div><h1 class="text-sm font-headline font-bold text-on-surface truncate max-w-[200px]">Readiness Check In</h1></div></div><div class="flex items-center gap-2"><div class="flex items-center gap-1.5 px-2 py-1 rounded-full bg-surface-container border border-outline-variant/30"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="text-[10px] font-label font-bold uppercase tracking-wider text-secondary">Live</span></div><button aria-label="Context actions" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors focus:outline-none"><span class="material-symbols-outlined text-[22px]">more_vert</span></button></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-safe"><div class="flex flex-col w-full px-4 pb-12 space-y-6">
+<!-- Top Section: Header & Step Telemetry -->
+<div class="flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label font-bold tracking-[0.15em] text-secondary uppercase">DAILY BIOMETRICS · B02-B13</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-label font-bold bg-surface-container-high text-on-surface-variant">
+        PROTOCOL 4.0
+      </span>
+</div>
+<div class="space-y-1">
+<h2 class="text-2xl font-headline font-extrabold text-on-surface tracking-tight">Readiness Check-in</h2>
+<p class="text-xs font-body text-on-surface-variant leading-relaxed">
+        Calibrate today’s training volume, neural drive, and autoregulation multiplier.
+      </p>
+</div>
+<!-- Step Progress & Card Breadcrumbs -->
+<div class="pt-2 space-y-2">
+<div class="flex items-center justify-between text-xs font-label">
+<span class="font-bold text-on-surface flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Step 3 of 7 <span class="text-on-surface-variant font-normal">· Soreness & Tissue Tone</span>
+</span>
+<span class="font-bold text-secondary">43%</span>
+</div>
+<!-- Segmented Micro Bar -->
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary rounded-full transition-all duration-500 ease-out" style="width: 43%;"></div>
+</div>
+<!-- Card Step Navigation Controls -->
+<div class="flex items-center justify-between pt-1 text-[11px] font-label font-semibold">
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors py-1">
+<span class="material-symbols-outlined text-[14px]">arrow_back</span>
+          Previous Card
+        </button>
+<button class="flex items-center gap-1 text-secondary hover:underline transition-all py-1">
+          Skip to Summary
+          <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Prior Recorded Telemetry Badges Strip -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+<div class="flex-shrink-0 flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low text-xs font-label">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span class="text-on-surface-variant">Sleep:</span>
+<span class="text-on-surface font-bold">7h 45m (90%)</span>
+</div>
+<div class="flex-shrink-0 flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low text-xs font-label">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span class="text-on-surface-variant">Quality:</span>
+<span class="text-on-surface font-bold">8/10 Restorative</span>
+</div>
+<div class="flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest text-[11px] font-label text-outline">
+<span class="material-symbols-outlined text-[14px]">lock_clock</span>
+<span>HRV: Synced</span>
+</div>
+</div>
+<!-- Interactive Flashcard Deck Container -->
+<div class="relative w-full">
+<!-- Active Primary Card: B05 Soreness & Tissue Tone -->
+<div class="relative w-full rounded-2xl bg-surface-container-low shadow-2xl p-5 space-y-5 overflow-hidden">
+<!-- Top Decorative Aura / Kinetic Ambient Glow -->
+<div class="absolute -top-16 -right-16 w-36 h-36 bg-secondary/10 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Card Eyebrow & Status -->
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-surface-container-highest flex items-center justify-center text-secondary shadow-inner">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">vital_signs</span>
+</div>
+<div>
+<span class="text-[10px] font-label font-bold text-secondary uppercase tracking-widest block">FLASHCARD B05</span>
+<span class="text-xs font-headline font-bold text-on-surface">Tissue Readiness Multiplier</span>
+</div>
+</div>
+<div class="px-2.5 py-1 rounded-full bg-secondary/15 text-secondary text-[10px] font-label font-extrabold uppercase tracking-wide flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+          Autoreg Active
+        </div>
+</div>
+<!-- Central Prompt -->
+<div class="space-y-1 relative z-10">
+<h3 class="text-lg font-headline font-extrabold text-on-surface leading-snug">
+          How does your muscular and connective tissue feel today?
+        </h3>
+<p class="text-xs font-body text-on-surface-variant">
+          Log systemic soreness and localized fascial stiffness to tune load velocity thresholds.
+        </p>
+</div>
+<!-- Interactive Slider / Rating Metric Readout -->
+<div class="bg-surface-container p-4 rounded-xl space-y-3 relative z-10 shadow-sm">
+<div class="flex items-end justify-between">
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-headline font-extrabold text-on-surface tracking-tight" id="ratingDisplay">3</span>
+<span class="text-xs font-label text-outline-variant font-bold">/ 10</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-label font-bold text-[11px] shadow-sm" id="ratingStatePill">
+            Mild / Normal Rested Tension
+          </span>
+</div>
+<!-- Custom Tactile Slider -->
+<div class="space-y-1.5 pt-1">
+<div class="relative flex items-center">
+<input class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-[#a8f530]" id="sorenessSlider" max="10" min="1" type="range" value="3"/>
+</div>
+<div class="flex justify-between text-[10px] font-label text-outline font-medium px-0.5">
+<span>1 (Fresh)</span>
+<span>5 (Moderate)</span>
+<span>10 (Exhausted)</span>
+</div>
+</div>
+</div>
+<!-- Anatomical Contextual Chips -->
+<div class="space-y-2 relative z-10">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label font-bold text-on-surface-variant tracking-wider uppercase">Region-Specific Feedback</span>
+<span class="text-[10px] font-label text-secondary cursor-pointer hover:underline">+ Add Region</span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-xs font-label">
+<!-- Chip 1 -->
+<div class="cursor-pointer flex items-center justify-between p-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span class="text-on-surface font-medium">Quads</span>
+</div>
+<span class="text-[11px] text-on-surface-variant font-bold">Low</span>
+</div>
+<!-- Chip 2: Selected Active -->
+<div class="cursor-pointer flex items-center justify-between p-2.5 rounded-xl bg-secondary/15 shadow-sm text-secondary">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></span>
+<span class="font-bold truncate text-on-surface">Hamstrings</span>
+</div>
+<span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-secondary text-on-secondary ml-1 flex-shrink-0">Mild · 2d</span>
+</div>
+<!-- Chip 3 -->
+<div class="cursor-pointer flex items-center justify-between p-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span class="text-on-surface font-medium">Chest</span>
+</div>
+<span class="text-[11px] text-on-surface-variant font-bold">Recovered</span>
+</div>
+<!-- Chip 4 -->
+<div class="cursor-pointer flex items-center justify-between p-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span class="text-on-surface font-medium">Lower Back</span>
+</div>
+<span class="text-[11px] text-on-surface-variant font-bold">Clean</span>
+</div>
+</div>
+</div>
+<!-- Quick Contextual Notes Input Field -->
+<div class="space-y-1.5 relative z-10">
+<label class="text-[11px] font-label font-bold text-on-surface-variant uppercase tracking-wider block">Contextual Biometric Note</label>
+<div class="relative flex items-center">
+<input class="w-full text-xs font-body bg-surface-container text-on-surface px-3 py-2.5 rounded-xl focus:outline-none focus:ring-1 focus:ring-secondary transition-all" placeholder="Log specific physical markers..." type="text" value="Hamstrings slightly stiff from Romanian deadlifts, zero joint pain."/>
+<button class="absolute right-2.5 text-on-surface-variant hover:text-secondary">
+<span class="material-symbols-outlined text-[16px]">mic</span>
+</button>
+</div>
+</div>
+<!-- Visual Context Placeholder Graphic -->
+<div class="relative w-full h-24 rounded-xl overflow-hidden">
+<img class="w-full h-full object-cover opacity-60 mix-blend-screen" data-alt="Technical infrared anatomical muscle silhouette map highlighting hamstring and posterior chain tissue temperature in deep obsidian and vivid lime glow, sleek futuristic high-contrast athletic telemetry display." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2bcAjBdr08bUOCAMH7TXZMfQPppRSwvGerI_S-BxLT5dxb-69I_70rLaJS7E4dl3oiEAA7ChL3o1y6uoC1bmW-OuAjOjIsZPe9BqyB9oHvKl7x38XAAOKbj04lo7Nu8FkF4qyIC1tTj9DXPkXDuIHo0HpTni0WIMczC_rQmjkF56p5hXBqT-xM1EWyI3ohT_KUHkh-WyKhidPggKeC0D7UhQFj2B1dgTc0HH3SZ0SbC5nNjfoJj4Scg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+<div class="absolute bottom-2 left-3 flex items-center gap-2 text-[10px] font-label font-bold text-secondary">
+<span class="material-symbols-outlined text-[14px]">graphic_eq</span>
+<span>Target Load: Neural Posterior Focus OK</span>
+</div>
+</div>
+</div>
+<!-- Next Card Peek Shadow Effect -->
+<div class="mt-2 mx-3 p-3 rounded-xl bg-surface-container/60 backdrop-blur-sm flex items-center justify-between text-xs text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+<span class="font-headline font-semibold text-on-surface">Next: Step 4 · Central Energy & Focus</span>
+</div>
+<span class="text-[11px] font-label text-outline">Card B06 →</span>
+</div>
+</div>
+<!-- Autoregulation Engine Telemetry Preview Card -->
+<div class="p-4 rounded-2xl bg-surface-container-low space-y-3 shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
+<span class="text-[11px] font-label font-bold uppercase tracking-wider text-on-surface-variant">Autoregulation Dynamic Yield</span>
+</div>
+<span class="text-[10px] font-label font-bold text-secondary bg-secondary/10 px-2 py-0.5 rounded-full">REALTIME</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div>
+<div class="text-[11px] font-label text-on-surface-variant">Projected Readiness Score</div>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="text-2xl font-headline font-extrabold text-on-surface tracking-tight">84</span>
+<span class="text-xs font-label text-outline font-semibold">/ 100</span>
+<span class="ml-2 text-xs font-label font-bold text-secondary">Optimal State</span>
+</div>
+</div>
+<!-- Circular Radial Mini Telemetry Meter -->
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="84, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute text-[10px] font-headline font-extrabold text-on-surface">84%</span>
+</div>
+</div>
+<!-- Prescribed Strategy Strip -->
+<div class="flex items-center gap-2 p-2.5 rounded-xl bg-surface-container text-xs font-label">
+<span class="material-symbols-outlined text-secondary text-[18px]">tune</span>
+<span class="text-on-surface">
+<strong class="text-secondary font-bold">100% Prescribed Volume</strong> · Progressive Overload Approved
+      </span>
+</div>
+</div>
+<!-- Action CTA Footer -->
+<div class="flex flex-col gap-2 pt-2">
+<button class="w-full h-13 py-3.5 px-6 rounded-xl bg-secondary text-on-secondary font-headline font-bold text-sm tracking-wide flex items-center justify-center gap-2 shadow-lg shadow-secondary/15 active:scale-[0.98] transition-transform">
+<span>Confirm & Next Card</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="w-full py-3 px-4 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label font-bold text-xs transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">bookmark_check</span>
+<span>Save & Commit Early</span>
+</button>
+</div>
+</div>
+<script>
+  // Simple slider readout updater micro-interaction
+  const slider = document.getElementById('sorenessSlider');
+  const display = document.getElementById('ratingDisplay');
+  const pill = document.getElementById('ratingStatePill');
+
+  if (slider && display && pill) {
+    slider.addEventListener('input', (e) => {
+      const val = parseInt(e.target.value, 10);
+      display.textContent = val;
+      
+      if (val <= 2) {
+        pill.textContent = 'Ultra Fresh / Supple';
+      } else if (val <= 4) {
+        pill.textContent = 'Mild / Normal Rested Tension';
+      } else if (val <= 7) {
+        pill.textContent = 'Moderate DOMS / Load Sensitive';
+      } else {
+        pill.textContent = 'High Soreness / Autoreg Limit';
+      }
+    });
+  }
+</script></main></body></html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&family=Manrope:wght@200..800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Manrope:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#324f00", "secondary-fixed-dim": "#91db04", "secondary-container": "#8ed800", "surface": "#0d141e", "surface-variant": "#2e3541", "on-primary-container": "#7d7d83", "outline-variant": "#46464b", "on-primary-fixed": "#1a1b20", "primary-fixed": "#e3e1e9", "on-secondary-fixed": "#112000", "on-secondary": "#213600", "inverse-surface": "#dce3f2", "background": "#0d141e", "primary-container": "#111217", "error-container": "#93000a", "surface-container-low": "#151c27", "on-primary-fixed-variant": "#46464c", "surface-container-high": "#232a35", "tertiary-fixed-dim": "#9dd841", "tertiary-container": "#0a1500", "surface-tint": "#c7c6cd", "secondary": "#a8f530", "surface-container-highest": "#2e3541", "secondary-fixed": "#abf834", "tertiary-fixed": "#b8f55b", "inverse-on-surface": "#2a313c", "on-secondary-container": "#395a00", "primary": "#c7c6cd", "outline": "#919095", "on-error": "#690005", "primary-fixed-dim": "#c7c6cd", "surface-container": "#19202b", "on-surface-variant": "#c7c6cb", "on-tertiary-fixed": "#121f00", "inverse-primary": "#5e5e64", "on-tertiary": "#213600", "on-secondary-fixed-variant": "#314f00", "surface-container-lowest": "#070e19", "on-primary": "#2f3036", "tertiary": "#9dd841", "on-tertiary-container": "#5c8a00", "on-error-container": "#ffdad6", "surface-bright": "#333a45", "on-background": "#dce3f2", "on-surface": "#dce3f2", "error": "#ffb4ab", "surface-dim": "#0d141e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: {}, fontFamily: { "headline": ["Manrope"], "display": ["Manrope"], "body": ["Hanken Grotesk"], "label": ["Hanken Grotesk"] }, fontSize: {} } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-3"><img alt="Body OS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeWKOx9KwVkdFVhN0ua2jD2UQKolfaWQGFPO9o07-k_cQsBvghBykEEqyYvx3xw0mmgB4rka1l44rItIo5XJ-TWgyIOme3wfvu-ShqzOHKODDPNBO_OKbUOiw8RuIyDCtJFE4IfKEdckU8NsPpPDbZezQA11xNrKavHW6rBbAbn2m273QAEy29yHSQWow1RANWO7cHeyrcvOvVmjk1A7FOtr3Aj8z6Zle9sFNnlU9RzNRWkxqQjvEaIA"/><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline font-extrabold text-sm tracking-tight text-on-surface uppercase">Body OS</span><span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-secondary text-on-secondary">OS 2.4</span></div><h1 class="text-xs font-headline font-semibold text-on-surface-variant truncate max-w-[140px]">Dashboard</h1></div></div><div class="flex items-center gap-3"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors focus:outline-none"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-28"><div class="flex flex-col w-full px-4 pb-12 space-y-4 select-none">
+<!-- Top Telemetry Subheader (Context within Active Session) -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<button aria-label="Back to overview" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-transform active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label text-[11px] font-extrabold tracking-wider text-secondary uppercase">Exercise 2 of 6 · Set 2 of 4</span>
+</div>
+<span class="font-headline text-xs font-semibold text-on-surface-variant">Active Workout Session</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button aria-label="View exercise history" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors" title="Exercise History" type="button">
+<span class="material-symbols-outlined text-[19px]">history</span>
+</button>
+<button aria-label="Play exercise tutorial" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors" title="Video Form Cue" type="button">
+<span class="material-symbols-outlined text-[19px]">smart_display</span>
+</button>
+</div>
+</div>
+<!-- Primary Exercise Identity Banner with Card Navigation -->
+<div class="bg-surface-container-low rounded-xl p-4 shadow-md space-y-3">
+<div class="flex items-start justify-between">
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<h2 class="font-headline text-xl font-extrabold tracking-tight text-on-surface">Goblet Squat</h2>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold bg-surface-container-high text-on-surface-variant uppercase tracking-wider">Dumbbell</span>
+</div>
+<p class="font-body text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">swipe</span>
+<span>Card 2 of 4 · Swipe horizontally or tap to jump sets</span>
+</p>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary/15 text-secondary text-xs font-headline font-black tracking-tight">SET 02</span>
+</div>
+<!-- Set Progress Dots Indicator -->
+<div class="grid grid-cols-4 gap-1.5 pt-1">
+<div class="h-1.5 rounded-full bg-secondary"></div>
+<div class="h-1.5 rounded-full bg-secondary shadow-[0_0_8px_rgba(168,245,48,0.7)]"></div>
+<div class="h-1.5 rounded-full bg-surface-container-highest"></div>
+<div class="h-1.5 rounded-full bg-surface-container-highest"></div>
+</div>
+<!-- Target Prescription Telemetry Module -->
+<div class="bg-surface-container rounded-lg p-3 space-y-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label text-[10px] font-extrabold uppercase tracking-widest text-secondary">Prescription Target</span>
+<span class="font-label text-[11px] font-semibold text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">timer</span> 90s Rest
+        </span>
+</div>
+<div class="flex items-baseline justify-between">
+<p class="font-headline text-base font-extrabold text-on-surface tracking-tight">
+          24.0 <span class="text-xs font-semibold text-on-surface-variant">kg</span> × 8–10 <span class="text-xs font-semibold text-on-surface-variant">reps</span>
+<span class="ml-1 text-xs font-bold text-secondary">@ RPE 8.0</span>
+</p>
+<span class="text-[11px] font-body text-outline">Prev: 22.0 kg × 10</span>
+</div>
+</div>
+</div>
+<!-- Set Classifications & Bilateral Segmented Toggles -->
+<div class="space-y-2">
+<!-- Type Selector -->
+<div class="bg-surface-container-lowest p-1 rounded-full flex items-center justify-between text-xs font-label">
+<button class="flex-1 py-1.5 rounded-full text-center text-on-surface-variant hover:text-on-surface transition-colors font-medium" type="button">Warmup</button>
+<button class="flex-1 py-1.5 rounded-full text-center bg-surface-container text-secondary font-bold shadow-sm flex items-center justify-center gap-1" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        Working
+      </button>
+<button class="flex-1 py-1.5 rounded-full text-center text-on-surface-variant hover:text-on-surface transition-colors font-medium" type="button">Drop Set</button>
+<button class="flex-1 py-1.5 rounded-full text-center text-on-surface-variant hover:text-on-surface transition-colors font-medium" type="button">To Failure</button>
+</div>
+<!-- Bilateral/Unilateral Indicator Toggle -->
+<div class="flex items-center justify-between px-1">
+<span class="text-[11px] font-label font-bold uppercase tracking-wider text-outline">Loading Mode</span>
+<div class="bg-surface-container-lowest p-0.5 rounded-full flex items-center text-[11px] font-label">
+<button class="px-3 py-0.5 rounded-full bg-surface-container-high text-on-surface font-semibold" type="button">Single / Both</button>
+<button class="px-2.5 py-0.5 rounded-full text-on-surface-variant hover:text-on-surface" type="button">Left</button>
+<button class="px-2.5 py-0.5 rounded-full text-on-surface-variant hover:text-on-surface" type="button">Right</button>
+</div>
+</div>
+</div>
+<!-- Dual Interactive Input Touch Matrix (Load & Reps) -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Weight / Load Container -->
+<div class="bg-surface-container-low rounded-xl p-3.5 flex flex-col justify-between space-y-3 relative overflow-hidden shadow-md">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] font-extrabold uppercase tracking-widest text-on-surface-variant">Load Weight</span>
+<button class="text-[10px] font-label font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary hover:bg-surface-bright transition-colors" id="unit-toggle" type="button">
+          kg
+        </button>
+</div>
+<!-- Stepper and Readout -->
+<div class="flex flex-col items-center justify-center py-1">
+<div class="flex items-baseline gap-1">
+<span class="font-headline text-4xl font-extrabold text-on-surface tracking-tighter" id="load-display">24.0</span>
+<span class="font-body text-xs font-semibold text-outline">kg</span>
+</div>
+<span class="text-[10px] font-body text-secondary mt-0.5 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">tune</span> Tap digits for keypad
+        </span>
+</div>
+<!-- Tactile Plus / Minus Steppers -->
+<div class="flex items-center justify-between gap-2 pt-1">
+<button aria-label="Decrease weight by 1 kg" class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-on-surface text-xl font-headline font-bold hover:bg-surface-container-high active:scale-95 transition-all shadow" id="load-minus" type="button">
+          −
+        </button>
+<button aria-label="Increase weight by 1 kg" class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-on-surface text-xl font-headline font-bold hover:bg-surface-container-high active:scale-95 transition-all shadow" id="load-plus" type="button">
+          +
+        </button>
+</div>
+<!-- Quick Micro Steppers -->
+<div class="grid grid-cols-3 gap-1 pt-0.5">
+<button class="step-btn text-[10px] font-label font-semibold py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface text-center" data-delta="-2.5" type="button">-2.5</button>
+<button class="step-btn text-[10px] font-label font-semibold py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface text-center" data-delta="1.0" type="button">+1.0</button>
+<button class="step-btn text-[10px] font-label font-semibold py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface text-center" data-delta="2.5" type="button">+2.5</button>
+</div>
+</div>
+<!-- Completed Reps Container -->
+<div class="bg-surface-container-low rounded-xl p-3.5 flex flex-col justify-between space-y-3 relative overflow-hidden shadow-md">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] font-extrabold uppercase tracking-widest text-on-surface-variant">Completed</span>
+<span class="text-[10px] font-label font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant">
+          Target 10
+        </span>
+</div>
+<!-- Stepper and Readout -->
+<div class="flex flex-col items-center justify-center py-1">
+<div class="flex items-baseline gap-1">
+<span class="font-headline text-4xl font-extrabold text-on-surface tracking-tighter" id="reps-display">10</span>
+<span class="font-body text-xs font-semibold text-outline">reps</span>
+</div>
+<span class="text-[10px] font-body text-secondary mt-0.5 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> In target window
+        </span>
+</div>
+<!-- Tactile Plus / Minus Steppers -->
+<div class="flex items-center justify-between gap-2 pt-1">
+<button aria-label="Decrease reps" class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-on-surface text-xl font-headline font-bold hover:bg-surface-container-high active:scale-95 transition-all shadow" id="reps-minus" type="button">
+          −
+        </button>
+<button aria-label="Increase reps" class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-on-surface text-xl font-headline font-bold hover:bg-surface-container-high active:scale-95 transition-all shadow" id="reps-plus" type="button">
+          +
+        </button>
+</div>
+<!-- Fast Rep Modifiers -->
+<div class="grid grid-cols-3 gap-1 pt-0.5">
+<button class="rep-jump-btn text-[10px] font-label font-semibold py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface text-center" data-val="8" type="button">8</button>
+<button class="rep-jump-btn text-[10px] font-label font-semibold py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface text-center" data-val="10" type="button">10</button>
+<button class="rep-jump-btn text-[10px] font-label font-semibold py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface text-center" data-val="12" type="button">12</button>
+</div>
+</div>
+</div>
+<!-- Perceived Exertion (RPE / RIR) Rating Bar -->
+<div class="bg-surface-container-low rounded-xl p-3.5 space-y-2.5 shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">speed</span>
+<span class="font-label text-[11px] font-extrabold uppercase tracking-widest text-on-surface">Exertion (RPE)</span>
+</div>
+<span class="font-label text-xs font-bold text-secondary" id="rpe-feedback">RPE 8.5 · ~1.5 Reps in Reserve</span>
+</div>
+<!-- RPE Horizontal Pill Scale -->
+<div class="grid grid-cols-6 gap-1.5" id="rpe-group">
+<button class="rpe-btn py-2 rounded-lg text-center font-headline text-xs font-bold bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors" data-rir="3.0" data-rpe="7.0" type="button">7.0</button>
+<button class="rpe-btn py-2 rounded-lg text-center font-headline text-xs font-bold bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors" data-rir="2.5" data-rpe="7.5" type="button">7.5</button>
+<button class="rpe-btn py-2 rounded-lg text-center font-headline text-xs font-bold bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors" data-rir="2.0" data-rpe="8.0" type="button">8.0</button>
+<button class="rpe-btn active py-2 rounded-lg text-center font-headline text-xs font-extrabold bg-secondary text-on-secondary shadow-[0_0_10px_rgba(168,245,48,0.5)] transition-all" data-rir="1.5" data-rpe="8.5" type="button">8.5</button>
+<button class="rpe-btn py-2 rounded-lg text-center font-headline text-xs font-bold bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors" data-rir="1.0" data-rpe="9.0" type="button">9.0</button>
+<button class="rpe-btn py-2 rounded-lg text-center font-headline text-xs font-bold bg-surface-container text-error hover:bg-surface-container-high transition-colors" data-rir="0.0" data-rpe="10" type="button">10</button>
+</div>
+</div>
+<!-- Primary Flashcard Action Button (Commit Set) -->
+<div class="pt-1">
+<button class="w-full h-14 rounded-xl bg-secondary text-on-secondary flex items-center justify-center gap-2.5 font-headline text-base font-extrabold tracking-tight shadow-[0_4px_20px_rgba(168,245,48,0.35)] active:scale-[0.98] transition-transform" id="btn-log-set" type="button">
+<span class="material-symbols-outlined text-[24px] font-bold">check_circle</span>
+<span>Log Set & Start Rest (90s)</span>
+</button>
+</div>
+<!-- Secondary Navigation & Utility Ribbon -->
+<div class="flex items-center justify-between px-1 text-xs font-label">
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors py-1" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span>Set 1 (Done)</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface font-semibold hover:bg-surface-bright transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">calculate</span>
+<span>Weight Breakdown</span>
+</button>
+<button class="flex items-center gap-1 text-secondary font-bold hover:text-secondary-fixed transition-colors py-1" type="button">
+<span>Set 3</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+<!-- Tactical Hardware Setup Drawer Hint -->
+<div class="bg-surface-container-low/70 rounded-xl p-3 flex items-center justify-between text-xs">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">fitness_center</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-bold text-on-surface text-[12px]">Dumbbell Rack Setup</span>
+<span class="text-outline text-[11px]">Single 24 kg bell ready · Matches target</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-label font-bold uppercase bg-surface-container-high text-secondary">
+      Ready
+    </span>
+</div>
+<!-- Telemetry Session Summary Strip -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 flex items-center justify-between shadow-inner">
+<div class="flex items-center gap-3">
+<div class="flex flex-col">
+<span class="text-[10px] font-label font-bold uppercase tracking-wider text-outline">Session Elapsed</span>
+<span class="font-headline text-sm font-extrabold text-on-surface tracking-tight" id="session-stopwatch">00:24:20</span>
+</div>
+<div class="w-px h-6 bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="text-[10px] font-label font-bold uppercase tracking-wider text-outline">Accumulated Volume</span>
+<span class="font-headline text-sm font-extrabold text-on-surface tracking-tight">1,450 <span class="text-[10px] font-normal text-outline">kg</span></span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="text-right flex flex-col items-end">
+<span class="text-[10px] font-label font-bold uppercase tracking-wider text-secondary">Strain 14.2</span>
+<span class="text-[11px] font-body text-outline">6 sets done</span>
+</div>
+<button aria-label="Pause workout session" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high active:scale-95 transition-transform" title="Pause Workout" type="button">
+<span class="material-symbols-outlined text-[18px]">pause</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    // Interactive State for Current Flashcard
+    let currentWeight = 24.0;
+    let currentReps = 10;
+    let currentUnit = 'kg';
+
+    const loadEl = document.getElementById('load-display');
+    const repsEl = document.getElementById('reps-display');
+    const unitBtn = document.getElementById('unit-toggle');
+    const rpeFeedback = document.getElementById('rpe-feedback');
+    const rpeBtns = document.querySelectorAll('.rpe-btn');
+    const stepBtns = document.querySelectorAll('.step-btn');
+    const repJumpBtns = document.querySelectorAll('.rep-jump-btn');
+
+    function updateWeight(newVal) {
+      currentWeight = Math.max(0, Math.round(newVal * 10) / 10);
+      loadEl.textContent = currentWeight.toFixed(1);
+    }
+
+    function updateReps(newVal) {
+      currentReps = Math.max(0, Math.floor(newVal));
+      repsEl.textContent = currentReps;
+    }
+
+    // Load Stepper Events
+    document.getElementById('load-minus').addEventListener('click', () => updateWeight(currentWeight - 1.0));
+    document.getElementById('load-plus').addEventListener('click', () => updateWeight(currentWeight + 1.0));
+
+    // Reps Stepper Events
+    document.getElementById('reps-minus').addEventListener('click', () => updateReps(currentReps - 1));
+    document.getElementById('reps-plus').addEventListener('click', () => updateReps(currentReps + 1));
+
+    // Fast Step Buttons
+    stepBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const delta = parseFloat(btn.dataset.delta);
+        updateWeight(currentWeight + delta);
+      });
+    });
+
+    repJumpBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const val = parseInt(btn.dataset.val, 10);
+        updateReps(val);
+      });
+    });
+
+    // Unit Toggle
+    unitBtn.addEventListener('click', () => {
+      if (currentUnit === 'kg') {
+        currentUnit = 'lbs';
+        currentWeight = Math.round(currentWeight * 2.20462 * 2) / 2;
+      } else {
+        currentUnit = 'kg';
+        currentWeight = Math.round((currentWeight / 2.20462) * 2) / 2;
+      }
+      unitBtn.textContent = currentUnit;
+      document.querySelectorAll('#load-display + span').forEach(el => el.textContent = currentUnit);
+      loadEl.textContent = currentWeight.toFixed(1);
+    });
+
+    // Exertion / RPE Selection Handling
+    rpeBtns.forEach(button => {
+      button.addEventListener('click', () => {
+        rpeBtns.forEach(b => {
+          b.className = "rpe-btn py-2 rounded-lg text-center font-headline text-xs font-bold bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors";
+        });
+        button.className = "rpe-btn active py-2 rounded-lg text-center font-headline text-xs font-extrabold bg-secondary text-on-secondary shadow-[0_0_10px_rgba(168,245,48,0.5)] transition-all";
+        
+        const rpe = button.dataset.rpe;
+        const rir = button.dataset.rir;
+        rpeFeedback.textContent = `RPE ${rpe} · ~${rir} Reps in Reserve`;
+      });
+    });
+
+    // Primary Action Feedback Animation
+    const logBtn = document.getElementById('btn-log-set');
+    logBtn.addEventListener('click', () => {
+      logBtn.classList.add('scale-95', 'opacity-90');
+      const originalHtml = logBtn.innerHTML;
+      logBtn.innerHTML = '<span class="material-symbols-outlined text-[24px] animate-spin">sync</span><span>Recording Telemetry...</span>';
+      setTimeout(() => {
+        logBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">done_all</span><span>Set Logged · Rest Active</span>';
+        logBtn.classList.remove('bg-secondary', 'text-on-secondary');
+        logBtn.classList.add('bg-surface-container-highest', 'text-secondary');
+      }, 700);
+    });
+
+    // Simulated Active Workout Stopwatch
+    let seconds = 1460;
+    const stopwatchEl = document.getElementById('session-stopwatch');
+    setInterval(() => {
+      seconds++;
+      const hrs = Math.floor(seconds / 3600).toString().padStart(2, '0');
+      const mins = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+      const secs = (seconds % 60).toString().padStart(2, '0');
+      stopwatchEl.textContent = `${hrs}:${mins}:${secs}`;
+    }, 1000);
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.3)]" data-active-classes="text-secondary font-bold"><div class="h-16 px-2 flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 transition-colors group text-secondary font-bold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="live-workout" href="#"><span class="material-symbols-outlined text-[22px]">fitness_center</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Workout</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="planner" href="#"><span class="material-symbols-outlined text-[22px]">calendar_month</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Planner</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="analytics" href="#"><span class="material-symbols-outlined text-[22px]">insights</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Analyze</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="system-hub" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">More</span></a></div></nav></body></html>

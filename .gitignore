@@ -1,0 +1,30 @@
+node_modules/
+.pnpm-store/
+dist/
+installer/stage/
+release/
+data/
+backups/
+*.db
+*.db-wal
+*.db-shm
+*.exe
+unins*.dat
+unins*.exe
+.env
+google-fit-debug.json
+
+scratch/
+test-results/
+playwright-report/
+apps/mobile/android/
+apps/mobile/.expo/
+
+# Private Android release credentials
+*.keystore
+*.jks
+keystore.properties
+
+# Local Android build cache (keep off C drive)
+.gradle-user-home/
+.build-tools/

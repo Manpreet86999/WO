@@ -1,0 +1,348 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=Manrope:wght@200..800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#324f00", "secondary-fixed-dim": "#91db04", "secondary-container": "#8ed800", "surface": "#0d141e", "surface-variant": "#2e3541", "on-primary-container": "#7d7d83", "outline-variant": "#46464b", "on-primary-fixed": "#1a1b20", "primary-fixed": "#e3e1e9", "on-secondary-fixed": "#112000", "on-secondary": "#213600", "inverse-surface": "#dce3f2", "background": "#0d141e", "primary-container": "#111217", "error-container": "#93000a", "surface-container-low": "#151c27", "on-primary-fixed-variant": "#46464c", "surface-container-high": "#232a35", "tertiary-fixed-dim": "#9dd841", "tertiary-container": "#0a1500", "surface-tint": "#c7c6cd", "secondary": "#a8f530", "surface-container-highest": "#2e3541", "secondary-fixed": "#abf834", "tertiary-fixed": "#b8f55b", "inverse-on-surface": "#2a313c", "on-secondary-container": "#395a00", "primary": "#c7c6cd", "outline": "#919095", "on-error": "#690005", "primary-fixed-dim": "#c7c6cd", "surface-container": "#19202b", "on-surface-variant": "#c7c6cb", "on-tertiary-fixed": "#121f00", "inverse-primary": "#5e5e64", "on-tertiary": "#213600", "on-secondary-fixed-variant": "#314f00", "surface-container-lowest": "#070e19", "on-primary": "#2f3036", "tertiary": "#9dd841", "on-tertiary-container": "#5c8a00", "on-error-container": "#ffdad6", "surface-bright": "#333a45", "on-background": "#dce3f2", "on-surface": "#dce3f2", "error": "#ffb4ab", "surface-dim": "#0d141e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: {}, fontFamily: { "headline": ["Manrope"], "display": ["Manrope"], "body": ["Hanken Grotesk"], "label": ["Hanken Grotesk"] }, fontSize: {} } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.35)]"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-2"><button aria-label="Go back" class="w-11 h-11 -ml-2 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors focus:outline-none" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline font-extrabold text-xs tracking-tight text-on-surface-variant uppercase">Body OS</span><span class="inline-flex items-center px-1.5 py-0.2 rounded-full text-[9px] font-label font-bold uppercase tracking-wider bg-secondary text-on-secondary">OS 2.4</span></div><h1 class="text-sm font-headline font-bold text-on-surface truncate max-w-[200px]">Reports Hub</h1></div></div><div class="flex items-center gap-2"><div class="flex items-center gap-1.5 px-2 py-1 rounded-full bg-surface-container border border-outline-variant/30"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="text-[10px] font-label font-bold uppercase tracking-wider text-secondary">Live</span></div><button aria-label="Context actions" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors focus:outline-none"><span class="material-symbols-outlined text-[22px]">more_vert</span></button></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-safe"><div class="flex flex-col w-full px-4 pb-12 space-y-6">
+<!-- Top Section: Header & Range Selector -->
+<div class="flex flex-col space-y-3 pt-2">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label font-extrabold uppercase tracking-[0.14em] text-secondary">
+        TELEMETRY EXPORTS &amp; COMPLIANCE
+      </span>
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-[10px] font-label font-bold text-on-surface-variant uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px] text-secondary">shield</span>
+        Verified Safe
+      </span>
+</div>
+<div class="flex flex-col space-y-1">
+<h2 class="text-2xl font-headline font-extrabold text-on-surface tracking-tight">Reports Hub</h2>
+<p class="text-sm font-body text-on-surface-variant leading-relaxed">
+        Autonomous session debriefs, weekly clinical rollups, and verifiable data exports.
+      </p>
+</div>
+<!-- Period Range Pill Selector -->
+<div class="pt-2">
+<button class="flex items-center justify-between w-full px-4 py-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all active:scale-[0.99] text-left">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">calendar_view_week</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-label font-bold uppercase tracking-wider text-outline">Selected Window</span>
+<span class="text-sm font-headline font-bold text-on-surface">Mesocycle 3 (Current)</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface text-xs font-label font-semibold">
+<span>8 wks</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Telemetry Health Diagnostic Metric Banner -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-4 flex items-center gap-4">
+<div class="relative flex-shrink-0 w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center">
+<svg class="w-10 h-10 transform -rotate-90" viewBox="0 0 36 36">
+<path class="text-surface-variant" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="98, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<span class="absolute text-[11px] font-headline font-extrabold text-secondary">98%</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="text-xs font-headline font-bold text-on-surface">Telemetry Integrity Status</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<p class="text-xs font-body text-on-surface-variant line-clamp-1">Zero missing data points across 42 mesocycle tracking vectors.</p>
+</div>
+</div>
+<!-- Report Archetype Section -->
+<div class="flex flex-col space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-xs font-headline font-bold uppercase tracking-wider text-outline">REPORT ARCHETYPES</span>
+<span class="text-[11px] font-label font-bold text-secondary">3 FORMATS READY</span>
+</div>
+<!-- Archetype 1: Lifetime Progress Dossier -->
+<div class="relative flex flex-col rounded-2xl bg-surface-container p-5 space-y-4 shadow-lg overflow-hidden">
+<div class="absolute top-0 right-0 w-36 h-36 bg-secondary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col space-y-1">
+<span class="text-[10px] font-label font-extrabold uppercase tracking-[0.14em] text-secondary">LIFETIME AUDIT</span>
+<h3 class="text-lg font-headline font-extrabold text-on-surface">Lifetime Progress Dossier</h3>
+</div>
+<div class="p-2 rounded-xl bg-surface-container-high text-secondary">
+<span class="material-symbols-outlined text-[20px]">auto_stories</span>
+</div>
+</div>
+<p class="text-xs font-body text-on-surface-variant leading-relaxed">
+        Comprehensive aggregation of all 42 sessions, 18 PRs, body composition deltas, and neural recovery aggregates.
+      </p>
+<!-- Key Figures Strip -->
+<div class="grid grid-cols-3 gap-2 p-3 rounded-xl bg-surface-container-lowest">
+<div class="flex flex-col">
+<span class="text-[10px] font-label text-outline uppercase tracking-wider">Volume</span>
+<span class="text-sm font-headline font-extrabold text-on-surface">142.5k <span class="text-[10px] font-normal text-on-surface-variant">kg</span></span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-label text-outline uppercase tracking-wider">Sessions</span>
+<span class="text-sm font-headline font-extrabold text-secondary">42 <span class="text-[10px] font-normal text-on-surface-variant">logs</span></span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-label text-outline uppercase tracking-wider">Velocity</span>
+<span class="text-sm font-headline font-extrabold text-on-surface">+12% <span class="text-[10px] font-normal text-secondary">avg</span></span>
+</div>
+</div>
+<button class="w-full h-12 rounded-xl bg-secondary text-on-secondary font-headline font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-transform active:scale-[0.98] shadow-md shadow-secondary/15" onclick="simulateGeneration(this)">
+<span class="material-symbols-outlined text-[18px]">document_scanner</span>
+<span>Generate Dossier (HTML / PDF)</span>
+</button>
+</div>
+<!-- Archetype 2: Weekly Clinical Rollup -->
+<div class="flex flex-col rounded-2xl bg-surface-container p-5 space-y-4 shadow-lg">
+<div class="flex items-start justify-between">
+<div class="flex flex-col space-y-1">
+<span class="text-[10px] font-label font-extrabold uppercase tracking-[0.14em] text-outline">MICROCYCLE 2 (SEP 01 - SEP 07)</span>
+<h3 class="text-lg font-headline font-extrabold text-on-surface">Weekly Clinical Rollup</h3>
+</div>
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-full bg-surface-container-high">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-[10px] font-label font-bold text-on-surface">Verified</span>
+</div>
+</div>
+<p class="text-xs font-body text-on-surface-variant leading-relaxed">
+        Adherence rate (95%), volume landmarks per muscle group (MEV/MAV check), and deload probability score.
+      </p>
+<!-- Mini Telemetry Sparkline SVG -->
+<div class="p-3 rounded-xl bg-surface-container-lowest flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] font-label uppercase text-outline">Deload Probability</span>
+<span class="text-xs font-headline font-bold text-on-surface">14.2% <span class="text-[10px] text-secondary font-label">Optimal Load</span></span>
+</div>
+<svg class="w-24 h-6 text-secondary" fill="none" viewBox="0 0 100 24">
+<path d="M0 18 Q 25 22, 45 10 T 80 8 T 100 4" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<button class="w-full h-12 rounded-xl bg-surface-container-high hover:bg-surface-variant text-on-surface font-headline font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px] text-secondary">download</span>
+<span>Download Week 2 Report</span>
+</button>
+</div>
+<!-- Archetype 3: Direct Telemetry CSV Dumps -->
+<div class="flex flex-col rounded-2xl bg-surface-container p-5 space-y-4 shadow-lg">
+<div class="flex items-start justify-between">
+<div class="flex flex-col space-y-1">
+<span class="text-[10px] font-label font-extrabold uppercase tracking-[0.14em] text-outline">RAW BIOMETRICS</span>
+<h3 class="text-lg font-headline font-extrabold text-on-surface">Direct Telemetry CSV Dumps</h3>
+</div>
+<div class="p-2 rounded-xl bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">database</span>
+</div>
+</div>
+<p class="text-xs font-body text-on-surface-variant leading-relaxed">
+        Uncompressed relational tables formatted for local spreadsheets, Python/Jupyter, or doctor review.
+      </p>
+<!-- Dual Action Download Grid -->
+<div class="grid grid-cols-2 gap-3 pt-1">
+<button class="flex flex-col p-3 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high transition-colors active:scale-[0.98] text-left">
+<div class="flex items-center justify-between w-full mb-1">
+<span class="material-symbols-outlined text-[18px] text-secondary">table_chart</span>
+<span class="text-[10px] font-label font-bold text-outline">44 KB</span>
+</div>
+<span class="text-xs font-headline font-bold text-on-surface">Sessions CSV</span>
+<span class="text-[10px] font-body text-on-surface-variant">Sets, reps, RPE</span>
+</button>
+<button class="flex flex-col p-3 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high transition-colors active:scale-[0.98] text-left">
+<div class="flex items-center justify-between w-full mb-1">
+<span class="material-symbols-outlined text-[18px] text-secondary">vital_signs</span>
+<span class="text-[10px] font-label font-bold text-outline">12 KB</span>
+</div>
+<span class="text-xs font-headline font-bold text-on-surface">Body Telemetry</span>
+<span class="text-[10px] font-body text-on-surface-variant">HRV, resting HR</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Visual Biometric Archival Placeholder -->
+<div class="flex flex-col rounded-2xl bg-surface-container-low overflow-hidden">
+<div class="relative h-32 w-full bg-cover bg-center" data-alt="Athletic clinical telemetry display in obsidian gym lab showing biometric graphs, heart rate variability, and muscle activation metrics with electric lime data trails and ambient cinematic dark studio lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAzWZhLj-CpicK_4-sILypiSZWaaIGvMuKZ5JZRQ_wKSvszqor2qS7-tS0BVlRh3ZtjELctp7QpeGUVyX0Lh1WR477RhBoJnVFBA5KEOcbeHVO6eoB1aOG5KwhFC4IHeO3J0lYD2-Kfxp_3FO_WfDO-qQQKUo5SHlZjfcSH2DTL5WvkNMIOonuKE4mY21vUF6QSgXKqf3RqWyikSPSQGa0HZTdkOFjJlylHOic0aW_pWS3uDFVBN2dGaw')">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/60 to-transparent"></div>
+<div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] font-label uppercase font-bold text-secondary tracking-widest">CLINICAL DATA ENCRYPTION</span>
+<span class="text-xs font-headline font-bold text-on-surface">Local Vault Key Active</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">enhanced_encryption</span>
+</div>
+</div>
+</div>
+<!-- Recent Daily Session Reports -->
+<div class="flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-xs font-headline font-bold uppercase tracking-wider text-outline">RECENT DAILY SESSION REPORTS</span>
+<button class="text-[11px] font-label font-bold text-secondary flex items-center gap-0.5">
+<span>View All</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+<!-- Daily Item 1 -->
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3 min-w-0 pr-2">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">fitness_center</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-xs font-headline font-bold text-on-surface truncate">Wed, Sep 09 · Legs A - Strength</span>
+<span class="text-[11px] font-body text-on-surface-variant truncate">6 exercises · 95% adherence</span>
+</div>
+</div>
+<button class="flex-shrink-0 px-3 py-1.5 rounded-lg bg-surface-container-highest hover:bg-surface-variant text-secondary text-[11px] font-headline font-bold uppercase tracking-wider flex items-center gap-1 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[14px]">html</span>
+<span>HTML</span>
+</button>
+</div>
+<!-- Daily Item 2 -->
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3 min-w-0 pr-2">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-xs font-headline font-bold text-on-surface truncate">Mon, Aug 31 · Push B - Hypertrophy</span>
+<span class="text-[11px] font-body text-on-surface-variant truncate">5 exercises · 100% adherence</span>
+</div>
+</div>
+<button class="flex-shrink-0 px-3 py-1.5 rounded-lg bg-surface-container-highest hover:bg-surface-variant text-secondary text-[11px] font-headline font-bold uppercase tracking-wider flex items-center gap-1 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[14px]">html</span>
+<span>HTML</span>
+</button>
+</div>
+<!-- Daily Item 3 -->
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3 min-w-0 pr-2">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">layers</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-xs font-headline font-bold text-on-surface truncate">Thu, Aug 27 · Pull A - Compound Focus</span>
+<span class="text-[11px] font-body text-on-surface-variant truncate">6 exercises · 100% adherence</span>
+</div>
+</div>
+<button class="flex-shrink-0 px-3 py-1.5 rounded-lg bg-surface-container-highest hover:bg-surface-variant text-secondary text-[11px] font-headline font-bold uppercase tracking-wider flex items-center gap-1 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[14px]">html</span>
+<span>HTML</span>
+</button>
+</div>
+</div>
+<!-- Report Automation & Delivery Settings -->
+<div class="flex flex-col space-y-3">
+<span class="text-xs font-headline font-bold uppercase tracking-wider text-outline">AUTOMATION &amp; DISPATCH</span>
+<div class="flex flex-col rounded-2xl bg-surface-container p-5 space-y-4 shadow-lg">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-headline font-bold text-on-surface">Automated Email Digest</span>
+<span class="text-[11px] font-body text-outline">Weekly every Sun · 20:00</span>
+</div>
+</div>
+<!-- Custom Interactive Switch Toggle -->
+<button class="relative w-12 h-6 rounded-full bg-secondary transition-colors duration-200 focus:outline-none p-0.5" id="email-toggle-btn" onclick="toggleDigestSwitch()">
+<div class="w-5 h-5 rounded-full bg-on-secondary shadow-sm transform translate-x-6 transition-transform duration-200 flex items-center justify-center" id="email-toggle-dot">
+<span class="material-symbols-outlined text-[12px] text-secondary">check</span>
+</div>
+</button>
+</div>
+<!-- Recipient Spec -->
+<div class="flex items-center justify-between px-3 py-2 rounded-xl bg-surface-container-lowest text-xs">
+<div class="flex items-center gap-2 min-w-0 pr-2">
+<span class="material-symbols-outlined text-[16px] text-outline">alternate_email</span>
+<span class="font-body text-on-surface-variant truncate">harpreet76819kaur@gmail.com</span>
+</div>
+<span class="text-[10px] font-label font-bold text-secondary uppercase tracking-wider flex-shrink-0">Verified</span>
+</div>
+<!-- Telegram Sub-Option -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">send</span>
+</div>
+<span class="text-xs font-body text-on-surface">Telegram Mirror Channel</span>
+</div>
+<span class="text-[10px] font-label font-bold text-outline px-2 py-0.5 rounded bg-surface-container-highest uppercase">Optional</span>
+</div>
+<!-- Action Footer: Test Dispatch -->
+<div class="pt-2 border-none">
+<button class="w-full py-2.5 rounded-xl bg-surface-container-high hover:bg-surface-variant text-secondary text-xs font-headline font-bold tracking-wide flex items-center justify-center gap-1.5 transition-all" id="test-dispatch-btn" onclick="triggerTestEmail(this)">
+<span class="material-symbols-outlined text-[16px]">mark_email_read</span>
+<span id="dispatch-label">Send Test Email Dispatch</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Storage Compliance Footer Note -->
+<div class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-surface-container-lowest text-center">
+<span class="material-symbols-outlined text-[16px] text-secondary">lock</span>
+<span class="text-[11px] font-body text-on-surface-variant">Telemetry stored locally in SQLite with zero third-party telemetry sync.</span>
+</div>
+</div>
+<script>
+  let digestActive = true;
+
+  function toggleDigestSwitch() {
+    digestActive = !digestActive;
+    const btn = document.getElementById('email-toggle-btn');
+    const dot = document.getElementById('email-toggle-dot');
+
+    if (digestActive) {
+      btn.classList.remove('bg-surface-variant');
+      btn.classList.add('bg-secondary');
+      dot.classList.remove('translate-x-0', 'bg-outline');
+      dot.classList.add('translate-x-6', 'bg-on-secondary');
+    } else {
+      btn.classList.remove('bg-secondary');
+      btn.classList.add('bg-surface-variant');
+      dot.classList.remove('translate-x-6', 'bg-on-secondary');
+      dot.classList.add('translate-x-0', 'bg-outline');
+    }
+  }
+
+  function triggerTestEmail(button) {
+    const label = document.getElementById('dispatch-label');
+    const originalText = label.innerText;
+    button.disabled = true;
+    label.innerText = 'Dispatching via BodyOS Relay...';
+    button.classList.add('opacity-75');
+
+    setTimeout(() => {
+      label.innerText = 'Test Dispatch Transmitted!';
+      button.classList.remove('text-secondary', 'opacity-75');
+      button.classList.add('text-on-secondary', 'bg-secondary');
+
+      setTimeout(() => {
+        label.innerText = originalText;
+        button.classList.remove('text-on-secondary', 'bg-secondary');
+        button.classList.add('text-secondary');
+        button.disabled = false;
+      }, 3000);
+    }, 1200);
+  }
+
+  function simulateGeneration(button) {
+    const originalContent = button.innerHTML;
+    button.disabled = true;
+    button.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">sync</span><span>Compiling Mesocycle Dossier...</span>';
+
+    setTimeout(() => {
+      button.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span><span>Dossier Ready (4.2 MB)</span>';
+      setTimeout(() => {
+        button.innerHTML = originalContent;
+        button.disabled = false;
+      }, 3500);
+    }, 1500);
+  }
+</script></main></body></html>

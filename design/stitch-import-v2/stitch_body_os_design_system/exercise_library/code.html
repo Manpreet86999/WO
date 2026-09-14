@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&family=Manrope:wght@200..800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Manrope:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#324f00", "secondary-fixed-dim": "#91db04", "secondary-container": "#8ed800", "surface": "#0d141e", "surface-variant": "#2e3541", "on-primary-container": "#7d7d83", "outline-variant": "#46464b", "on-primary-fixed": "#1a1b20", "primary-fixed": "#e3e1e9", "on-secondary-fixed": "#112000", "on-secondary": "#213600", "inverse-surface": "#dce3f2", "background": "#0d141e", "primary-container": "#111217", "error-container": "#93000a", "surface-container-low": "#151c27", "on-primary-fixed-variant": "#46464c", "surface-container-high": "#232a35", "tertiary-fixed-dim": "#9dd841", "tertiary-container": "#0a1500", "surface-tint": "#c7c6cd", "secondary": "#a8f530", "surface-container-highest": "#2e3541", "secondary-fixed": "#abf834", "tertiary-fixed": "#b8f55b", "inverse-on-surface": "#2a313c", "on-secondary-container": "#395a00", "primary": "#c7c6cd", "outline": "#919095", "on-error": "#690005", "primary-fixed-dim": "#c7c6cd", "surface-container": "#19202b", "on-surface-variant": "#c7c6cb", "on-tertiary-fixed": "#121f00", "inverse-primary": "#5e5e64", "on-tertiary": "#213600", "on-secondary-fixed-variant": "#314f00", "surface-container-lowest": "#070e19", "on-primary": "#2f3036", "tertiary": "#9dd841", "on-tertiary-container": "#5c8a00", "on-error-container": "#ffdad6", "surface-bright": "#333a45", "on-background": "#dce3f2", "on-surface": "#dce3f2", "error": "#ffb4ab", "surface-dim": "#0d141e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: {}, fontFamily: { "headline": ["Manrope"], "display": ["Manrope"], "body": ["Hanken Grotesk"], "label": ["Hanken Grotesk"] }, fontSize: {} } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.35)]"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-2"><button aria-label="Go back" class="w-11 h-11 -ml-2 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors focus:outline-none" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline font-extrabold text-xs tracking-tight text-on-surface-variant uppercase">Body OS</span><span class="inline-flex items-center px-1.5 py-0.2 rounded-full text-[9px] font-label font-bold uppercase tracking-wider bg-secondary text-on-secondary">OS 2.4</span></div><h1 class="text-sm font-headline font-bold text-on-surface truncate max-w-[200px]">Exercise Library</h1></div></div><div class="flex items-center gap-2"><div class="flex items-center gap-1.5 px-2 py-1 rounded-full bg-surface-container border border-outline-variant/30"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="text-[10px] font-label font-bold uppercase tracking-wider text-secondary">Live</span></div><button aria-label="Context actions" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors focus:outline-none"><span class="material-symbols-outlined text-[22px]">more_vert</span></button></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-safe"><div class="flex flex-col w-full px-4 pb-24 gap-5">
+<!-- Header Telemetry & Title Section -->
+<section class="flex flex-col gap-1.5 pt-2">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] font-bold uppercase tracking-[0.12em] text-secondary">Exercises · System Catalog</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-[10px] font-label font-bold text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        v4.0.2 SYNCED
+      </span>
+</div>
+<h2 class="font-headline text-2xl md:text-3xl font-extrabold text-on-surface tracking-tight">Exercise Library</h2>
+<p class="font-body text-xs text-on-surface-variant max-w-md leading-relaxed">
+      Verified movement mechanics, kinetic cues, and movement prescriptions.
+    </p>
+</section>
+<!-- Search & Tactical Filters Area -->
+<section class="flex flex-col gap-3">
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px] pointer-events-none">search</span>
+<input class="w-full h-12 pl-10 pr-10 rounded-xl bg-surface-container-low text-on-surface text-sm font-body placeholder:text-on-surface-variant/50 focus:outline-none focus:bg-surface-container transition-all" id="exercise-search" placeholder="Search 142 movements, muscles, or cues..." type="text"/>
+<button aria-label="Clear search" class="absolute right-3 p-1 text-on-surface-variant/60 hover:text-on-surface focus:outline-none" onclick="document.getElementById('exercise-search').value = '';">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Quick Muscle/Target Pills (Horizontal Scroll) -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5 -mx-4 px-4">
+<button class="filter-pill shrink-0 px-3.5 py-1.5 rounded-full bg-secondary text-on-secondary text-xs font-headline font-bold shadow-sm transition-transform active:scale-95" data-filter="all">
+        All (142)
+      </button>
+<button class="filter-pill shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface text-xs font-headline font-semibold transition-all active:scale-95" data-filter="quads">
+        Quads & Glutes
+      </button>
+<button class="filter-pill shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface text-xs font-headline font-semibold transition-all active:scale-95" data-filter="chest">
+        Chest & Push
+      </button>
+<button class="filter-pill shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface text-xs font-headline font-semibold transition-all active:scale-95" data-filter="back">
+        Back & Pull
+      </button>
+<button class="filter-pill shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface text-xs font-headline font-semibold transition-all active:scale-95" data-filter="core">
+        Core
+      </button>
+<button class="filter-pill shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface text-xs font-headline font-semibold transition-all active:scale-95" data-filter="custom">
+        Custom
+      </button>
+</div>
+<!-- Secondary Equipment Tags & Create CTA Bar -->
+<div class="flex items-center justify-between gap-2 pt-1">
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+<span class="text-[10px] font-label font-bold uppercase tracking-wider text-on-surface-variant/70 shrink-0 mr-1">Gear:</span>
+<button class="equip-chip px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface-variant text-[11px] font-label font-medium hover:text-secondary transition-colors" data-gear="dumbbell">
+          Dumbbell
+        </button>
+<button class="equip-chip px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface-variant text-[11px] font-label font-medium hover:text-secondary transition-colors" data-gear="barbell">
+          Barbell
+        </button>
+<button class="equip-chip px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface-variant text-[11px] font-label font-medium hover:text-secondary transition-colors" data-gear="cables">
+          Cables
+        </button>
+<button class="equip-chip px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface-variant text-[11px] font-label font-medium hover:text-secondary transition-colors" data-gear="bodyweight">
+          Bodyweight
+        </button>
+</div>
+<button class="shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-highest text-secondary hover:bg-secondary hover:text-on-secondary text-xs font-headline font-bold transition-all shadow-sm active:scale-95" id="btn-add-custom">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Custom</span>
+</button>
+</div>
+</section>
+<!-- Exercise List (Catalog Cards) -->
+<section class="flex flex-col gap-3.5" id="exercise-catalog">
+<!-- Exercise 1: Goblet Squat -->
+<article class="exercise-card group flex flex-col p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all shadow-sm gap-3.5 relative overflow-hidden" data-category="quads" data-equipment="dumbbell">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-secondary text-on-secondary">
+              Quads · Glutes
+            </span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-surface-container-high text-on-surface-variant">
+              Compound
+            </span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-surface-container-high text-on-surface-variant">
+              Dumbbell
+            </span>
+</div>
+<h3 class="font-headline text-base font-bold text-on-surface tracking-tight group-hover:text-secondary transition-colors">
+            Goblet Squat
+          </h3>
+</div>
+<button aria-label="Toggle favorite" class="fav-toggle w-9 h-9 rounded-full flex items-center justify-center bg-surface-container-high text-secondary hover:scale-110 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<!-- Kinetic Cue Banner -->
+<div class="flex items-start gap-2.5 p-2.5 rounded-lg bg-surface-container-high">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">adjust</span>
+<div class="flex flex-col">
+<span class="font-label text-[10px] font-bold uppercase tracking-wider text-secondary">Kinetic Cue</span>
+<p class="font-body text-xs text-on-surface leading-snug">
+            Maintain upright torso, elbows tucked within knees at depth pause (2s)
+          </p>
+</div>
+</div>
+<!-- Telemetry Footer / Mechanics Link -->
+<div class="flex items-center justify-between pt-1 text-xs">
+<div class="flex items-center gap-1.5 text-on-surface-variant min-w-0">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant/70 shrink-0">history</span>
+<span class="truncate font-body">Yesterday · 4 × 10 @ 24kg</span>
+<span class="shrink-0 px-1.5 py-0.2 rounded text-[9px] font-headline font-bold bg-secondary/15 text-secondary">PR</span>
+</div>
+<button class="inline-flex items-center gap-0.5 font-headline text-xs font-bold text-secondary hover:underline group-hover:translate-x-0.5 transition-transform shrink-0">
+<span>Mechanics</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Exercise 2: Dumbbell Romanian Deadlift -->
+<article class="exercise-card group flex flex-col p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all shadow-sm gap-3.5 relative overflow-hidden" data-category="back" data-equipment="dumbbell">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-surface-container-high text-secondary">
+              Hamstrings · Posterior
+            </span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-surface-container-high text-on-surface-variant">
+              Compound
+            </span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-surface-container-high text-on-surface-variant">
+              Dumbbell
+            </span>
+</div>
+<h3 class="font-headline text-base font-bold text-on-surface tracking-tight group-hover:text-secondary transition-colors">
+            Dumbbell Romanian Deadlift
+          </h3>
+</div>
+<button aria-label="Toggle favorite" class="fav-toggle w-9 h-9 rounded-full flex items-center justify-center bg-surface-container-high text-on-surface-variant hover:text-secondary hover:scale-110 active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">star</span>
+</button>
+</div>
+<!-- Kinetic Cue Banner -->
+<div class="flex items-start gap-2.5 p-2.5 rounded-lg bg-surface-container-high">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">adjust</span>
+<div class="flex flex-col">
+<span class="font-label text-[10px] font-bold uppercase tracking-wider text-secondary">Kinetic Cue</span>
+<p class="font-body text-xs text-on-surface leading-snug">
+            Initiate hip hinge with soft knees, maintain lat engagement and neutral spine
+          </p>
+</div>
+</div>
+<!-- Telemetry Footer / Mechanics Link -->
+<div class="flex items-center justify-between pt-1 text-xs">
+<div class="flex items-center gap-1.5 text-on-surface-variant min-w-0">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant/70 shrink-0">history</span>
+<span class="truncate font-body">3 days ago · 4 × 12 @ 28kg</span>
+</div>
+<button class="inline-flex items-center gap-0.5 font-headline text-xs font-bold text-secondary hover:underline group-hover:translate-x-0.5 transition-transform shrink-0">
+<span>Mechanics</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Exercise 3: Front Plank -->
+<article class="exercise-card group flex flex-col p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all shadow-sm gap-3.5 relative overflow-hidden" data-category="core" data-equipment="bodyweight">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-surface-container-high text-secondary">
+              Core Stability
+            </span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-surface-container-high text-on-surface-variant">
+              Isometric
+            </span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-surface-container-high text-on-surface-variant">
+              Bodyweight
+            </span>
+</div>
+<h3 class="font-headline text-base font-bold text-on-surface tracking-tight group-hover:text-secondary transition-colors">
+            Front Plank
+          </h3>
+</div>
+<button aria-label="Toggle favorite" class="fav-toggle w-9 h-9 rounded-full flex items-center justify-center bg-surface-container-high text-secondary hover:scale-110 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<!-- Kinetic Cue Banner -->
+<div class="flex items-start gap-2.5 p-2.5 rounded-lg bg-surface-container-high">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">adjust</span>
+<div class="flex flex-col">
+<span class="font-label text-[10px] font-bold uppercase tracking-wider text-secondary">Kinetic Cue</span>
+<p class="font-body text-xs text-on-surface leading-snug">
+            Posterior pelvic tilt, lock glutes and drive forearms into floor
+          </p>
+</div>
+</div>
+<!-- Telemetry Footer / Mechanics Link -->
+<div class="flex items-center justify-between pt-1 text-xs">
+<div class="flex items-center gap-1.5 text-on-surface-variant min-w-0">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant/70 shrink-0">history</span>
+<span class="truncate font-body">Today · 3 × 45s</span>
+</div>
+<button class="inline-flex items-center gap-0.5 font-headline text-xs font-bold text-secondary hover:underline group-hover:translate-x-0.5 transition-transform shrink-0">
+<span>Mechanics</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Exercise 4: Dumbbell Shoulder Press -->
+<article class="exercise-card group flex flex-col p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all shadow-sm gap-3.5 relative overflow-hidden" data-category="chest" data-equipment="dumbbell">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-surface-container-high text-secondary">
+              Anterior Delts · Triceps
+            </span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-surface-container-high text-on-surface-variant">
+              Compound
+            </span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-surface-container-high text-on-surface-variant">
+              Dumbbell
+            </span>
+</div>
+<h3 class="font-headline text-base font-bold text-on-surface tracking-tight group-hover:text-secondary transition-colors">
+            Dumbbell Shoulder Press
+          </h3>
+</div>
+<button aria-label="Toggle favorite" class="fav-toggle w-9 h-9 rounded-full flex items-center justify-center bg-surface-container-high text-on-surface-variant hover:text-secondary hover:scale-110 active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">star</span>
+</button>
+</div>
+<!-- Kinetic Cue Banner -->
+<div class="flex items-start gap-2.5 p-2.5 rounded-lg bg-surface-container-high">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">adjust</span>
+<div class="flex flex-col">
+<span class="font-label text-[10px] font-bold uppercase tracking-wider text-secondary">Kinetic Cue</span>
+<p class="font-body text-xs text-on-surface leading-snug">
+            Elbows 30° forward of coronal plane, lock out without hyperextending lumbar
+          </p>
+</div>
+</div>
+<!-- Telemetry Footer / Mechanics Link -->
+<div class="flex items-center justify-between pt-1 text-xs">
+<div class="flex items-center gap-1.5 text-on-surface-variant min-w-0">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant/70 shrink-0">history</span>
+<span class="truncate font-body">Aug 31 · 5 × 8 @ 5kg</span>
+</div>
+<button class="inline-flex items-center gap-0.5 font-headline text-xs font-bold text-secondary hover:underline group-hover:translate-x-0.5 transition-transform shrink-0">
+<span>Mechanics</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Telemetry & Diagnostic Bottom Drawer -->
+<section class="flex flex-col gap-3 p-4 rounded-xl bg-surface-container-lowest shadow-md">
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">database</span>
+<span class="font-label text-[11px] font-bold uppercase tracking-wider text-on-surface">Library Telemetry</span>
+</div>
+<span class="inline-flex items-center gap-1 text-[10px] font-label font-bold uppercase text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        Encrypted Cache
+      </span>
+</div>
+<div class="grid grid-cols-3 gap-2 py-1">
+<div class="flex flex-col p-2 rounded-lg bg-surface-container-low">
+<span class="font-label text-[9px] uppercase tracking-wider text-on-surface-variant">Built-in</span>
+<span class="font-headline text-base font-extrabold text-on-surface">138</span>
+</div>
+<div class="flex flex-col p-2 rounded-lg bg-surface-container-low">
+<span class="font-label text-[9px] uppercase tracking-wider text-on-surface-variant">Custom</span>
+<span class="font-headline text-base font-extrabold text-secondary">4</span>
+</div>
+<div class="flex flex-col p-2 rounded-lg bg-surface-container-low">
+<span class="font-label text-[9px] uppercase tracking-wider text-on-surface-variant">Local Hash</span>
+<span class="font-headline text-base font-extrabold text-on-surface">SHA-256</span>
+</div>
+</div>
+<button class="w-full h-11 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-headline text-xs font-bold flex items-center justify-center gap-2 transition-colors active:scale-[0.99]" id="btn-export-json">
+<span class="material-symbols-outlined text-[18px] text-secondary">import_export</span>
+<span>Import / Export Movements (JSON)</span>
+</button>
+</section>
+</div>
+<!-- Micro-Interaction Logic for Search, Toggles, and Tabs -->
+<script>
+  (function() {
+    // Favorite button toggle
+    const favButtons = document.querySelectorAll('.fav-toggle');
+    favButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const icon = btn.querySelector('.material-symbols-outlined');
+        const isFilled = icon.style.fontVariationSettings && icon.style.fontVariationSettings.includes("'FILL' 1");
+        if (isFilled) {
+          icon.style.fontVariationSettings = "'FILL' 0";
+          btn.classList.remove('text-secondary');
+          btn.classList.add('text-on-surface-variant');
+        } else {
+          icon.style.fontVariationSettings = "'FILL' 1";
+          btn.classList.remove('text-on-surface-variant');
+          btn.classList.add('text-secondary');
+        }
+      });
+    });
+
+    // Pill filter toggle
+    const pills = document.querySelectorAll('.filter-pill');
+    const cards = document.querySelectorAll('.exercise-card');
+
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => {
+          p.classList.remove('bg-secondary', 'text-on-secondary');
+          p.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        pill.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        pill.classList.add('bg-secondary', 'text-on-secondary');
+
+        const filter = pill.getAttribute('data-filter');
+        cards.forEach(card => {
+          if (filter === 'all') {
+            card.style.display = 'flex';
+          } else if (card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Instant Search functionality
+    const searchInput = document.getElementById('exercise-search');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        cards.forEach(card => {
+          const text = card.innerText.toLowerCase();
+          if (text.includes(query)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
+
+    // Equipment chip filter
+    const chips = document.querySelectorAll('.equip-chip');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const isActive = chip.classList.contains('bg-secondary');
+        chips.forEach(c => {
+          c.classList.remove('bg-secondary', 'text-on-secondary');
+          c.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        });
+        if (!isActive) {
+          chip.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+          chip.classList.add('bg-secondary', 'text-on-secondary');
+          const gear = chip.getAttribute('data-gear');
+          cards.forEach(card => {
+            if (card.getAttribute('data-equipment') === gear) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        } else {
+          cards.forEach(card => card.style.display = 'flex');
+        }
+      });
+    });
+
+    // Export JSON Feedback
+    const exportBtn = document.getElementById('btn-export-json');
+    if (exportBtn) {
+      exportBtn.addEventListener('click', () => {
+        const originalText = exportBtn.innerHTML;
+        exportBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span> Movements Exported to Clipboard';
+        setTimeout(() => {
+          exportBtn.innerHTML = originalText;
+        }, 2000);
+      });
+    }
+  })();
+</script></main></body></html>

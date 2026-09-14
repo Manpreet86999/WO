@@ -1,0 +1,25 @@
+import {useState} from 'react';
+import {Pressable,View} from 'react-native';
+import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {localDateKey} from '../../../../src/shared/evidence';
+import type {ScheduledWorkout,Session} from '../../../../src/shared/types';
+import {useBody} from '../state/BodyProvider';
+import {useNav,type RootRoutes} from '../navigation/routes';
+import {Action,Card,Chip,Empty,Heading,Kicker,Label,Metric,Page,Row} from '../ui/kit';
+import {useTheme} from '../ui/theme';
+import {RecordEditor} from './RecordEditor';
+import {scheduleSpec} from '../components/record-specs';
+const day=(date:Date)=>localDateKey(date);
+export function ScheduleEditorScreen({route}:NativeStackScreenProps<RootRoutes,'ScheduleEditor'>){return <RecordEditor id={route.params?.id} spec={{...scheduleSpec,defaults:{...scheduleSpec.defaults,date:route.params?.date||localDateKey()}}} title="Schedule workout"/>;}
+export function TrainingCalendarScreen(){
+ const t=useTheme(),nav=useNav(),{rows}=useBody(),[selected,setSelected]=useState(localDateKey()),[view,setView]=useState<'month'|'week'|'agenda'>('month');
+ const anchor=new Date(selected+'T12:00:00'),today=localDateKey();
+ const scheduled=rows<ScheduledWorkout>('scheduledWorkout'),sessions=rows<Session>('session').filter(r=>r.payload.status==='finished');
+ const first=new Date(anchor.getFullYear(),anchor.getMonth(),1,12),start=new Date(view==='week'?anchor:first);start.setDate(start.getDate()-(start.getDay()+6)%7);
+ const dates=Array.from({length:view==='week'?7:42},(_,i)=>{const d=new Date(start);d.setDate(d.getDate()+i);return d;});
+ const visible=scheduled.filter(r=>view==='agenda'?r.payload.date.slice(0,7)===selected.slice(0,7):r.payload.date===selected).sort((a,b)=>a.payload.date.localeCompare(b.payload.date));
+ const completed=sessions.filter(r=>view==='agenda'?r.payload.date.slice(0,7)===selected.slice(0,7):r.payload.date===selected);
+ function move(direction:number){const d=new Date(anchor);if(view==='week')d.setDate(d.getDate()+direction*7);else {d.setDate(1);d.setMonth(d.getMonth()+direction);}setSelected(day(d));}
+ return <Page><Kicker>Schedule & discipline</Kicker><Heading>Training Map</Heading><Label muted>Your training schedule and completed sessions.</Label><Row>{(['month','week','agenda'] as const).map(mode=><Chip key={mode} title={mode} selected={view===mode} onPress={()=>setView(mode)}/>)}</Row><Card><Heading size={22}>{anchor.toLocaleDateString(undefined,{month:'long',year:'numeric'})}</Heading><Row wrap><Chip title="Previous" onPress={()=>move(-1)}/><Chip title="Today" onPress={()=>setSelected(today)}/><Chip title="Next" onPress={()=>move(1)}/></Row>{view!=='agenda'&&<><View style={{flexDirection:'row'}}>{['M','T','W','T','F','S','S'].map((label,i)=><View key={i} style={{width:'14.2857%',alignItems:'center'}}><Label muted size={11}>{label}</Label></View>)}</View><View style={{flexDirection:'row',flexWrap:'wrap'}}>{dates.map(date=>{const key=day(date),done=sessions.some(r=>r.payload.date===key),plans=scheduled.filter(r=>r.payload.date===key),missed=key<today&&plans.some(r=>r.payload.status==='planned')&&!done;return <Pressable key={key} accessibilityRole="button" accessibilityLabel={`Select ${key}`} accessibilityState={{selected:key===selected}} onPress={()=>setSelected(key)} style={{width:'14.2857%',padding:2}}><View style={{minHeight:58,padding:4,borderRadius:8,backgroundColor:t.low,borderWidth:1,borderColor:key===selected?t.lime:missed?t.error:t.low,opacity:date.getMonth()===anchor.getMonth()?1:.45}}><Label size={12}>{date.getDate()}</Label><Label size={8} accent={done}>{done?'Done':missed?'Missed':plans.length?'Plan':key===today?'Today':''}</Label></View></Pressable>;})}</View><Label muted size={11}>Done · Planned · Missed (past planned date) · Selected outline</Label></>}</Card>
+ <Action title={`Schedule ${selected}`} icon="plus" onPress={()=>nav.navigate('ScheduleEditor',{date:selected})}/><Heading size={22}>{view==='agenda'?'This month’s timeline':selected}</Heading>{visible.map(r=><Card key={r.id}><Kicker>{r.payload.date} · {r.payload.status==='planned'&&r.payload.date<today?'Missed / not marked complete':r.payload.status}</Kicker><Heading size={22}>{r.payload.title}</Heading>{Boolean(r.payload.notes)&&<Label muted>{r.payload.notes}</Label>}<Action title="Edit, reschedule or skip" secondary onPress={()=>nav.navigate('ScheduleEditor',{id:r.id})}/>{Boolean(r.payload.weekId)&&Boolean(r.payload.dayKey)&&<Action title="Open planned workout" secondary onPress={()=>nav.navigate('WorkoutPreview',{weekId:r.payload.weekId!,dayKey:r.payload.dayKey!})}/>}</Card>)}{completed.map(r=><Card key={r.id}><Kicker>{r.payload.date} · Completed session</Kicker><Heading size={22}>{r.payload.dayTitle}</Heading><Action title="View workout record" secondary onPress={()=>nav.navigate('Session',{id:r.id})}/></Card>)}{visible.length===0&&completed.length===0&&<Empty title="Space in your schedule" detail="Add a workout for this date or leave it open for recovery."/>}</Page>;
+}

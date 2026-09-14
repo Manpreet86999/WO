@@ -1,0 +1,366 @@
+{
+  "sourceArchive": "stitch_body_os_design_system (2).zip",
+  "screenCount": 45,
+  "screens": [
+    {
+      "name": "am_pm_routines",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/am_pm_routines/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/am_pm_routines/screen.png",
+      "htmlSha256": "b2b74a2dd8559974f361781e188ed23876b6af9095cea15d3f2fcb8a9f8c1f74",
+      "newInV2": false,
+      "changedFromV1": true
+    },
+    {
+      "name": "app_lock_pin_a09",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/app_lock_pin_a09/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/app_lock_pin_a09/screen.png",
+      "htmlSha256": "d9f5c91cb7a35636c7ccb369302dba9400fdf8bce245a756b74ddeb5795cd775",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "backup_center_h10",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/backup_center_h10/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/backup_center_h10/screen.png",
+      "htmlSha256": "407258a50d3c140875a4ac4514f3884954ceb6b2fc5f443f0d52cd983a8f6819",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "body",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/body/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/body/screen.png",
+      "htmlSha256": "f6e4330ca76185768c0518955d222e8b3787e58976e4c9acb6e4b183a0e173ea",
+      "newInV2": false,
+      "changedFromV1": true
+    },
+    {
+      "name": "calendar",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/calendar/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/calendar/screen.png",
+      "htmlSha256": "3ef6b4b06ec853164ec2a3ab0e5cf66a854987235fc5e763bf0a92afcbe9b25f",
+      "newInV2": false,
+      "changedFromV1": true
+    },
+    {
+      "name": "care_overview",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/care_overview/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/care_overview/screen.png",
+      "htmlSha256": "c65a692ef883e0682611330b469952dec98ea9bae75cfd4f3993b3b987b1d4b1",
+      "newInV2": false,
+      "changedFromV1": true
+    },
+    {
+      "name": "coach",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/coach/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/coach/screen.png",
+      "htmlSha256": "fe8867c4ae53e5c4a330df389bc751774cf30f3350f83693087869223b6e88c5",
+      "newInV2": false,
+      "changedFromV1": true
+    },
+    {
+      "name": "day_editor_d04",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/day_editor_d04/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/day_editor_d04/screen.png",
+      "htmlSha256": "6391acd8511562d5dfa8c452bb3fd7c52175be5b5fe6213d4f783077a4f160a3",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "device_sync_h06",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/device_sync_h06/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/device_sync_h06/screen.png",
+      "htmlSha256": "a41fcab7137b62259be903f6948d4d19156c2c21f1fff363e0143b1384c6a66d",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "exercise_library",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/exercise_library/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/exercise_library/screen.png",
+      "htmlSha256": "3418dafda2bedd13f0e4f75b23ef1cabe2e09ea8193b45a2849df9eb1acf16eb",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "finish_workout_review_c20",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/finish_workout_review_c20/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/finish_workout_review_c20/screen.png",
+      "htmlSha256": "78a27c585465c1f5b55f39eae3de29b149277f0f5ee64c5a3edc8314ea7cd3b1",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "goal_editor_e18",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/goal_editor_e18/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/goal_editor_e18/screen.png",
+      "htmlSha256": "43e97c44e9422c47cb591f48ddc28b5eb36954a1c0674d7abb00d5d3a0e72ca2",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "goals",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/goals/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/goals/screen.png",
+      "htmlSha256": "f43c31bb06df2b74a987116bfd672bad24479f33e2c2a84ac840160530f48595",
+      "newInV2": false,
+      "changedFromV1": true
+    },
+    {
+      "name": "lift_history",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/lift_history/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/lift_history/screen.png",
+      "htmlSha256": "121186550de4af060dc722b074995e9a8695ca185d90fce9332caab82da2ce80",
+      "newInV2": false,
+      "changedFromV1": true
+    },
+    {
+      "name": "measurement_editor_e21",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/measurement_editor_e21/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/measurement_editor_e21/screen.png",
+      "htmlSha256": "bc634c052d2842cfc5a28a9fb1b806e27dd4b789aa7d1fc6809e1eeba0134b7d",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "my_skin_profile",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/my_skin_profile/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/my_skin_profile/screen.png",
+      "htmlSha256": "2bbd4bab7352d81d17e3b1232a4417ad67a937e2a1c0280e96cf841593d91784",
+      "newInV2": false,
+      "changedFromV1": true
+    },
+    {
+      "name": "plan_import_preview_d06",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/plan_import_preview_d06/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/plan_import_preview_d06/screen.png",
+      "htmlSha256": "b0f63eaa712d311e92d8e7b68724ff7245e3249059eda99678f6b1b4d5745d2d",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "prescription_editor_d05",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/prescription_editor_d05/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/prescription_editor_d05/screen.png",
+      "htmlSha256": "e95ecbb8dbbf158a110b56a33d4540389bf28e559d49154fadd90cadeb355a12",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "product_shelf",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/product_shelf/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/product_shelf/screen.png",
+      "htmlSha256": "caf775e7352eb6980bd570149eb55e51cec1f703a80180165d19e8dffbce75b2",
+      "newInV2": false,
+      "changedFromV1": true
+    },
+    {
+      "name": "programs",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/programs/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/programs/screen.png",
+      "htmlSha256": "de6439aa87e52be3d67b35feaf595bec70d9a0ab3016828665f4389708bc2794",
+      "newInV2": false,
+      "changedFromV1": true
+    },
+    {
+      "name": "progress_overview_e01",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/progress_overview_e01/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/progress_overview_e01/screen.png",
+      "htmlSha256": "85bd369dc580e95494fbda7997040812d3d648c6f0c2ca25addfda29a1ceb788",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "readiness_check_in",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/readiness_check_in/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/readiness_check_in/screen.png",
+      "htmlSha256": "e4fd91589c2b1089091a28e0814bc8d5eea34299d1abb7c0f5f4d21e84348cdb",
+      "newInV2": false,
+      "changedFromV1": true
+    },
+    {
+      "name": "readiness_energy_b06_1",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/readiness_energy_b06_1/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/readiness_energy_b06_1/screen.png",
+      "htmlSha256": "2066ef08224a53b0cb61f405de839ee381fe05f96e51dddfbbba296ea1fe9871",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "readiness_energy_b06_2",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/readiness_energy_b06_2/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/readiness_energy_b06_2/screen.png",
+      "htmlSha256": "e1468714549bdbe82550ccb62b8254747654e41677c96683c1787c5c063018cf",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "readiness_pain_check_b10_1",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/readiness_pain_check_b10_1/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/readiness_pain_check_b10_1/screen.png",
+      "htmlSha256": "c1777891942fcccf7e2046feb6a8ade16abb913b6cab1cf4b040c5a8bc95b02f",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "readiness_pain_check_b10_2",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/readiness_pain_check_b10_2/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/readiness_pain_check_b10_2/screen.png",
+      "htmlSha256": "44518456eaad38f4fc6415b8fd5fe1fa2c3914f6bfa531442e022ce8b4ca1cc5",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "readiness_sleep_b03_b04_1",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/readiness_sleep_b03_b04_1/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/readiness_sleep_b03_b04_1/screen.png",
+      "htmlSha256": "aa3e32a273bad3f5b2943acacef55beeaa116cabf9772aa16c447256ccca2119",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "readiness_sleep_b03_b04_2",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/readiness_sleep_b03_b04_2/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/readiness_sleep_b03_b04_2/screen.png",
+      "htmlSha256": "42084e144a60163ee5e31513062abe21d88f94d3b7e1adbd9ca7bf61e9d8a450",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "readiness_stress_b07_1",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/readiness_stress_b07_1/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/readiness_stress_b07_1/screen.png",
+      "htmlSha256": "a6d402eae96acddc30033c06354d26296ba2b3cc8feea6d74df64e5beb23814c",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "readiness_stress_b07_2",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/readiness_stress_b07_2/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/readiness_stress_b07_2/screen.png",
+      "htmlSha256": "6b05d7239f6eed915ba97f91d61026e1d492f4a86899974353cda913a8a1fc8e",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "records",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/records/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/records/screen.png",
+      "htmlSha256": "fa5a4f3fa95012f8709f2e910f42c1415e56a09ab421b36ee0262a375185c09b",
+      "newInV2": false,
+      "changedFromV1": true
+    },
+    {
+      "name": "reports_hub",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/reports_hub/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/reports_hub/screen.png",
+      "htmlSha256": "a8d5993e46e200d2f369381a9aa28fdbe6a346ca30dfdeddb150df9fbb526431",
+      "newInV2": false,
+      "changedFromV1": true
+    },
+    {
+      "name": "reps_only_set_flashcard_c07",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/reps_only_set_flashcard_c07/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/reps_only_set_flashcard_c07/screen.png",
+      "htmlSha256": "f2330db1a03c8cb4e7d485e016838a7f9754d9104f15d007d74b790ab98cc71b",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "resolve_conflict_h07_h08",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/resolve_conflict_h07_h08/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/resolve_conflict_h07_h08/screen.png",
+      "htmlSha256": "4f19d38133b0fc51257cc251bc44bb07a7a5ae4af74acab296d19ad6c65a4bd6",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "rest_timer_c10",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/rest_timer_c10/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/rest_timer_c10/screen.png",
+      "htmlSha256": "5f89d40272862cf8b18b10cc88866c68cbe5d607d3b2b55df93025d6aa0c792e",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "session_detail_e03",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/session_detail_e03/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/session_detail_e03/screen.png",
+      "htmlSha256": "a37e76699e4b39739611dd4f0e01bc66654584899bc92b31b4e7ddbaefa9a2b5",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "session_editor_e04",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/session_editor_e04/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/session_editor_e04/screen.png",
+      "htmlSha256": "9061d820c864ee1e9eadc5e74ae3c0572133383a16671f984e46b86091a1c46d",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "skin_ai_coach",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/skin_ai_coach/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/skin_ai_coach/screen.png",
+      "htmlSha256": "b7911a07aadec9bfe313fb1939130450afc4ae9d66a90fbd9328974719029b51",
+      "newInV2": false,
+      "changedFromV1": true
+    },
+    {
+      "name": "skin_journal",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/skin_journal/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/skin_journal/screen.png",
+      "htmlSha256": "8a4733ce8a722f1ec3e6773da8e9e6c024b70da4bb7b7fd6a12fe5376326e0ff",
+      "newInV2": false,
+      "changedFromV1": true
+    },
+    {
+      "name": "strength_prs_e11",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/strength_prs_e11/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/strength_prs_e11/screen.png",
+      "htmlSha256": "11f7ab795994a30a955351ae88c9b2a6bfb2b0725981a904daee6ef4e1c88de9",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "timed_exercise_flashcard_c08",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/timed_exercise_flashcard_c08/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/timed_exercise_flashcard_c08/screen.png",
+      "htmlSha256": "f22e76fe41e30293c0ae301ffa923419154e91e01b405b608edb5586ee92d3de",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "week_editor_d03",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/week_editor_d03/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/week_editor_d03/screen.png",
+      "htmlSha256": "2c9bd0c4bd1e9d6474a81a03be0fa75ab2ccb4f74a909de8e0425fc332388c1f",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "weighted_set_flashcard_c06",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/weighted_set_flashcard_c06/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/weighted_set_flashcard_c06/screen.png",
+      "htmlSha256": "21d311aa60cf1421ecfeef5dbd39ba94980378a0b7394507765e1d28fe624a9b",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "welcome_entry_a02_1",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/welcome_entry_a02_1/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/welcome_entry_a02_1/screen.png",
+      "htmlSha256": "81f0f5835c79d7d115cf4523aded04d3153dedc94b8e488945b3072ef0c8388e",
+      "newInV2": true,
+      "changedFromV1": false
+    },
+    {
+      "name": "welcome_entry_a02_2",
+      "html": "design/stitch-import-v2/stitch_body_os_design_system/welcome_entry_a02_2/code.html",
+      "image": "design/stitch-import-v2/stitch_body_os_design_system/welcome_entry_a02_2/screen.png",
+      "htmlSha256": "ae90fc32a5479087eef599523d11d29cc2fb5d1fde7c06a19478d53404739eae",
+      "newInV2": true,
+      "changedFromV1": false
+    }
+  ]
+}

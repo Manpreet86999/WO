@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "Body OS",
+    "slug": "body-os",
+    "version": "4.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "icon": "../../src/client/public/body-os-app-512-v2.png",
+    "android": {
+      "package": "com.bodyos.mobile",
+      "permissions": [
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.health.READ_STEPS",
+        "android.permission.health.READ_SLEEP",
+        "android.permission.health.READ_RESTING_HEART_RATE"
+      ],
+      "versionCode": 5,
+      "googleServicesFile": "./google-services.json"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-notifications",
+      "react-native-health-connect",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 26
+          }
+        }
+      ],
+      "./plugins/with-release-signing.cjs",
+      "@react-native-google-signin/google-signin",
+      "expo-font"
+    ]
+  }
+}

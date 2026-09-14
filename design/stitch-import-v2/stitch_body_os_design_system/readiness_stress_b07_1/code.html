@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&family=Manrope:wght@200..800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Manrope:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#324f00", "secondary-fixed-dim": "#91db04", "secondary-container": "#8ed800", "surface": "#0d141e", "surface-variant": "#2e3541", "on-primary-container": "#7d7d83", "outline-variant": "#46464b", "on-primary-fixed": "#1a1b20", "primary-fixed": "#e3e1e9", "on-secondary-fixed": "#112000", "on-secondary": "#213600", "inverse-surface": "#dce3f2", "background": "#0d141e", "primary-container": "#111217", "error-container": "#93000a", "surface-container-low": "#151c27", "on-primary-fixed-variant": "#46464c", "surface-container-high": "#232a35", "tertiary-fixed-dim": "#9dd841", "tertiary-container": "#0a1500", "surface-tint": "#c7c6cd", "secondary": "#a8f530", "surface-container-highest": "#2e3541", "secondary-fixed": "#abf834", "tertiary-fixed": "#b8f55b", "inverse-on-surface": "#2a313c", "on-secondary-container": "#395a00", "primary": "#c7c6cd", "outline": "#919095", "on-error": "#690005", "primary-fixed-dim": "#c7c6cd", "surface-container": "#19202b", "on-surface-variant": "#c7c6cb", "on-tertiary-fixed": "#121f00", "inverse-primary": "#5e5e64", "on-tertiary": "#213600", "on-secondary-fixed-variant": "#314f00", "surface-container-lowest": "#070e19", "on-primary": "#2f3036", "tertiary": "#9dd841", "on-tertiary-container": "#5c8a00", "on-error-container": "#ffdad6", "surface-bright": "#333a45", "on-background": "#dce3f2", "on-surface": "#dce3f2", "error": "#ffb4ab", "surface-dim": "#0d141e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: {}, fontFamily: { "headline": ["Manrope"], "display": ["Manrope"], "body": ["Hanken Grotesk"], "label": ["Hanken Grotesk"] }, fontSize: {} } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-3"><img alt="Body OS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeWKOx9KwVkdFVhN0ua2jD2UQKolfaWQGFPO9o07-k_cQsBvghBykEEqyYvx3xw0mmgB4rka1l44rItIo5XJ-TWgyIOme3wfvu-ShqzOHKODDPNBO_OKbUOiw8RuIyDCtJFE4IfKEdckU8NsPpPDbZezQA11xNrKavHW6rBbAbn2m273QAEy29yHSQWow1RANWO7cHeyrcvOvVmjk1A7FOtr3Aj8z6Zle9sFNnlU9RzNRWkxqQjvEaIA"/><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline font-extrabold text-sm tracking-tight text-on-surface uppercase">Body OS</span><span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-secondary text-on-secondary">OS 2.4</span></div><h1 class="text-xs font-headline font-semibold text-on-surface-variant truncate max-w-[140px]">Dashboard</h1></div></div><div class="flex items-center gap-3"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors focus:outline-none"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-28"><div class="flex flex-col w-full px-4 pb-8 space-y-4">
+<!-- Interactive Top Calibration Bar -->
+<div class="flex items-center justify-between pt-1">
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-secondary text-xs font-label uppercase tracking-wider transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Previous</span>
+</button>
+<span class="font-headline font-bold text-xs uppercase tracking-widest text-on-surface">Readiness Check-in</span>
+<button class="text-[11px] font-label font-bold text-secondary hover:opacity-80 transition-opacity tracking-wider uppercase flex items-center gap-0.5" type="button">
+      Skip to Summary
+      <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+<!-- Telemetry Stepper Progress -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-[11px] font-label font-semibold text-on-surface-variant">
+<span class="text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        Step 3 of 6
+      </span>
+<span class="uppercase tracking-widest text-[10px] text-primary">Allostatic Load Calibration</span>
+<span class="font-headline text-secondary">50%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full w-1/2 transition-all duration-500 ease-out shadow-sm"></div>
+</div>
+</div>
+<!-- Main Flashcard B07: Elevated Obsidian Frame -->
+<section class="bg-surface-container-low rounded-xl p-4 sm:p-5 flex flex-col space-y-5 shadow-xl relative overflow-hidden">
+<!-- Ambient Bio-Holo Glow -->
+<div class="absolute -top-16 -right-16 w-44 h-44 rounded-full bg-secondary/5 blur-3xl pointer-events-none"></div>
+<!-- Metadata Badges -->
+<div class="flex items-center justify-between z-10">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant font-label text-[10px] font-bold tracking-widest uppercase">
+<span class="material-symbols-outlined text-[13px] text-secondary">memory</span>
+        Flashcard B07
+      </div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-label text-[10px] font-extrabold uppercase tracking-wider shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary"></span>
+        Cortisol & Recovery
+      </div>
+</div>
+<!-- Header Copy -->
+<div class="space-y-1 z-10">
+<h2 class="font-headline font-extrabold text-xl text-on-surface leading-tight tracking-tight">
+        How heavy is your systemic and life stress level?
+      </h2>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">
+        Quantifies non-training physiological burden and current autonomic tone.
+      </p>
+</div>
+<!-- Live Telemetry Readout Box -->
+<div class="bg-surface-container rounded-xl p-4 flex flex-col items-center justify-center space-y-3 z-10 shadow-inner">
+<div class="flex items-baseline gap-2">
+<span class="font-headline font-black text-5xl tracking-tighter text-secondary leading-none" id="stressValueDisplay">2</span>
+<span class="font-headline font-bold text-xl text-on-surface-variant">/ 10</span>
+</div>
+<!-- Qualitative Status Pill -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/10 text-secondary text-xs font-label font-bold tracking-wide" id="stressStateBadge">
+<span class="material-symbols-outlined text-[15px]">spa</span>
+<span>Low Allostatic Stress • Parasympathetic Dominant</span>
+</div>
+<!-- Calibrated Interactive Scale Range -->
+<div class="w-full pt-3 pb-1 px-1">
+<div class="relative w-full flex items-center">
+<!-- Multi-tier Color Spectrum Track -->
+<div class="w-full h-3 rounded-full flex overflow-hidden shadow-inner">
+<div class="h-full w-[30%] bg-secondary"></div>
+<div class="h-full w-[30%] bg-[#F4C46B]"></div>
+<div class="h-full w-[40%] bg-[#F26B6B]"></div>
+</div>
+<!-- Custom Range Input Slider Overlaid -->
+<input aria-label="Adjust systemic stress score" class="absolute inset-0 w-full h-3 opacity-0 cursor-pointer z-20" id="stressRangeInput" max="10" min="1" type="range" value="2"/>
+<!-- Visual Target Needle Indicator -->
+<div class="absolute left-[11%] -top-1.5 w-6 h-6 rounded-full bg-on-secondary shadow-lg flex items-center justify-center pointer-events-none transition-transform duration-100 ease-out z-10 ring-2 ring-secondary" id="sliderThumbIndicator">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+</div>
+</div>
+<!-- Scale Axis Labels -->
+<div class="flex justify-between items-center text-[10px] font-label font-bold uppercase tracking-wider text-on-surface-variant pt-2">
+<span class="text-secondary">1 Calm</span>
+<span class="text-[#F4C46B]">4 Moderate</span>
+<span class="text-[#F2B541]">7 High</span>
+<span class="text-[#F26B6B]">10 Severe</span>
+</div>
+</div>
+</div>
+<!-- Tension Vectors Checklist Matrix -->
+<div class="space-y-2 z-10">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">
+          Identified Tension Vectors
+        </span>
+<span class="text-[10px] font-label text-secondary font-medium tracking-tight">Tap card to calibrate</span>
+</div>
+<div class="grid grid-cols-2 gap-2.5" id="vectorsGrid">
+<!-- Vector 1 -->
+<button class="vector-card text-left p-3 rounded-lg bg-surface-container hover:bg-surface-container-high transition-all flex flex-col justify-between space-y-2 group" data-active="true" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-label text-[9px] font-extrabold uppercase tracking-widest text-secondary">Cognitive</span>
+<span class="material-symbols-outlined text-[16px] text-secondary check-icon">check_circle</span>
+</div>
+<div>
+<div class="font-headline font-bold text-xs text-on-surface leading-tight">Work Load</div>
+<div class="font-body text-[11px] text-on-surface-variant status-text">Low Systemic</div>
+</div>
+</button>
+<!-- Vector 2 -->
+<button class="vector-card text-left p-3 rounded-lg bg-surface-container hover:bg-surface-container-high transition-all flex flex-col justify-between space-y-2 group" data-active="true" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-label text-[9px] font-extrabold uppercase tracking-widest text-secondary">Circadian</span>
+<span class="material-symbols-outlined text-[16px] text-secondary check-icon">check_circle</span>
+</div>
+<div>
+<div class="font-headline font-bold text-xs text-on-surface leading-tight">Sleep Deficit</div>
+<div class="font-body text-[11px] text-on-surface-variant status-text">None / Rested</div>
+</div>
+</button>
+<!-- Vector 3 -->
+<button class="vector-card text-left p-3 rounded-lg bg-surface-container hover:bg-surface-container-high transition-all flex flex-col justify-between space-y-2 group" data-active="false" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-label text-[9px] font-extrabold uppercase tracking-widest text-on-surface-variant">Autonomic</span>
+<span class="material-symbols-outlined text-[16px] text-outline check-icon">radio_button_unchecked</span>
+</div>
+<div>
+<div class="font-headline font-bold text-xs text-on-surface leading-tight">Emotional Tone</div>
+<div class="font-body text-[11px] text-on-surface-variant status-text">Nominal State</div>
+</div>
+</button>
+<!-- Vector 4 -->
+<button class="vector-card text-left p-3 rounded-lg bg-surface-container hover:bg-surface-container-high transition-all flex flex-col justify-between space-y-2 group" data-active="false" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-label text-[9px] font-extrabold uppercase tracking-widest text-on-surface-variant">Somatic</span>
+<span class="material-symbols-outlined text-[16px] text-outline check-icon">radio_button_unchecked</span>
+</div>
+<div>
+<div class="font-headline font-bold text-xs text-on-surface leading-tight">Physical Fatigue</div>
+<div class="font-body text-[11px] text-on-surface-variant status-text">Mild Sensation</div>
+</div>
+</button>
+</div>
+</div>
+<!-- Autonomic Protocol Clearance Card -->
+<div class="bg-surface-container-high rounded-lg p-3.5 flex items-start gap-3 z-10 shadow-sm">
+<div class="w-8 h-8 rounded-full bg-secondary/15 flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">verified_user</span>
+</div>
+<div class="space-y-1">
+<div class="font-headline font-bold text-xs tracking-wide uppercase text-secondary">
+          Autonomic Protocol Clearance
+        </div>
+<p class="font-body text-[11px] text-on-surface-variant leading-relaxed">
+          Low systemic stress permits nominal training volume with standard rest intervals (90s–120s) and peak CNS output.
+        </p>
+</div>
+</div>
+<!-- Visual Biometric Signature Telemetry Strip -->
+<div class="flex items-center justify-between pt-1 text-[10px] font-label text-on-surface-variant">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">lock</span>
+        Bio-encrypted Telemetry
+      </span>
+<span class="uppercase tracking-wider font-semibold text-primary">Ready for Pain Matrix</span>
+</div>
+</section>
+<!-- Navigation Action Cluster -->
+<div class="grid grid-cols-5 gap-3 pt-2">
+<button class="col-span-2 h-12 rounded-xl bg-surface-container text-on-surface font-headline font-bold text-xs tracking-wide flex items-center justify-center gap-1.5 hover:bg-surface-container-high transition-transform active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+      Previous
+    </button>
+<button class="col-span-3 h-12 rounded-xl bg-secondary text-on-secondary font-headline font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-secondary/20 hover:opacity-95 transition-all active:scale-[0.98]" type="button">
+<span>Confirm & Next</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<script>
+  (function initStressFlashcard() {
+    const slider = document.getElementById('stressRangeInput');
+    const valueDisplay = document.getElementById('stressValueDisplay');
+    const thumbIndicator = document.getElementById('sliderThumbIndicator');
+    const statusBadge = document.getElementById('stressStateBadge');
+
+    if (!slider || !valueDisplay || !thumbIndicator || !statusBadge) return;
+
+    const states = [
+      { max: 3, label: 'Low Allostatic Stress • Parasympathetic Dominant', icon: 'spa', colorClass: 'text-secondary', bgClass: 'bg-secondary/10' },
+      { max: 6, label: 'Moderate Load • Balanced Autonomic Tone', icon: 'monitoring', colorClass: 'text-[#F4C46B]', bgClass: 'bg-[#F4C46B]/15' },
+      { max: 8, label: 'Elevated Sympathetic Tone • Manage CNS Fatigue', icon: 'warning', colorClass: 'text-[#F2B541]', bgClass: 'bg-[#F2B541]/15' },
+      { max: 10, label: 'Severe Stress Load • Deload / Downregulation Needed', icon: 'emergency', colorClass: 'text-[#F26B6B]', bgClass: 'bg-[#F26B6B]/20' }
+    ];
+
+    function updateSlider(val) {
+      valueDisplay.textContent = val;
+      const min = parseInt(slider.min, 10);
+      const max = parseInt(slider.max, 10);
+      const percent = ((val - min) / (max - min)) * 92 + 4; // keep thumb nicely in bounds
+      thumbIndicator.style.left = percent + '%';
+
+      const matchedState = states.find(s => val <= s.max) || states[states.length - 1];
+      statusBadge.className = 'inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-label font-bold tracking-wide transition-colors ' + matchedState.bgClass + ' ' + matchedState.colorClass;
+      statusBadge.innerHTML = '<span class="material-symbols-outlined text-[15px]">' + matchedState.icon + '</span><span>' + matchedState.label + '</span>';
+    }
+
+    slider.addEventListener('input', function(e) {
+      updateSlider(parseInt(e.target.value, 10));
+    });
+
+    // Vector selection interactions
+    const vectorCards = document.querySelectorAll('.vector-card');
+    vectorCards.forEach(card => {
+      card.addEventListener('click', function() {
+        const isActive = this.getAttribute('data-active') === 'true';
+        const newState = !isActive;
+        this.setAttribute('data-active', newState ? 'true' : 'false');
+        
+        const icon = this.querySelector('.check-icon');
+        const eyebrow = this.querySelector('span:first-child');
+        
+        if (newState) {
+          icon.textContent = 'check_circle';
+          icon.className = 'material-symbols-outlined text-[16px] text-secondary check-icon';
+          eyebrow.className = 'font-label text-[9px] font-extrabold uppercase tracking-widest text-secondary';
+        } else {
+          icon.textContent = 'radio_button_unchecked';
+          icon.className = 'material-symbols-outlined text-[16px] text-outline check-icon';
+          eyebrow.className = 'font-label text-[9px] font-extrabold uppercase tracking-widest text-on-surface-variant';
+        }
+      });
+    });
+
+    updateSlider(2);
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.3)]" data-active-classes="text-secondary font-bold"><div class="h-16 px-2 flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 transition-colors group text-secondary font-bold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="live-workout" href="#"><span class="material-symbols-outlined text-[22px]">fitness_center</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Workout</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="planner" href="#"><span class="material-symbols-outlined text-[22px]">calendar_month</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Planner</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="analytics" href="#"><span class="material-symbols-outlined text-[22px]">insights</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Analyze</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="system-hub" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">More</span></a></div></nav></body></html>

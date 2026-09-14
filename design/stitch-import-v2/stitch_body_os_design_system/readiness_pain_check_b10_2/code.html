@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&family=Manrope:wght@200..800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Manrope:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#324f00", "secondary-fixed-dim": "#91db04", "secondary-container": "#8ed800", "surface": "#0d141e", "surface-variant": "#2e3541", "on-primary-container": "#7d7d83", "outline-variant": "#46464b", "on-primary-fixed": "#1a1b20", "primary-fixed": "#e3e1e9", "on-secondary-fixed": "#112000", "on-secondary": "#213600", "inverse-surface": "#dce3f2", "background": "#0d141e", "primary-container": "#111217", "error-container": "#93000a", "surface-container-low": "#151c27", "on-primary-fixed-variant": "#46464c", "surface-container-high": "#232a35", "tertiary-fixed-dim": "#9dd841", "tertiary-container": "#0a1500", "surface-tint": "#c7c6cd", "secondary": "#a8f530", "surface-container-highest": "#2e3541", "secondary-fixed": "#abf834", "tertiary-fixed": "#b8f55b", "inverse-on-surface": "#2a313c", "on-secondary-container": "#395a00", "primary": "#c7c6cd", "outline": "#919095", "on-error": "#690005", "primary-fixed-dim": "#c7c6cd", "surface-container": "#19202b", "on-surface-variant": "#c7c6cb", "on-tertiary-fixed": "#121f00", "inverse-primary": "#5e5e64", "on-tertiary": "#213600", "on-secondary-fixed-variant": "#314f00", "surface-container-lowest": "#070e19", "on-primary": "#2f3036", "tertiary": "#9dd841", "on-tertiary-container": "#5c8a00", "on-error-container": "#ffdad6", "surface-bright": "#333a45", "on-background": "#dce3f2", "on-surface": "#dce3f2", "error": "#ffb4ab", "surface-dim": "#0d141e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: {}, fontFamily: { "headline": ["Manrope"], "display": ["Manrope"], "body": ["Hanken Grotesk"], "label": ["Hanken Grotesk"] }, fontSize: {} } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-3"><img alt="Body OS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeWKOx9KwVkdFVhN0ua2jD2UQKolfaWQGFPO9o07-k_cQsBvghBykEEqyYvx3xw0mmgB4rka1l44rItIo5XJ-TWgyIOme3wfvu-ShqzOHKODDPNBO_OKbUOiw8RuIyDCtJFE4IfKEdckU8NsPpPDbZezQA11xNrKavHW6rBbAbn2m273QAEy29yHSQWow1RANWO7cHeyrcvOvVmjk1A7FOtr3Aj8z6Zle9sFNnlU9RzNRWkxqQjvEaIA"/><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline font-extrabold text-sm tracking-tight text-on-surface uppercase">Body OS</span><span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-secondary text-on-secondary">OS 2.4</span></div><h1 class="text-xs font-headline font-semibold text-on-surface-variant truncate max-w-[140px]">Dashboard</h1></div></div><div class="flex items-center gap-3"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors focus:outline-none"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-28"><div class="flex flex-col w-full px-4 pt-2 pb-12 space-y-4">
+<div class="flex items-center justify-between">
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-secondary transition-colors focus:outline-none" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+<span class="text-xs font-headline font-bold uppercase tracking-wider">Readiness Check-in</span>
+</button>
+<button class="text-xs font-label font-bold text-secondary hover:underline transition-all flex items-center gap-0.5" type="button">
+<span>Skip to Summary</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded-xl p-3.5 space-y-2">
+<div class="flex items-center justify-between text-[11px] font-label font-bold uppercase tracking-wider">
+<span class="text-on-surface flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        Step 4 of 6 • Kinetic Integrity
+      </span>
+<span class="text-secondary font-headline">66%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full transition-all duration-500" style="width: 66%;"></div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-4 sm:p-5 space-y-5">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-label font-extrabold uppercase tracking-widest bg-surface-container-high text-on-surface-variant">
+        FLASHCARD B10
+      </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-secondary/10 text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+        Injury Prevention Protocol
+      </span>
+</div>
+<div class="space-y-1.5">
+<h2 class="text-xl sm:text-2xl font-headline font-extrabold text-on-surface leading-tight tracking-tight">
+        Are you experiencing any acute pain or joint dysfunction?
+      </h2>
+<p class="text-xs sm:text-sm font-body text-on-surface-variant leading-relaxed">
+        Explicit confirmation required before auto-routing today's loading thresholds and kinetic pattern constraints.
+      </p>
+</div>
+<div class="grid grid-cols-1 gap-3" id="pain-options-group">
+<div class="cursor-pointer bg-surface-container-high rounded-xl p-4 transition-all duration-200 shadow-md relative overflow-hidden" id="option-no-pain" onclick="selectPainOption('no-pain')" style="box-shadow: inset 0 0 0 2px #a8f530;">
+<div class="absolute -right-8 -top-8 w-24 h-24 bg-secondary/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 mt-0.5 shadow-sm" id="check-icon-container">
+<span class="material-symbols-outlined text-[18px] font-black">check</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline font-bold text-sm sm:text-base text-on-surface">No Pain — Full Structural Readiness</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-label font-extrabold uppercase tracking-wider bg-secondary text-on-secondary">
+                  OPTIMAL
+                </span>
+</div>
+<p class="text-xs font-body text-on-surface-variant">
+                Joints and tendons clear for loaded multi-joint resistance training.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<div class="cursor-pointer bg-surface-container rounded-xl p-4 transition-all duration-200 hover:bg-surface-container-high opacity-80 relative overflow-hidden" id="option-pain" onclick="selectPainOption('pain')">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest text-outline flex items-center justify-center shrink-0 mt-0.5" id="warn-icon-container">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline font-bold text-sm sm:text-base text-on-surface">Yes — Report Pain / Discomfort</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-label font-extrabold uppercase tracking-wider bg-surface-container-highest text-on-surface-variant">
+                  ATTENTION
+                </span>
+</div>
+<p class="text-xs font-body text-on-surface-variant">
+                Routes directly to anatomical pain locator and exercise substitute filter.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-4 space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label font-bold uppercase tracking-wider text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+          Anatomic Clearance Vectors
+        </span>
+<span class="text-[11px] font-label font-extrabold text-secondary uppercase tracking-wider">
+          3 of 3 Verified
+        </span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<div class="bg-surface-container-low rounded-lg p-2.5 flex flex-col justify-between">
+<span class="text-[10px] font-label font-medium text-on-surface-variant truncate">Lumbar Spine</span>
+<div class="flex items-center gap-1 mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="text-xs font-headline font-extrabold text-secondary">Nominal</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2.5 flex flex-col justify-between">
+<span class="text-[10px] font-label font-medium text-on-surface-variant truncate">Patellar Tendon</span>
+<div class="flex items-center gap-1 mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="text-xs font-headline font-extrabold text-secondary">Clean</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2.5 flex flex-col justify-between">
+<span class="text-[10px] font-label font-medium text-on-surface-variant truncate">Glenohumeral</span>
+<div class="flex items-center gap-1 mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="text-xs font-headline font-extrabold text-secondary">Clear</span>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-2 bg-surface-container-low/70 rounded-lg p-2.5">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">info</span>
+<p class="text-[11px] font-body text-on-surface leading-snug">
+          Biomechanical advisory: Movement patterns will follow standard planned loading today without volume caps.
+        </p>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-4 space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label font-bold uppercase tracking-wider text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">hub</span>
+          Telemetry Mesh Synchronized
+        </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-label font-bold uppercase tracking-widest bg-tertiary-container text-tertiary">
+          LIVE V4.0
+        </span>
+</div>
+<div class="relative bg-surface-container-low rounded-lg p-3 overflow-hidden flex items-center gap-3.5">
+<div class="w-16 h-20 rounded bg-surface-container-high shrink-0 relative flex items-center justify-center">
+<svg class="w-12 h-16 text-secondary/80" fill="none" viewbox="0 0 60 80" xmlns="http://www.w3.org/2000/svg">
+<circle cx="30" cy="12" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+<line stroke="currentColor" stroke-width="1.5" x1="30" x2="30" y1="18" y2="44"></line>
+<line stroke="currentColor" stroke-width="1.5" x1="16" x2="44" y1="28" y2="28"></line>
+<line stroke="currentColor" stroke-width="1.5" x1="16" x2="10" y1="28" y2="46"></line>
+<line stroke="currentColor" stroke-width="1.5" x1="44" x2="50" y1="28" y2="46"></line>
+<line stroke="currentColor" stroke-width="1.5" x1="30" x2="20" y1="44" y2="70"></line>
+<line stroke="currentColor" stroke-width="1.5" x1="30" x2="40" y1="44" y2="70"></line>
+<circle cx="30" cy="32" fill="#a8f530" r="2"></circle>
+<circle cx="20" cy="56" fill="#a8f530" r="2"></circle>
+<circle cx="40" cy="56" fill="#a8f530" r="2"></circle>
+<circle cx="20" cy="28" fill="#a8f530" r="2"></circle>
+<circle cx="40" cy="28" fill="#a8f530" r="2"></circle>
+</svg>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent opacity-30 pointer-events-none"></div>
+</div>
+<div class="space-y-1.5 min-w-0">
+<div class="flex items-center gap-1.5 text-xs font-headline font-bold text-on-surface truncate">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>
+            Zero Micro-Impingements Flagged
+          </div>
+<p class="text-[11px] font-body text-on-surface-variant leading-tight">
+            Previous session (Hypertrophy A) fully absorbed. Rest interval delta: +4.2 hrs over baseline.
+          </p>
+<div class="flex items-center gap-2 pt-0.5">
+<span class="text-[10px] font-label font-bold text-secondary uppercase tracking-wider">CNS Strain: LOW</span>
+<span class="text-[10px] font-label text-outline">•</span>
+<span class="text-[10px] font-label font-bold text-secondary uppercase tracking-wider">Mobility: 98%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-[11px] font-label font-bold uppercase tracking-wider text-on-surface-variant" for="warmup-notes">
+        Movement or Warmup Observations
+        <span class="text-[10px] font-medium text-outline lowercase">(optional)</span>
+</label>
+<div class="relative">
+<textarea class="w-full bg-surface-container-high rounded-lg p-3 text-xs font-body text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-highest transition-colors resize-none" id="warmup-notes" placeholder="Optional notes on warmup or movement concerns..." rows="2"></textarea>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-3 pt-2">
+<button class="col-span-4 h-12 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-container-highest font-headline font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1 transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span>Back</span>
+</button>
+<button class="col-span-8 h-12 rounded-xl bg-secondary text-on-secondary hover:bg-secondary-container font-headline font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-lg transition-all active:scale-[0.98]" type="button">
+<span>Confirm & Review Readiness</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<script>
+  function selectPainOption(choice) {
+    const optNoPain = document.getElementById('option-no-pain');
+    const optPain = document.getElementById('option-pain');
+    const checkContainer = document.getElementById('check-icon-container');
+    const warnContainer = document.getElementById('warn-icon-container');
+
+    if (choice === 'no-pain') {
+      optNoPain.style.boxShadow = 'inset 0 0 0 2px #a8f530';
+      optNoPain.className = 'cursor-pointer bg-surface-container-high rounded-xl p-4 transition-all duration-200 shadow-md relative overflow-hidden';
+      optPain.style.boxShadow = 'none';
+      optPain.className = 'cursor-pointer bg-surface-container rounded-xl p-4 transition-all duration-200 hover:bg-surface-container-high opacity-80 relative overflow-hidden';
+
+      checkContainer.className = 'w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 mt-0.5 shadow-sm';
+      warnContainer.className = 'w-7 h-7 rounded-full bg-surface-container-highest text-outline flex items-center justify-center shrink-0 mt-0.5';
+    } else {
+      optPain.style.boxShadow = 'inset 0 0 0 2px #ffb4ab';
+      optPain.className = 'cursor-pointer bg-surface-container-high rounded-xl p-4 transition-all duration-200 shadow-md relative overflow-hidden';
+      optNoPain.style.boxShadow = 'none';
+      optNoPain.className = 'cursor-pointer bg-surface-container rounded-xl p-4 transition-all duration-200 hover:bg-surface-container-high opacity-80 relative overflow-hidden';
+
+      warnContainer.className = 'w-7 h-7 rounded-full bg-error text-on-error flex items-center justify-center shrink-0 mt-0.5 shadow-sm';
+      checkContainer.className = 'w-7 h-7 rounded-full bg-surface-container-highest text-outline flex items-center justify-center shrink-0 mt-0.5';
+    }
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.3)]" data-active-classes="text-secondary font-bold"><div class="h-16 px-2 flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 transition-colors group text-secondary font-bold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="live-workout" href="#"><span class="material-symbols-outlined text-[22px]">fitness_center</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Workout</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="planner" href="#"><span class="material-symbols-outlined text-[22px]">calendar_month</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Planner</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="analytics" href="#"><span class="material-symbols-outlined text-[22px]">insights</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Analyze</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="system-hub" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">More</span></a></div></nav></body></html>

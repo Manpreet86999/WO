@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&family=Manrope:wght@200..800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Manrope:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#324f00", "secondary-fixed-dim": "#91db04", "secondary-container": "#8ed800", "surface": "#0d141e", "surface-variant": "#2e3541", "on-primary-container": "#7d7d83", "outline-variant": "#46464b", "on-primary-fixed": "#1a1b20", "primary-fixed": "#e3e1e9", "on-secondary-fixed": "#112000", "on-secondary": "#213600", "inverse-surface": "#dce3f2", "background": "#0d141e", "primary-container": "#111217", "error-container": "#93000a", "surface-container-low": "#151c27", "on-primary-fixed-variant": "#46464c", "surface-container-high": "#232a35", "tertiary-fixed-dim": "#9dd841", "tertiary-container": "#0a1500", "surface-tint": "#c7c6cd", "secondary": "#a8f530", "surface-container-highest": "#2e3541", "secondary-fixed": "#abf834", "tertiary-fixed": "#b8f55b", "inverse-on-surface": "#2a313c", "on-secondary-container": "#395a00", "primary": "#c7c6cd", "outline": "#919095", "on-error": "#690005", "primary-fixed-dim": "#c7c6cd", "surface-container": "#19202b", "on-surface-variant": "#c7c6cb", "on-tertiary-fixed": "#121f00", "inverse-primary": "#5e5e64", "on-tertiary": "#213600", "on-secondary-fixed-variant": "#314f00", "surface-container-lowest": "#070e19", "on-primary": "#2f3036", "tertiary": "#9dd841", "on-tertiary-container": "#5c8a00", "on-error-container": "#ffdad6", "surface-bright": "#333a45", "on-background": "#dce3f2", "on-surface": "#dce3f2", "error": "#ffb4ab", "surface-dim": "#0d141e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: {}, fontFamily: { "headline": ["Manrope"], "display": ["Manrope"], "body": ["Hanken Grotesk"], "label": ["Hanken Grotesk"] }, fontSize: {} } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-3"><img alt="Body OS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeWKOx9KwVkdFVhN0ua2jD2UQKolfaWQGFPO9o07-k_cQsBvghBykEEqyYvx3xw0mmgB4rka1l44rItIo5XJ-TWgyIOme3wfvu-ShqzOHKODDPNBO_OKbUOiw8RuIyDCtJFE4IfKEdckU8NsPpPDbZezQA11xNrKavHW6rBbAbn2m273QAEy29yHSQWow1RANWO7cHeyrcvOvVmjk1A7FOtr3Aj8z6Zle9sFNnlU9RzNRWkxqQjvEaIA"/><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline font-extrabold text-sm tracking-tight text-on-surface uppercase">Body OS</span><span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-secondary text-on-secondary">OS 2.4</span></div><h1 class="text-xs font-headline font-semibold text-on-surface-variant truncate max-w-[140px]">Dashboard</h1></div></div><div class="flex items-center gap-3"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors focus:outline-none"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-28"><div class="flex flex-col w-full px-4 space-y-6">
+<!-- Header Block -->
+<section class="flex flex-col pt-1">
+<div class="flex items-center justify-between mb-1">
+<span class="text-[11px] font-label font-bold uppercase tracking-[0.12em] text-secondary">Analytics & Biometric Repositories</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-label font-semibold bg-surface-container-high text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+        SYNCHRONIZED
+      </span>
+</div>
+<div class="flex items-baseline justify-between">
+<h2 class="font-headline font-extrabold text-2xl tracking-tight text-on-surface">Progress Overview</h2>
+<span class="text-xs font-label text-on-surface-variant font-medium">Cycle 14 • Week 3</span>
+</div>
+<!-- Date Range Selector Track -->
+<div class="flex items-center gap-1.5 p-1 mt-4 rounded-full bg-surface-container-lowest overflow-x-auto" id="dateFilter">
+<button class="px-3.5 py-1.5 rounded-full text-xs font-label font-semibold text-on-surface-variant hover:text-on-surface transition-all focus:outline-none">7D</button>
+<button class="px-3.5 py-1.5 rounded-full text-xs font-label font-bold bg-surface-container-high text-secondary shadow-sm transition-all focus:outline-none flex items-center gap-1">
+        30D
+        <span class="w-1 h-1 rounded-full bg-secondary"></span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full text-xs font-label font-semibold text-on-surface-variant hover:text-on-surface transition-all focus:outline-none">90D</button>
+<button class="px-3.5 py-1.5 rounded-full text-xs font-label font-semibold text-on-surface-variant hover:text-on-surface transition-all focus:outline-none">1Y</button>
+<button class="px-3.5 py-1.5 rounded-full text-xs font-label font-semibold text-on-surface-variant hover:text-on-surface transition-all focus:outline-none">All time</button>
+</div>
+</section>
+<!-- Metric KPI Carousel / Overflow Row -->
+<section class="flex flex-col space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label font-bold uppercase tracking-wider text-on-surface-variant">Core Telemetry</span>
+<span class="text-[11px] font-label text-on-surface-variant/70">Swipe for telemetry</span>
+</div>
+<div class="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-none snap-x snap-mandatory">
+<!-- KPI 1: Volume -->
+<div class="min-w-[170px] flex-shrink-0 snap-start bg-surface-container p-4 rounded-xl flex flex-col justify-between shadow-md relative overflow-hidden">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="text-[11px] font-label font-bold uppercase tracking-wider">Total Volume</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">fitness_center</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline font-extrabold text-2xl text-on-surface tracking-tight">74,200</span>
+<span class="font-label text-xs font-semibold text-on-surface-variant">kg</span>
+</div>
+<div class="flex items-center gap-1 mt-1.5 text-[11px] font-label font-semibold text-secondary">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+8.4%</span>
+<span class="text-on-surface-variant font-normal">vs prev</span>
+</div>
+</div>
+</div>
+<!-- KPI 2: Sessions -->
+<div class="min-w-[170px] flex-shrink-0 snap-start bg-surface-container p-4 rounded-xl flex flex-col justify-between shadow-md">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="text-[11px] font-label font-bold uppercase tracking-wider">Sessions</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary">check_circle</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline font-extrabold text-2xl text-on-surface tracking-tight">18</span>
+<span class="font-label text-xs font-semibold text-on-surface-variant">Done</span>
+</div>
+<div class="flex items-center gap-1 mt-1.5 text-[11px] font-label font-semibold text-tertiary">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>94.7%</span>
+<span class="text-on-surface-variant font-normal">adherence</span>
+</div>
+</div>
+</div>
+<!-- KPI 3: Sets Logged -->
+<div class="min-w-[170px] flex-shrink-0 snap-start bg-surface-container p-4 rounded-xl flex flex-col justify-between shadow-md">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="text-[11px] font-label font-bold uppercase tracking-wider">Sets Logged</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">format_list_numbered</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline font-extrabold text-2xl text-on-surface tracking-tight">104</span>
+<span class="font-label text-xs font-semibold text-on-surface-variant">Sets</span>
+</div>
+<div class="flex items-center gap-1 mt-1.5 text-[11px] font-label text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-medium text-[11px]">Heavy Working Sets</span>
+</div>
+</div>
+</div>
+<!-- KPI 4: Readiness -->
+<div class="min-w-[170px] flex-shrink-0 snap-start bg-surface-container p-4 rounded-xl flex flex-col justify-between shadow-md">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="text-[11px] font-label font-bold uppercase tracking-wider">Readiness Avg</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">monitor_heart</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline font-extrabold text-2xl text-on-surface tracking-tight">81.2</span>
+<span class="font-label text-xs font-semibold text-on-surface-variant">/100</span>
+</div>
+<div class="flex items-center gap-1 mt-1.5 text-[11px] font-label font-semibold text-secondary">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+<span>Optimal State</span>
+</div>
+</div>
+</div>
+<!-- KPI 5: New PRs -->
+<div class="min-w-[170px] flex-shrink-0 snap-start bg-surface-container p-4 rounded-xl flex flex-col justify-between shadow-md">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="text-[11px] font-label font-bold uppercase tracking-wider">New PRs</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">emoji_events</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline font-extrabold text-2xl text-secondary tracking-tight">6</span>
+<span class="font-label text-xs font-semibold text-on-surface-variant">Records</span>
+</div>
+<div class="flex items-center gap-1 mt-1.5 text-[11px] font-label font-semibold text-tertiary">
+<span class="material-symbols-outlined text-[14px]">military_tech</span>
+<span>All-time peaks</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- High-Level Visual telemetry: Visual Richness (Cards with detailed visuals) -->
+<section class="space-y-4">
+<!-- Chart 1: Volume & Tonnage Trend -->
+<div class="p-4 rounded-xl bg-surface-container shadow-md flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-[11px] font-label font-bold uppercase tracking-[0.12em] text-on-surface-variant">Volume & Tonnage Curve</span>
+<h3 class="font-headline font-bold text-base text-on-surface">30-Day Workload Distribution</h3>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-label font-bold bg-surface-container-high text-secondary">
+            Peak: 19,400 kg
+          </span>
+</div>
+</div>
+<!-- Visual Bar Telemetry -->
+<div class="h-32 w-full pt-4 flex items-end justify-between gap-1.5 relative">
+<!-- Gridlines -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
+<div class="w-full h-px bg-on-surface-variant"></div>
+<div class="w-full h-px bg-on-surface-variant"></div>
+<div class="w-full h-px bg-on-surface-variant"></div>
+</div>
+<!-- Weekly Bars Undulation -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end z-10">
+<div class="w-full max-w-[18px] bg-secondary/40 rounded-t-sm transition-all" style="height: 55%;"></div>
+<span class="text-[9px] font-label text-on-surface-variant font-medium">W1</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end z-10">
+<div class="w-full max-w-[18px] bg-secondary/60 rounded-t-sm transition-all" style="height: 72%;"></div>
+<span class="text-[9px] font-label text-on-surface-variant font-medium">W2</span>
+</div>
+<!-- Deload dip -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end z-10 relative">
+<span class="absolute -top-3 text-[8px] font-label font-bold text-on-surface-variant bg-surface-container-high px-1 rounded-sm">DELOAD</span>
+<div class="w-full max-w-[18px] bg-outline rounded-t-sm transition-all" style="height: 34%;"></div>
+<span class="text-[9px] font-label text-on-surface-variant font-medium">W3</span>
+</div>
+<!-- Peak Overload -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end z-10 relative">
+<span class="absolute -top-3 text-[8px] font-label font-bold text-on-secondary bg-secondary px-1 rounded-sm">PEAK</span>
+<div class="w-full max-w-[18px] bg-secondary rounded-t-sm transition-all shadow-[0_0_8px_rgba(168,245,48,0.4)]" style="height: 94%;"></div>
+<span class="text-[9px] font-label text-secondary font-bold">W4</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end z-10">
+<div class="w-full max-w-[18px] bg-secondary/80 rounded-t-sm transition-all" style="height: 82%;"></div>
+<span class="text-[9px] font-label text-on-surface-variant font-medium">W5</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-surface-container-high text-[11px] font-label text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          Accumulated Tonnage
+        </span>
+<span class="text-on-surface font-semibold">Mean: 14,840 kg / wk</span>
+</div>
+</div>
+<!-- Chart 2: Estimated 1RM Strength Velocity Curve -->
+<div class="p-4 rounded-xl bg-surface-container shadow-md flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-[11px] font-label font-bold uppercase tracking-[0.12em] text-on-surface-variant">Kinetic Progression</span>
+<h3 class="font-headline font-bold text-base text-on-surface">Estimated 1RM Trajectory</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold bg-surface-container-high text-secondary">
+          +4.2 kg Compound Avg
+        </span>
+</div>
+<!-- Vector SVG Sparkline Curve -->
+<div class="w-full h-24 relative flex items-center justify-center">
+<svg class="w-full h-full overflow-visible" fill="none" viewbox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+<!-- Baseline Guides -->
+<line stroke="#2e3541" stroke-dasharray="3 3" x1="0" x2="300" y1="75" y2="75"></line>
+<line stroke="#2e3541" stroke-dasharray="3 3" x1="0" x2="300" y1="40" y2="40"></line>
+<line stroke="#2e3541" stroke-dasharray="3 3" x1="0" x2="300" y1="10" y2="10"></line>
+<!-- Gradient Area -->
+<defs>
+<lineargradient id="curveGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#a8f530" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#a8f530" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,65 C40,62 70,55 100,50 C140,43 170,47 210,30 C245,16 270,12 300,8 L300,80 L0,80 Z" fill="url(#curveGradient)"></path>
+<!-- Trend Path -->
+<path d="M0,65 C40,62 70,55 100,50 C140,43 170,47 210,30 C245,16 270,12 300,8" stroke="#a8f530" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Key PR Points -->
+<circle cx="100" cy="50" fill="#19202b" r="3.5" stroke="#a8f530" stroke-width="2"></circle>
+<circle cx="210" cy="30" fill="#19202b" r="3.5" stroke="#a8f530" stroke-width="2"></circle>
+<circle cx="300" cy="8" fill="#a8f530" r="4.5" stroke="#0d141e" stroke-width="2"></circle>
+</svg>
+</div>
+<!-- Compound Micro Breakdown -->
+<div class="grid grid-cols-3 gap-2 pt-1 text-center">
+<div class="p-2 rounded-lg bg-surface-container-high flex flex-col">
+<span class="text-[10px] font-label text-on-surface-variant uppercase font-medium">Squat</span>
+<span class="font-headline font-bold text-sm text-on-surface">142.5 kg</span>
+<span class="text-[10px] font-label font-bold text-secondary">+5.0 kg</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-high flex flex-col">
+<span class="text-[10px] font-label text-on-surface-variant uppercase font-medium">Bench</span>
+<span class="font-headline font-bold text-sm text-on-surface">102.5 kg</span>
+<span class="text-[10px] font-label font-bold text-secondary">+2.5 kg</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-high flex flex-col">
+<span class="text-[10px] font-label text-on-surface-variant uppercase font-medium">Deadlift</span>
+<span class="font-headline font-bold text-sm text-on-surface">185.0 kg</span>
+<span class="text-[10px] font-label font-bold text-secondary">+7.5 kg</span>
+</div>
+</div>
+</div>
+<!-- Telemetry Card 3: Deload & Fatigue Forecast -->
+<div class="p-4 rounded-xl bg-surface-container shadow-md relative overflow-hidden flex flex-col space-y-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_8px_#a8f530]"></span>
+<span class="text-[11px] font-label font-bold uppercase tracking-wider text-on-surface">Deload & Fatigue Forecast</span>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold bg-secondary/10 text-secondary uppercase tracking-wider">
+          System Nominal
+        </span>
+</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+        Nominal Recovery Margin — System clear for progressive overload. No scheduled deload required this microcycle. Current acute-to-chronic workload ratio sits balanced at <span class="text-on-surface font-semibold">1.08</span>.
+      </p>
+<div class="flex items-center gap-3 pt-1 text-xs font-label">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">battery_charging_full</span>
+<span>Neuro Margin: 89%</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">speed</span>
+<span>Fatigue: Low</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Module Repositories (Quick Navigation Hub) -->
+<section class="space-y-3">
+<div class="flex items-center justify-between px-1">
+<span class="text-[11px] font-label font-bold uppercase tracking-[0.12em] text-on-surface-variant">Detailed Repositories & Matrix</span>
+<span class="text-xs font-label text-secondary font-medium">6 Modules</span>
+</div>
+<div class="space-y-2">
+<!-- Item 1: PR Matrix -->
+<a class="group p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all flex items-center justify-between shadow-sm active:scale-[0.99]" href="#">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px]">military_tech</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline font-bold text-sm text-on-surface truncate">Personal Records & e1RM Matrix</span>
+<span class="font-label text-xs text-on-surface-variant truncate">Module E11 • Peak loads & velocity curves</span>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold bg-secondary text-on-secondary shadow-sm">6 new PRs</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] group-hover:text-secondary group-hover:translate-x-0.5 transition-all">chevron_right</span>
+</div>
+</a>
+<!-- Item 2: Session Archives -->
+<a class="group p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all flex items-center justify-between shadow-sm active:scale-[0.99]" href="#">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
+<span class="material-symbols-outlined text-[20px]">history_edu</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline font-bold text-sm text-on-surface truncate">Session Record Archives</span>
+<span class="font-label text-xs text-on-surface-variant truncate">Modules E02/E03 • Chronological workout telemetry</span>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-medium bg-surface-container-high text-on-surface">42 total</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] group-hover:text-secondary group-hover:translate-x-0.5 transition-all">chevron_right</span>
+</div>
+</a>
+<!-- Item 3: Body Composition -->
+<a class="group p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all flex items-center justify-between shadow-sm active:scale-[0.99]" href="#">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px]">accessibility_new</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline font-bold text-sm text-on-surface truncate">Body Composition & Metrics</span>
+<span class="font-label text-xs text-on-surface-variant truncate">Modules E20/E21 • Dual-scale biometric impedance</span>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-semibold bg-surface-container-high text-secondary">58.0 kg, 24% BF</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] group-hover:text-secondary group-hover:translate-x-0.5 transition-all">chevron_right</span>
+</div>
+</a>
+<!-- Item 4: Active Targets & Goals -->
+<a class="group p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all flex items-center justify-between shadow-sm active:scale-[0.99]" href="#">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px]">flag</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline font-bold text-sm text-on-surface truncate">Active Targets & Goals</span>
+<span class="font-label text-xs text-on-surface-variant truncate">Modules E16/E18 • Hypertrophy & strength pacing</span>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-semibold bg-surface-container-high text-on-surface">3 active, 1 due soon</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] group-hover:text-secondary group-hover:translate-x-0.5 transition-all">chevron_right</span>
+</div>
+</a>
+<!-- Item 5: Cardio & Conditioning -->
+<a class="group p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all flex items-center justify-between shadow-sm active:scale-[0.99]" href="#">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px]">directions_run</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline font-bold text-sm text-on-surface truncate">Cardio & Conditioning Log</span>
+<span class="font-label text-xs text-on-surface-variant truncate">Module E06 • Zone 2 / VO2 Max tracking</span>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-medium bg-surface-container-high text-on-surface">12 sessions</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] group-hover:text-secondary group-hover:translate-x-0.5 transition-all">chevron_right</span>
+</div>
+</a>
+<!-- Item 6: Pain & Joint History -->
+<a class="group p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all flex items-center justify-between shadow-sm active:scale-[0.99]" href="#">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
+<span class="material-symbols-outlined text-[20px]">healing</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline font-bold text-sm text-on-surface truncate">Kinetic Pain & Joint History</span>
+<span class="font-label text-xs text-on-surface-variant truncate">Module E22 • Injury prevention & tissue load</span>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-semibold bg-surface-container-high text-tertiary">0 active flags</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] group-hover:text-secondary group-hover:translate-x-0.5 transition-all">chevron_right</span>
+</div>
+</a>
+</div>
+</section>
+<!-- Primary Action Trigger -->
+<section class="pt-2 pb-6">
+<button class="w-full h-13 py-3.5 px-4 rounded-xl bg-secondary text-on-secondary font-headline font-bold text-sm flex items-center justify-center gap-2 shadow-lg active:scale-[0.98] transition-transform hover:bg-secondary-fixed" id="exportBtn">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Export Comprehensive Progress Report (HTML/CSV)</span>
+</button>
+<p class="text-center text-[11px] font-label text-on-surface-variant mt-2">
+      Cryptographically signed biometric export • Local-first storage
+    </p>
+</section>
+</div>
+<script>
+  // Filter pills micro-interaction
+  const filterPills = document.querySelectorAll('#dateFilter button');
+  filterPills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterPills.forEach(b => {
+        b.className = 'px-3.5 py-1.5 rounded-full text-xs font-label font-semibold text-on-surface-variant hover:text-on-surface transition-all focus:outline-none';
+        const dot = b.querySelector('span');
+        if (dot) dot.remove();
+      });
+      btn.className = 'px-3.5 py-1.5 rounded-full text-xs font-label font-bold bg-surface-container-high text-secondary shadow-sm transition-all focus:outline-none flex items-center gap-1';
+      const indicator = document.createElement('span');
+      indicator.className = 'w-1 h-1 rounded-full bg-secondary';
+      btn.appendChild(indicator);
+    });
+  });
+
+  // Micro-feedback on export
+  const exportBtn = document.getElementById('exportBtn');
+  if (exportBtn) {
+    exportBtn.addEventListener('click', () => {
+      const originalText = exportBtn.innerHTML;
+      exportBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Compiling Biometric Archive...</span>';
+      setTimeout(() => {
+        exportBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span><span>Report Ready • Encrypted</span>';
+        setTimeout(() => {
+          exportBtn.innerHTML = originalText;
+        }, 2200);
+      }, 900);
+    });
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.3)]" data-active-classes="text-secondary font-bold"><div class="h-16 px-2 flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 transition-colors group text-secondary font-bold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="live-workout" href="#"><span class="material-symbols-outlined text-[22px]">fitness_center</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Workout</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="planner" href="#"><span class="material-symbols-outlined text-[22px]">calendar_month</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Planner</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="analytics" href="#"><span class="material-symbols-outlined text-[22px]">insights</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Analyze</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="system-hub" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">More</span></a></div></nav></body></html>

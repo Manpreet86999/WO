@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&family=Manrope:wght@200..800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Manrope:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#324f00", "secondary-fixed-dim": "#91db04", "secondary-container": "#8ed800", "surface": "#0d141e", "surface-variant": "#2e3541", "on-primary-container": "#7d7d83", "outline-variant": "#46464b", "on-primary-fixed": "#1a1b20", "primary-fixed": "#e3e1e9", "on-secondary-fixed": "#112000", "on-secondary": "#213600", "inverse-surface": "#dce3f2", "background": "#0d141e", "primary-container": "#111217", "error-container": "#93000a", "surface-container-low": "#151c27", "on-primary-fixed-variant": "#46464c", "surface-container-high": "#232a35", "tertiary-fixed-dim": "#9dd841", "tertiary-container": "#0a1500", "surface-tint": "#c7c6cd", "secondary": "#a8f530", "surface-container-highest": "#2e3541", "secondary-fixed": "#abf834", "tertiary-fixed": "#b8f55b", "inverse-on-surface": "#2a313c", "on-secondary-container": "#395a00", "primary": "#c7c6cd", "outline": "#919095", "on-error": "#690005", "primary-fixed-dim": "#c7c6cd", "surface-container": "#19202b", "on-surface-variant": "#c7c6cb", "on-tertiary-fixed": "#121f00", "inverse-primary": "#5e5e64", "on-tertiary": "#213600", "on-secondary-fixed-variant": "#314f00", "surface-container-lowest": "#070e19", "on-primary": "#2f3036", "tertiary": "#9dd841", "on-tertiary-container": "#5c8a00", "on-error-container": "#ffdad6", "surface-bright": "#333a45", "on-background": "#dce3f2", "on-surface": "#dce3f2", "error": "#ffb4ab", "surface-dim": "#0d141e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: {}, fontFamily: { "headline": ["Manrope"], "display": ["Manrope"], "body": ["Hanken Grotesk"], "label": ["Hanken Grotesk"] }, fontSize: {} } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-3"><img alt="Body OS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeWKOx9KwVkdFVhN0ua2jD2UQKolfaWQGFPO9o07-k_cQsBvghBykEEqyYvx3xw0mmgB4rka1l44rItIo5XJ-TWgyIOme3wfvu-ShqzOHKODDPNBO_OKbUOiw8RuIyDCtJFE4IfKEdckU8NsPpPDbZezQA11xNrKavHW6rBbAbn2m273QAEy29yHSQWow1RANWO7cHeyrcvOvVmjk1A7FOtr3Aj8z6Zle9sFNnlU9RzNRWkxqQjvEaIA"/><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline font-extrabold text-sm tracking-tight text-on-surface uppercase">Body OS</span><span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-secondary text-on-secondary">OS 2.4</span></div><h1 class="text-xs font-headline font-semibold text-on-surface-variant truncate max-w-[140px]">Dashboard</h1></div></div><div class="flex items-center gap-3"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors focus:outline-none"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-28"><div class="flex flex-col w-full text-on-surface px-4 pb-12 space-y-4">
+<!-- Top Context Header -->
+<div class="flex items-center justify-between pt-1">
+<button aria-label="Go back" class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<span class="font-headline font-bold text-xs tracking-wider uppercase text-on-surface">Active Workout Session</span>
+<span class="text-[10px] font-label font-semibold text-secondary tracking-widest mt-0.5 uppercase flex items-center gap-1">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+        STAGE VERIFIED • AUDIT MODE • 🛡 SHA-256 LOCAL
+      </span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+</div>
+<!-- Hero Session Summary Card -->
+<div class="relative overflow-hidden bg-surface-container rounded-xl p-5 shadow-lg shadow-black/40">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-secondary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-start justify-between gap-3">
+<div class="space-y-1">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container/20 text-secondary text-[11px] font-label font-bold tracking-wide">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          SESSION COMPLETE
+        </div>
+<h2 class="font-headline font-extrabold text-2xl tracking-tight text-on-surface pt-1">Legs A — Strength</h2>
+<p class="text-xs font-label text-on-surface-variant flex items-center gap-1.5">
+<span>Audited at 07:42 AM</span>
+<span>•</span>
+<span class="text-on-surface">Core Performance Profile</span>
+</p>
+</div>
+<button aria-label="Session settings" class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-highest transition-all">
+<span class="material-symbols-outlined text-[18px]">settings</span>
+</button>
+</div>
+<!-- Micro telemetry ticker -->
+<div class="mt-4 pt-3.5 flex items-center justify-between text-[11px] font-label text-on-surface-variant bg-surface-container-lowest/60 rounded-lg px-3 py-2">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[14px]">memory</span>
+        Telemetry Core: v4.28.1
+      </span>
+<span class="font-mono text-tertiary">Hash: 8f2c...4e91</span>
+</div>
+</div>
+<!-- 4 Key Telemetry Metric Cards (2x2 Grid) -->
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Metric 1: Duration -->
+<div class="bg-surface-container rounded-xl p-3.5 flex flex-col justify-between shadow-md">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="text-[10px] font-label font-bold tracking-wider uppercase">Duration</span>
+<span class="material-symbols-outlined text-[16px] text-primary">timer</span>
+</div>
+<div class="my-1.5">
+<span class="font-headline font-extrabold text-2xl text-on-surface">48</span>
+<span class="text-xs font-label font-semibold text-on-surface-variant ml-0.5">min</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] font-label text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Target: 50m Optimal</span>
+</div>
+</div>
+<!-- Metric 2: Volume Load -->
+<div class="bg-surface-container rounded-xl p-3.5 flex flex-col justify-between shadow-md">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="text-[10px] font-label font-bold tracking-wider uppercase">Volume Load</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">weight</span>
+</div>
+<div class="my-1.5">
+<span class="font-headline font-extrabold text-2xl text-on-surface">3,420</span>
+<span class="text-xs font-label font-semibold text-on-surface-variant ml-0.5">kg</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] font-label text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+8% vs weekly target</span>
+</div>
+</div>
+<!-- Metric 3: Set Adherence -->
+<div class="bg-surface-container rounded-xl p-3.5 flex flex-col justify-between shadow-md">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="text-[10px] font-label font-bold tracking-wider uppercase">Set Volume</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary">checklist</span>
+</div>
+<div class="my-1.5">
+<span class="font-headline font-extrabold text-2xl text-on-surface">18</span>
+<span class="text-sm font-label font-semibold text-on-surface-variant">/ 18</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] font-label text-tertiary font-medium">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span>100% adherence</span>
+</div>
+</div>
+<!-- Metric 4: Autonomic Strain -->
+<div class="bg-surface-container rounded-xl p-3.5 flex flex-col justify-between shadow-md">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="text-[10px] font-label font-bold tracking-wider uppercase">Strain Score</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">ecg_heart</span>
+</div>
+<div class="my-1.5 flex items-baseline gap-1.5">
+<span class="font-headline font-extrabold text-2xl text-on-surface">8.4</span>
+<span class="text-[10px] font-label font-extrabold px-1.5 py-0.5 rounded bg-secondary text-on-secondary uppercase tracking-wider">High</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] font-label text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Autonomic load sync</span>
+</div>
+</div>
+</div>
+<!-- Data Integrity Verified Banner -->
+<div class="bg-surface-container-low rounded-xl px-4 py-3 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[20px]">security</span>
+</div>
+<div class="min-w-0">
+<div class="text-xs font-headline font-bold text-on-surface flex items-center gap-1.5">
+<span>Data Integrity Verified</span>
+<span class="text-[9px] font-label font-black px-1.5 py-0.2 rounded bg-secondary/15 text-secondary uppercase tracking-widest">CLEAN</span>
+</div>
+<p class="text-[11px] font-body text-on-surface-variant truncate">0 skipped movements • Zero telemetry anomalies</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 ml-2" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<!-- Visual Breakdown: Heart Rate & Strain Arc Visualizer -->
+<div class="bg-surface-container rounded-xl p-4 space-y-2.5">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label font-bold tracking-wider uppercase text-on-surface-variant">Kinetic Effort Distribution</span>
+<span class="text-[11px] font-label text-secondary font-medium">Avg 142 bpm • Peak 171</span>
+</div>
+<!-- Simple inline lightweight effort visualization -->
+<div class="h-10 w-full flex items-end gap-1 pt-2 pb-1">
+<div class="flex-1 bg-surface-container-high rounded-t h-40% transition-all hover:bg-secondary"></div>
+<div class="flex-1 bg-surface-container-high rounded-t h-55% transition-all hover:bg-secondary"></div>
+<div class="flex-1 bg-secondary rounded-t h-85% transition-all"></div>
+<div class="flex-1 bg-secondary rounded-t h-90% transition-all"></div>
+<div class="flex-1 bg-surface-container-high rounded-t h-70% transition-all hover:bg-secondary"></div>
+<div class="flex-1 bg-surface-container-high rounded-t h-60% transition-all hover:bg-secondary"></div>
+<div class="flex-1 bg-secondary rounded-t h-95% transition-all"></div>
+<div class="flex-1 bg-surface-container-high rounded-t h-75% transition-all hover:bg-secondary"></div>
+<div class="flex-1 bg-surface-container-high rounded-t h-50% transition-all hover:bg-secondary"></div>
+<div class="flex-1 bg-surface-container-high rounded-t h-65% transition-all hover:bg-secondary"></div>
+<div class="flex-1 bg-secondary rounded-t h-100% transition-all"></div>
+<div class="flex-1 bg-surface-container-high rounded-t h-45% transition-all hover:bg-secondary"></div>
+</div>
+<div class="flex justify-between text-[10px] font-label text-on-surface-variant uppercase tracking-wider">
+<span>00:00 Warmup</span>
+<span>24:00 Peak Strain</span>
+<span>48:00 Finisher</span>
+</div>
+</div>
+<!-- Movement Breakdown List -->
+<div class="space-y-2 pt-1">
+<div class="flex items-center justify-between px-1">
+<h3 class="text-xs font-label font-extrabold tracking-wider uppercase text-on-surface">Movement Audit • 6 Exercises</h3>
+<span class="text-[11px] font-label text-on-surface-variant">Strict Quality 9.2/10</span>
+</div>
+<div class="space-y-2">
+<!-- Ex 1: Goblet Squat (PR) -->
+<div class="bg-surface-container rounded-xl p-3.5 flex items-center justify-between group cursor-pointer hover:bg-surface-container-high transition-colors shadow-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-7 h-7 rounded-md bg-secondary/15 text-secondary flex items-center justify-center font-mono font-bold text-xs shrink-0">
+            01
+          </div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h4 class="font-headline font-bold text-sm text-on-surface truncate">Goblet Squat</h4>
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[9px] font-label font-black tracking-wider bg-secondary text-on-secondary uppercase">
+                ★ NEW PR
+              </span>
+</div>
+<p class="text-xs font-label text-on-surface-variant mt-0.5">4 sets • <span class="text-on-surface font-semibold">24kg</span> peak load • RPE 8.5</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] group-hover:translate-x-0.5 transition-transform shrink-0 ml-2">chevron_right</span>
+</div>
+<!-- Ex 2: Dumbbell Romanian Deadlift -->
+<div class="bg-surface-container rounded-xl p-3.5 flex items-center justify-between group cursor-pointer hover:bg-surface-container-high transition-colors shadow-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-7 h-7 rounded-md bg-surface-container-high text-on-surface-variant flex items-center justify-center font-mono font-bold text-xs shrink-0">
+            02
+          </div>
+<div class="min-w-0">
+<h4 class="font-headline font-bold text-sm text-on-surface truncate">Dumbbell Romanian Deadlift</h4>
+<p class="text-xs font-label text-on-surface-variant mt-0.5">4 sets • <span class="text-on-surface font-semibold">28kg</span> • All sets logged</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] group-hover:translate-x-0.5 transition-transform shrink-0 ml-2">chevron_right</span>
+</div>
+<!-- Ex 3: Reverse Lunge -->
+<div class="bg-surface-container rounded-xl p-3.5 flex items-center justify-between group cursor-pointer hover:bg-surface-container-high transition-colors shadow-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-7 h-7 rounded-md bg-surface-container-high text-on-surface-variant flex items-center justify-center font-mono font-bold text-xs shrink-0">
+            03
+          </div>
+<div class="min-w-0">
+<h4 class="font-headline font-bold text-sm text-on-surface truncate">Reverse Lunge</h4>
+<p class="text-xs font-label text-on-surface-variant mt-0.5">3 sets • <span class="text-on-surface font-semibold">16kg</span> • Controlled eccentric</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] group-hover:translate-x-0.5 transition-transform shrink-0 ml-2">chevron_right</span>
+</div>
+<!-- Ex 4: Standing Calf Raise -->
+<div class="bg-surface-container rounded-xl p-3.5 flex items-center justify-between group cursor-pointer hover:bg-surface-container-high transition-colors shadow-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-7 h-7 rounded-md bg-surface-container-high text-on-surface-variant flex items-center justify-center font-mono font-bold text-xs shrink-0">
+            04
+          </div>
+<div class="min-w-0">
+<h4 class="font-headline font-bold text-sm text-on-surface truncate">Standing Calf Raise</h4>
+<p class="text-xs font-label text-on-surface-variant mt-0.5">3 sets • <span class="text-on-surface font-semibold">20kg</span> • Full contraction pause</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] group-hover:translate-x-0.5 transition-transform shrink-0 ml-2">chevron_right</span>
+</div>
+<!-- Ex 5: Front Plank -->
+<div class="bg-surface-container rounded-xl p-3.5 flex items-center justify-between group cursor-pointer hover:bg-surface-container-high transition-colors shadow-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-7 h-7 rounded-md bg-surface-container-high text-on-surface-variant flex items-center justify-center font-mono font-bold text-xs shrink-0">
+            05
+          </div>
+<div class="min-w-0">
+<h4 class="font-headline font-bold text-sm text-on-surface truncate">Front Plank</h4>
+<p class="text-xs font-label text-on-surface-variant mt-0.5">3 sets • <span class="text-on-surface font-semibold">45s static holds</span> • Isometric lock</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] group-hover:translate-x-0.5 transition-transform shrink-0 ml-2">chevron_right</span>
+</div>
+<!-- Ex 6: Bodyweight Squat (Finisher) -->
+<div class="bg-surface-container rounded-xl p-3.5 flex items-center justify-between group cursor-pointer hover:bg-surface-container-high transition-colors shadow-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-7 h-7 rounded-md bg-secondary/15 text-secondary flex items-center justify-center font-mono font-bold text-xs shrink-0">
+            06
+          </div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h4 class="font-headline font-bold text-sm text-on-surface truncate">Bodyweight Squat</h4>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-label font-bold tracking-wide bg-surface-container-high text-secondary uppercase">
+                FINISHER
+              </span>
+</div>
+<p class="text-xs font-label text-on-surface-variant mt-0.5">1 burnout set • <span class="text-on-surface font-semibold">15 reps</span> max depth</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center text-secondary shrink-0 ml-2">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Form/Technique Biometric Telemetry Card with Placeholder Graphic -->
+<div class="relative overflow-hidden bg-surface-container rounded-xl p-4 space-y-3 shadow-md">
+<div class="flex items-center justify-between">
+<span class="text-xs font-label font-bold uppercase tracking-wider text-on-surface">Kinetic Form Snapshot</span>
+<span class="text-[11px] font-label font-bold text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 98% SYMMETRY
+      </span>
+</div>
+<div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover opacity-75" data-alt="A futuristic dark telemetry render of an athletic silhouette performing a squat, highlighted with neon lime vector skeletal tracking lines, force vectors, and biometric data nodes on a matte black high-tech background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2n8n5Qi1jhH8G9ZnAcLSCukWXjN7arr6rgRVnk53mlu_jXBpJlXrP-U3M-Grkgftl8n_0JMiIQLH9y4m-DZ6gvoXcCmUKW9xTe96k87u1fkPShTfKjbBb_NJabDbB1qYLQsxXhncqSJ-3j5ggYxXvBl4-UdzvlvHtdZtxQA-f7ULWJ5pVzIDXeHcEgJogzXdk7CWiEZeKV_IibJFwflz7gcil0Y03i4qAd20rzb3TxvD9w88PWZV91w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<div class="absolute bottom-2 left-3 right-3 flex justify-between items-end text-[10px] font-mono text-on-surface">
+<span class="bg-surface-container-highest/80 px-2 py-0.5 rounded backdrop-blur">KNEE LATERAL DRIFT: 0.8° (NORMAL)</span>
+<span class="bg-secondary text-on-secondary px-1.5 py-0.5 rounded font-bold">OPTIMAL PATH</span>
+</div>
+</div>
+</div>
+<!-- Athletic Context & Sensations Card -->
+<div class="bg-surface-container rounded-xl p-4 space-y-3 shadow-md">
+<div class="flex items-center justify-between">
+<span class="text-xs font-label font-bold uppercase tracking-wider text-on-surface">Athletic Sensation & Context</span>
+<button class="text-[11px] font-label text-secondary hover:underline">Edit Notes</button>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-3 text-xs font-body leading-relaxed text-on-surface">
+      “Hamstrings feeling resilient, good knee tracking throughout squats. Posterior chain felt primed after dynamic warmups.”
+    </div>
+<!-- Audio voice note snippet -->
+<div class="flex items-center justify-between bg-surface-container-high rounded-lg px-3 py-2.5">
+<div class="flex items-center gap-2 text-xs font-label text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px]">mic</span>
+<span>Voice note attached (12s)</span>
+<span class="text-[10px] text-tertiary font-semibold">• Saved</span>
+</div>
+<button aria-label="Play audio note" class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Pipeline Health Sync Status -->
+<div class="bg-surface-container-low rounded-xl p-3.5 space-y-2 text-xs font-label">
+<div class="flex items-center justify-between text-on-surface-variant text-[11px] font-bold uppercase tracking-wider">
+<span>Pipeline Health Status</span>
+<span class="text-secondary flex items-center gap-1">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span> Ready to Commit
+      </span>
+</div>
+<div class="space-y-1.5 pt-1">
+<div class="flex items-center justify-between text-on-surface">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          Local SQLite DB
+        </span>
+<span class="font-mono text-on-surface-variant text-[11px]">Committed (Slot #042)</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">cloud_upload</span>
+          Firebase Cloud Mirror
+        </span>
+<span class="font-mono text-secondary text-[11px]">Pending User Commit</span>
+</div>
+</div>
+</div>
+<!-- Sticky Footer Action Cluster -->
+<div class="pt-2 space-y-2.5">
+<!-- Primary CTA: Commit & Save -->
+<button class="w-full h-13 py-3.5 px-4 bg-secondary active:scale-[0.98] rounded-xl text-on-secondary font-headline font-extrabold text-base tracking-wide flex items-center justify-center gap-2 shadow-lg shadow-secondary/15 transition-all" id="commitBtn">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+      Commit & Save Workout
+    </button>
+<!-- Secondary Action: Export HTML Report -->
+<button class="w-full py-3 px-4 bg-surface-container hover:bg-surface-container-high rounded-xl text-on-surface font-headline font-bold text-xs tracking-wider flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+      Export Session HTML Report
+    </button>
+<!-- Subtle Discard Draft Link -->
+<div class="text-center pt-1 pb-2">
+<button class="text-xs font-label text-error hover:underline inline-flex items-center gap-1 opacity-80 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[14px]">delete</span>
+        Discard Session Draft
+      </button>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const btn = document.getElementById('commitBtn');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        const originalContent = btn.innerHTML;
+        btn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span> Syncing SHA-256 Ledger...';
+        btn.classList.add('opacity-90');
+        setTimeout(() => {
+          btn.innerHTML = '<span class="material-symbols-outlined text-[20px]">done_all</span> Workout Anchored to OS';
+          btn.classList.remove('bg-secondary', 'text-on-secondary');
+          btn.classList.add('bg-tertiary-container', 'text-secondary');
+        }, 1200);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.3)]" data-active-classes="text-secondary font-bold"><div class="h-16 px-2 flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 transition-colors group text-secondary font-bold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="live-workout" href="#"><span class="material-symbols-outlined text-[22px]">fitness_center</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Workout</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="planner" href="#"><span class="material-symbols-outlined text-[22px]">calendar_month</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Planner</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="analytics" href="#"><span class="material-symbols-outlined text-[22px]">insights</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Analyze</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="system-hub" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">More</span></a></div></nav></body></html>

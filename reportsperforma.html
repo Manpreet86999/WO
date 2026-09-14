@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Body OS - Session Report</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#2a3548",
+                        "surface-tint": "#abd600",
+                        "secondary-container": "#3f465c",
+                        "inverse-primary": "#506600",
+                        "tertiary-container": "#c4e7ff",
+                        "on-tertiary": "#00354a",
+                        "primary-fixed": "#c3f400",
+                        "on-surface": "#d8e3fb",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#abd600",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-background": "#d8e3fb",
+                        "tertiary-fixed": "#c4e7ff",
+                        "surface-container-high": "#1f2a3c",
+                        "primary": "#ffffff",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-primary-fixed": "#161e00",
+                        "surface-container-low": "#111c2d",
+                        "surface-variant": "#2a3548",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#081425",
+                        "background": "#081425",
+                        "tertiary-fixed-dim": "#7bd0ff",
+                        "on-tertiary-fixed-variant": "#004c69",
+                        "on-surface-variant": "#c4c9ac",
+                        "on-primary-container": "#556d00",
+                        "on-tertiary-container": "#006c93",
+                        "secondary-fixed": "#dae2fd",
+                        "on-tertiary-fixed": "#001e2c",
+                        "on-secondary-fixed": "#131b2e",
+                        "outline-variant": "#444933",
+                        "inverse-surface": "#d8e3fb",
+                        "primary-container": "#c3f400",
+                        "inverse-on-surface": "#263143",
+                        "secondary": "#bec6e0",
+                        "surface-container": "#152031",
+                        "outline": "#8e9379",
+                        "surface": "#081425",
+                        "surface-container-lowest": "#040e1f",
+                        "on-error": "#690005",
+                        "on-secondary": "#283044",
+                        "on-primary": "#283500",
+                        "surface-bright": "#2f3a4c",
+                        "on-secondary-container": "#adb4ce",
+                        "on-primary-fixed-variant": "#3c4d00",
+                        "tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "48px",
+                        "xs": "8px",
+                        "sm": "16px",
+                        "base": "4px",
+                        "gutter": "16px",
+                        "margin-desktop": "40px",
+                        "lg": "32px",
+                        "margin-mobile": "16px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Manrope", "sans-serif"],
+                        "display-lg": ["Manrope", "sans-serif"],
+                        "headline-md": ["Manrope", "sans-serif"],
+                        "stat-value": ["Manrope", "sans-serif"],
+                        "headline-lg": ["Manrope", "sans-serif"],
+                        "body-lg": ["Manrope", "sans-serif"],
+                        "label-caps": ["Manrope", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "stat-value": ["20px", { "lineHeight": "24px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .glass-card {
+                @apply bg-surface-container-high/80 backdrop-blur-md border border-outline-variant/30 rounded-xl;
+            }
+            .ai-border {
+                @apply border border-primary-fixed shadow-[0_0_15px_rgba(195,244,0,0.15)] bg-surface-container-high/90;
+            }
+            .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .hide-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col pb-24">
+<!-- Top Navigation (Shell) -->
+<nav class="bg-surface/90 backdrop-blur-sm border-b border-outline-variant flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-md max-w-7xl mx-auto top-0 z-50 sticky">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-surface-container-lowest text-sm" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</div>
+<span class="text-headline-md font-headline-md font-extrabold text-primary-fixed dark:text-primary-fixed tracking-tight uppercase">Body OS</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-fixed dark:text-primary-fixed hover:bg-surface-container-highest transition-colors cursor-pointer p-2 rounded-full" data-icon="share" style="font-variation-settings: 'FILL' 0;">share</span>
+<span class="material-symbols-outlined text-primary-fixed dark:text-primary-fixed hover:bg-surface-container-highest transition-colors cursor-pointer p-2 rounded-full" data-icon="more_vert" style="font-variation-settings: 'FILL' 0;">more_vert</span>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-3xl mx-auto px-margin-mobile md:px-0 py-lg space-y-lg">
+<!-- Header Card -->
+<header class="bg-surface-container-lowest rounded-xl p-lg border border-outline-variant/20 shadow-lg relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container to-background opacity-50 z-0"></div>
+<div class="relative z-10 flex flex-col gap-2">
+<span class="text-label-caps font-label-caps text-primary-fixed uppercase tracking-[0.2em]">Workout OS Session Report</span>
+<h1 class="text-display-lg font-display-lg text-primary uppercase tracking-tight">DR. HARPREET</h1>
+<p class="text-body-md font-body-md text-secondary-fixed-dim mt-2">Week 1 - Week 1 | Mon Day Mon — PUSH A | 2026-08-20</p>
+</div>
+</header>
+<!-- High-Level Stats Bento -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-sm">
+<div class="bg-gradient-to-br from-surface-container to-surface-container-high p-md flex flex-col items-start justify-center border border-outline-variant/10 rounded-xl shadow-sm">
+<span class="text-label-caps font-label-caps text-secondary mb-1">DONE</span>
+<span class="text-headline-lg font-headline-lg text-primary-fixed drop-shadow-[0_2px_10px_rgba(195,244,0,0.2)]">4</span>
+</div>
+<div class="bg-gradient-to-br from-surface-container to-surface-container-high p-md flex flex-col items-start justify-center border border-outline-variant/10 rounded-xl shadow-sm">
+<span class="text-label-caps font-label-caps text-secondary mb-1">SKIPPED</span>
+<span class="text-headline-lg font-headline-lg text-error drop-shadow-[0_2px_10px_rgba(255,180,171,0.2)]">1</span>
+</div>
+<div class="bg-gradient-to-br from-surface-container to-surface-container-high p-md flex flex-col items-start justify-center border border-outline-variant/10 rounded-xl shadow-sm">
+<span class="text-label-caps font-label-caps text-secondary mb-1">SETS</span>
+<span class="text-headline-lg font-headline-lg text-primary drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]">10</span>
+</div>
+<div class="bg-gradient-to-br from-surface-container to-surface-container-high p-md flex flex-col items-start justify-center border border-outline-variant/10 rounded-xl shadow-sm">
+<span class="text-label-caps font-label-caps text-secondary mb-1">TONNAGE</span>
+<span class="text-headline-lg font-headline-lg text-primary drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]">0.2k kg</span>
+</div>
+</section>
+<!-- Readiness Carousel -->
+<section class="bg-gradient-to-br from-surface-container-high to-surface-container border border-outline-variant/20 rounded-xl p-lg shadow-lg">
+<div class="flex items-center gap-2 mb-md text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">monitor_heart</span>
+<h2 class="text-headline-md font-headline-md">Readiness</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-sm">
+<!-- Score Card -->
+<div class="col-span-2 md:col-span-4 lg:col-span-1 bg-surface-container-lowest rounded-xl p-md flex flex-col items-center justify-center border border-outline-variant/10 shadow-inner">
+<span class="text-label-caps font-label-caps text-secondary mb-3 text-center w-full tracking-widest">OVERALL SCORE</span>
+<div class="relative w-24 h-24 flex items-center justify-center">
+<svg class="absolute inset-0 w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-highest stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-linecap="round" stroke-width="2"></path>
+<path class="text-primary-fixed stroke-current drop-shadow-[0_0_5px_rgba(195,244,0,0.5)]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="75, 100" stroke-linecap="round" stroke-width="2.5"></path>
+</svg>
+<div class="absolute flex flex-col items-center justify-center">
+<span class="text-headline-lg font-headline-lg text-primary font-extrabold leading-none">75</span>
+<span class="text-[10px] font-bold text-secondary uppercase">Good</span>
+</div>
+</div>
+</div>
+<!-- Metric Chips -->
+<div class="bg-surface-container-lowest rounded-xl p-sm flex items-center gap-3 border border-outline-variant/10">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">bedtime</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-caps font-label-caps text-secondary">SLEEP</span>
+<span class="text-stat-value font-stat-value text-primary">8h</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-sm flex items-center gap-3 border border-outline-variant/10">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">healing</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-caps font-label-caps text-secondary">SORENESS</span>
+<span class="text-stat-value font-stat-value text-primary">2/10</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-sm flex items-center gap-3 border border-outline-variant/10">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-caps font-label-caps text-secondary">ENERGY</span>
+<span class="text-stat-value font-stat-value text-primary">9/10</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-sm flex items-center gap-3 border border-outline-variant/10">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-error-container">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">waves</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-caps font-label-caps text-secondary">STRESS</span>
+<span class="text-stat-value font-stat-value text-primary">5/10</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-sm flex items-center gap-3 border border-outline-variant/10">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-caps font-label-caps text-secondary">MOTIVATION</span>
+<span class="text-stat-value font-stat-value text-primary">9/10</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-sm flex items-center gap-3 border border-outline-variant/10">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">mood</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-caps font-label-caps text-secondary">MOOD</span>
+<span class="text-stat-value font-stat-value text-primary">9/10</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-sm flex items-center gap-3 border border-outline-variant/10">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-tertiary-fixed">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-caps font-label-caps text-secondary">HYDRATION</span>
+<span class="text-stat-value font-stat-value text-primary">2/10</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-sm flex items-center gap-3 border border-outline-variant/10">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-secondary-fixed">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">egg_alt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-caps font-label-caps text-secondary">PROTEIN</span>
+<span class="text-stat-value font-stat-value text-primary">14/10</span>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Session Analysis -->
+<section class="rounded-xl ai-border p-lg flex flex-col gap-sm relative overflow-hidden">
+<div class="absolute right-0 top-0 w-32 h-32 bg-primary-fixed/5 rounded-full blur-2xl -mr-16 -mt-16 pointer-events-none"></div>
+<div class="flex items-center gap-3 text-primary-fixed relative z-10">
+<div class="w-10 h-10 rounded-full bg-primary-fixed/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<h3 class="text-body-lg font-headline-md uppercase font-bold tracking-widest text-primary-fixed drop-shadow-[0_0_8px_rgba(195,244,0,0.4)]">AI Session Analysis</h3>
+</div>
+<p class="text-body-lg font-body-lg text-primary/90 relative z-10 leading-relaxed">A solid start to your week with a 100% completion rate on your Push A session. Your readiness is high, allowing for a consistent progressive training approach.</p>
+</section>
+<!-- Exercise List -->
+<div class="w-full flex justify-center py-sm">
+<div class="w-24 h-1 bg-surface-container-highest rounded-full shadow-inner"></div>
+</div>
+<section class="space-y-lg">
+<!-- Exercise 1 -->
+<article class="bg-surface-container-high/60 backdrop-blur-md border border-outline-variant/20 rounded-xl p-lg flex flex-col gap-sm relative overflow-hidden shadow-md">
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-primary-fixed shadow-[0_0_10px_rgba(195,244,0,0.6)]"></div>
+<div class="flex flex-col gap-1 pl-4">
+<span class="text-label-caps font-label-caps text-primary-fixed uppercase tracking-wider flex items-center gap-2"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span> COMPLETED | CHEST + TRICEPS</span>
+<h3 class="text-headline-md font-headline-md text-primary">1. Incline Knee Push-Up</h3>
+</div>
+<div class="flex flex-col gap-xs mt-3 pl-4">
+<div class="flex justify-between items-center text-body-md font-body-md border-b border-outline-variant/10 pb-2">
+<span class="text-secondary">Set 1</span>
+<span class="text-primary font-bold bg-surface-container rounded-md px-2 py-1">0 kg x 10</span>
+</div>
+<div class="flex justify-between items-center text-body-md font-body-md border-b border-outline-variant/10 pb-2">
+<span class="text-secondary">Set 2</span>
+<span class="text-primary font-bold bg-surface-container rounded-md px-2 py-1">0 kg x 10</span>
+</div>
+<div class="flex justify-between items-center text-body-md font-body-md pb-1">
+<span class="text-secondary">Set 3</span>
+<span class="text-primary font-bold bg-surface-container rounded-md px-2 py-1">0 kg x 10</span>
+</div>
+</div>
+<div class="mt-md p-md rounded-xl bg-tertiary-container/10 border border-tertiary-fixed/20 flex gap-3 ml-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">tips_and_updates</span>
+<div class="flex flex-col gap-1">
+<span class="text-label-caps font-label-caps text-tertiary-fixed-dim uppercase tracking-wider">AI COACH</span>
+<p class="text-body-md font-body-md text-primary/90">First time performing this movement; great job completing all 3 sets for 10 reps.</p>
+</div>
+</div>
+</article>
+<!-- Exercise 2 -->
+<article class="bg-surface-container-high/60 backdrop-blur-md border border-outline-variant/20 rounded-xl p-lg flex flex-col gap-sm relative overflow-hidden shadow-md">
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-primary-fixed shadow-[0_0_10px_rgba(195,244,0,0.6)]"></div>
+<div class="flex flex-col gap-1 pl-4">
+<span class="text-label-caps font-label-caps text-primary-fixed uppercase tracking-wider flex items-center gap-2"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span> COMPLETED | CHEST + TRICEPS</span>
+<h3 class="text-headline-md font-headline-md text-primary">2. Dumbbell Floor Press</h3>
+</div>
+<div class="flex flex-col gap-xs mt-3 pl-4">
+<div class="flex justify-between items-center text-body-md font-body-md border-b border-outline-variant/10 pb-2">
+<span class="text-secondary">Set 1</span>
+<span class="text-primary font-bold bg-surface-container rounded-md px-2 py-1">4 kg x 8</span>
+</div>
+<div class="flex justify-between items-center text-body-md font-body-md border-b border-outline-variant/10 pb-2">
+<span class="text-secondary">Set 2</span>
+<span class="text-primary font-bold bg-surface-container rounded-md px-2 py-1">4 kg x 10</span>
+</div>
+<div class="flex justify-between items-center text-body-md font-body-md pb-1">
+<span class="text-secondary">Set 3</span>
+<span class="text-primary font-bold bg-surface-container rounded-md px-2 py-1">4 kg x 10</span>
+</div>
+</div>
+<div class="mt-md p-md rounded-xl bg-tertiary-container/10 border border-tertiary-fixed/20 flex gap-3 ml-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">tips_and_updates</span>
+<div class="flex flex-col gap-1">
+<span class="text-label-caps font-label-caps text-tertiary-fixed-dim uppercase tracking-wider">AI COACH</span>
+<p class="text-body-md font-body-md text-primary/90">Solid introductory session; focus on maintaining controlled tempo as you increase weight.</p>
+</div>
+</div>
+</article>
+<!-- Exercise 3 -->
+<article class="bg-surface-container-high/60 backdrop-blur-md border border-outline-variant/20 rounded-xl p-lg flex flex-col gap-sm relative overflow-hidden shadow-md">
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-primary-fixed shadow-[0_0_10px_rgba(195,244,0,0.6)]"></div>
+<div class="flex flex-col gap-1 pl-4">
+<span class="text-label-caps font-label-caps text-primary-fixed uppercase tracking-wider flex items-center gap-2"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span> COMPLETED | SHOULDERS</span>
+<h3 class="text-headline-md font-headline-md text-primary">3. Dumbbell Shoulder Press</h3>
+</div>
+<div class="flex flex-col gap-xs mt-3 pl-4">
+<div class="flex justify-between items-center text-body-md font-body-md border-b border-outline-variant/10 pb-2">
+<span class="text-secondary">Set 1</span>
+<span class="text-primary font-bold bg-surface-container rounded-md px-2 py-1">2 kg x 8</span>
+</div>
+<div class="flex justify-between items-center text-body-md font-body-md pb-1">
+<span class="text-secondary">Set 2</span>
+<span class="text-primary font-bold bg-surface-container rounded-md px-2 py-1">2 kg x 8</span>
+</div>
+</div>
+<div class="mt-md p-md rounded-xl bg-tertiary-container/10 border border-tertiary-fixed/20 flex gap-3 ml-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">tips_and_updates</span>
+<div class="flex flex-col gap-1">
+<span class="text-label-caps font-label-caps text-tertiary-fixed-dim uppercase tracking-wider">AI COACH</span>
+<p class="text-body-md font-body-md text-primary/90">Good initial performance; aim to increase reps or weight in the next session to drive progression.</p>
+</div>
+</div>
+</article>
+<!-- Exercise 4 -->
+<article class="bg-surface-container-high/60 backdrop-blur-md border border-outline-variant/20 rounded-xl p-lg flex flex-col gap-sm relative overflow-hidden shadow-md">
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-primary-fixed shadow-[0_0_10px_rgba(195,244,0,0.6)]"></div>
+<div class="flex flex-col gap-1 pl-4">
+<span class="text-label-caps font-label-caps text-primary-fixed uppercase tracking-wider flex items-center gap-2"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span> COMPLETED | SIDE SHOULDERS</span>
+<h3 class="text-headline-md font-headline-md text-primary">4. Dumbbell Lateral Raise</h3>
+</div>
+<div class="flex flex-col gap-xs mt-3 pl-4">
+<div class="flex justify-between items-center text-body-md font-body-md border-b border-outline-variant/10 pb-2">
+<span class="text-secondary">Set 1</span>
+<span class="text-primary font-bold bg-surface-container rounded-md px-2 py-1">4 kg x 10</span>
+</div>
+<div class="flex justify-between items-center text-body-md font-body-md pb-1">
+<span class="text-secondary">Set 2</span>
+<span class="text-primary font-bold bg-surface-container rounded-md px-2 py-1">4 kg x 10</span>
+</div>
+</div>
+<div class="mt-md p-md rounded-xl bg-tertiary-container/10 border border-tertiary-fixed/20 flex gap-3 ml-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">tips_and_updates</span>
+<div class="flex flex-col gap-1">
+<span class="text-label-caps font-label-caps text-tertiary-fixed-dim uppercase tracking-wider">AI COACH</span>
+<p class="text-body-md font-body-md text-primary/90">Consistent volume achieved; keep focusing on strict form to isolate the lateral deltoid.</p>
+</div>
+</div>
+</article>
+<!-- Exercise 5 (Skipped) -->
+<article class="bg-surface-container/40 backdrop-blur-md border border-outline-variant/10 rounded-xl p-lg flex flex-col gap-sm relative overflow-hidden shadow-sm opacity-80">
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-surface-variant"></div>
+<div class="flex flex-col gap-1 pl-4">
+<span class="text-label-caps font-label-caps text-secondary uppercase tracking-wider flex items-center gap-2"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">block</span> SKIPPED | CORE</span>
+<h3 class="text-headline-md font-headline-md text-secondary">5. Dead Bug</h3>
+</div>
+<div class="mt-2 pl-4">
+<span class="text-body-md font-body-md text-secondary/70 italic bg-surface-container/50 px-3 py-2 rounded-md inline-block">No sets recorded.</span>
+</div>
+</article>
+</section>
+<footer class="flex flex-col items-center justify-center gap-4 py-xl mt-lg opacity-70">
+<div class="w-12 h-12 bg-surface-container-high rounded-full flex items-center justify-center border border-outline-variant/20 shadow-inner">
+<img alt="Body OS Logo" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClrbjc16eakVS5GG_UHKHeCD1ip1Fcoyv07TVMpfzgV_fsCo7zNFKly90EH3MhnycaJ27vPPoSnoSnrOAq04gOgWGjvzGNjssvwSiXMb5OygsqGKB2S20xLTD4gcSKZs73ryVrzHh4UtzXYCCoFUaMIUgtFzCk-kmEdG-hqc6_TGw_hJZRbddI2j3fvMOx6ubjtIV3D_Z2UzhoSo1tDSht2qVkm2bPjTf7Zeqnye1fypKXPnQKZfRAbHW0F8QqbAfChQ"/>
+</div>
+<span class="text-label-caps font-label-caps tracking-[0.2em] uppercase text-secondary">Generated by Body OS</span>
+</footer></main>
+<!-- Bottom Navigation (Shell) -->
+<nav class="bg-surface-container-low dark:bg-surface-container-low border-t border-outline-variant fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 shadow-[0_-10px_20px_rgba(0,0,0,0.2)] md:hidden">
+<div class="flex flex-col items-center justify-center text-secondary p-2 cursor-pointer hover:bg-surface-variant rounded-lg transition-colors group">
+<span class="material-symbols-outlined mb-1 group-hover:text-primary-fixed transition-colors" data-icon="fitness_center" style="font-variation-settings: 'FILL' 0;">fitness_center</span>
+<span class="text-label-caps font-label-caps group-hover:text-primary transition-colors">Training</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary p-2 cursor-pointer hover:bg-surface-variant rounded-lg transition-colors group">
+<span class="material-symbols-outlined mb-1 group-hover:text-primary-fixed transition-colors" data-icon="psychology" style="font-variation-settings: 'FILL' 0;">psychology</span>
+<span class="text-label-caps font-label-caps group-hover:text-primary transition-colors">Insight</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-fixed text-surface rounded-full px-5 py-2 cursor-pointer scale-90 duration-150 shadow-[0_0_15px_rgba(195,244,0,0.3)]">
+<span class="material-symbols-outlined mb-1" data-icon="history" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="text-label-caps font-label-caps font-bold">History</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary p-2 cursor-pointer hover:bg-surface-variant rounded-lg transition-colors group">
+<span class="material-symbols-outlined mb-1 group-hover:text-primary-fixed transition-colors" data-icon="person" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="text-label-caps font-label-caps group-hover:text-primary transition-colors">Profile</span>
+</div>
+</nav>
+</body></html>

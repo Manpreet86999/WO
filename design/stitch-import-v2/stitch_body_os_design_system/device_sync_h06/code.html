@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&family=Manrope:wght@200..800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Manrope:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#324f00", "secondary-fixed-dim": "#91db04", "secondary-container": "#8ed800", "surface": "#0d141e", "surface-variant": "#2e3541", "on-primary-container": "#7d7d83", "outline-variant": "#46464b", "on-primary-fixed": "#1a1b20", "primary-fixed": "#e3e1e9", "on-secondary-fixed": "#112000", "on-secondary": "#213600", "inverse-surface": "#dce3f2", "background": "#0d141e", "primary-container": "#111217", "error-container": "#93000a", "surface-container-low": "#151c27", "on-primary-fixed-variant": "#46464c", "surface-container-high": "#232a35", "tertiary-fixed-dim": "#9dd841", "tertiary-container": "#0a1500", "surface-tint": "#c7c6cd", "secondary": "#a8f530", "surface-container-highest": "#2e3541", "secondary-fixed": "#abf834", "tertiary-fixed": "#b8f55b", "inverse-on-surface": "#2a313c", "on-secondary-container": "#395a00", "primary": "#c7c6cd", "outline": "#919095", "on-error": "#690005", "primary-fixed-dim": "#c7c6cd", "surface-container": "#19202b", "on-surface-variant": "#c7c6cb", "on-tertiary-fixed": "#121f00", "inverse-primary": "#5e5e64", "on-tertiary": "#213600", "on-secondary-fixed-variant": "#314f00", "surface-container-lowest": "#070e19", "on-primary": "#2f3036", "tertiary": "#9dd841", "on-tertiary-container": "#5c8a00", "on-error-container": "#ffdad6", "surface-bright": "#333a45", "on-background": "#dce3f2", "on-surface": "#dce3f2", "error": "#ffb4ab", "surface-dim": "#0d141e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: {}, fontFamily: { "headline": ["Manrope"], "display": ["Manrope"], "body": ["Hanken Grotesk"], "label": ["Hanken Grotesk"] }, fontSize: {} } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-3"><img alt="Body OS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeWKOx9KwVkdFVhN0ua2jD2UQKolfaWQGFPO9o07-k_cQsBvghBykEEqyYvx3xw0mmgB4rka1l44rItIo5XJ-TWgyIOme3wfvu-ShqzOHKODDPNBO_OKbUOiw8RuIyDCtJFE4IfKEdckU8NsPpPDbZezQA11xNrKavHW6rBbAbn2m273QAEy29yHSQWow1RANWO7cHeyrcvOvVmjk1A7FOtr3Aj8z6Zle9sFNnlU9RzNRWkxqQjvEaIA"/><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline font-extrabold text-sm tracking-tight text-on-surface uppercase">Body OS</span><span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase tracking-wider bg-secondary text-on-secondary">OS 2.4</span></div><h1 class="text-xs font-headline font-semibold text-on-surface-variant truncate max-w-[140px]">Dashboard</h1></div></div><div class="flex items-center gap-3"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors focus:outline-none"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-28"><div class="flex flex-col w-full px-4 space-y-4">
+<!-- Top Device Sync Navigation Header & Live Node Bar -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-3">
+<button aria-label="Go back" class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface hover:text-secondary active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-[11px] font-label font-bold uppercase tracking-widest text-secondary">Telemetry Core</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="text-[10px] font-label text-on-surface-variant font-medium">NODE #704-B</span>
+</div>
+<h2 class="text-lg font-headline font-extrabold text-on-surface tracking-tight">Device Sync (H06)</h2>
+</div>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high">
+<span class="material-symbols-outlined text-secondary text-[16px]">wifi_tethering</span>
+<span class="text-[11px] font-label font-bold text-on-surface tracking-wider">ONLINE</span>
+</div>
+</div>
+<!-- Live Pulse Status Banner -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-4">
+<div class="absolute -right-8 -top-8 w-28 h-28 rounded-full bg-secondary/5 blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container-highest">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="absolute w-5 h-5 rounded-full bg-secondary/30 animate-ping"></span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-headline font-extrabold tracking-wider uppercase text-secondary">SYNCING ACTIVE</span>
+<span class="text-xs text-on-surface-variant">·</span>
+<span class="text-xs font-headline font-bold text-on-surface" id="sync-percentage-badge">44% COMPLETE</span>
+</div>
+<p class="text-[11px] font-label text-on-surface-variant mt-0.5">Bidirectional pipeline streaming telemetry stream</p>
+</div>
+</div>
+<div class="px-2 py-1 rounded-full bg-surface-container-highest text-secondary text-[10px] font-label font-bold uppercase tracking-wider">
+        LIVE BUS
+      </div>
+</div>
+</div>
+<!-- Batch Payload Telemetry Card -->
+<div class="rounded-xl bg-surface-container p-4 flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">sync_saved_locally</span>
+<span class="text-xs font-label font-bold uppercase tracking-wider text-on-surface">Batch Payload Engine</span>
+</div>
+<span class="text-xs font-headline font-bold text-secondary">Chunk 14/32</span>
+</div>
+<!-- Progress Bar with Glow Segment -->
+<div class="space-y-1.5">
+<div class="w-full h-2.5 rounded-full bg-surface-container-lowest overflow-hidden p-0.5">
+<div class="h-full rounded-full bg-secondary transition-all duration-500 shadow-[0_0_12px_rgba(168,245,48,0.4)]" id="sync-progress-bar" style="width: 47%"></div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-label text-on-surface-variant">
+<span>Uploading 399 of 850 records...</span>
+<span class="font-bold text-on-surface">47%</span>
+</div>
+</div>
+<!-- Speed and ETA Stats Strip -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-container-high">
+<span class="text-[11px] font-label text-on-surface-variant">Transfer Rate</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[14px]">speed</span>
+<span class="text-xs font-headline font-bold text-on-surface">124 kb/s</span>
+</div>
+</div>
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-container-high">
+<span class="text-[11px] font-label text-on-surface-variant">Remaining ETA</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[14px]">timelapse</span>
+<span class="text-xs font-headline font-bold text-on-surface">Est. 18s</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Storage & Node State 2x2 Bento Grid -->
+<div class="space-y-2">
+<div class="flex items-center justify-between px-1">
+<span class="text-[11px] font-label font-bold uppercase tracking-widest text-on-surface-variant">Node Architecture State</span>
+<span class="text-[10px] font-label text-secondary font-semibold">4 / 4 CORES SYNCED</span>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- 1. SQLite Local -->
+<div class="rounded-xl bg-surface-container p-3.5 flex flex-col justify-between space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label font-bold uppercase text-on-surface-variant tracking-wider">SQLite Local</span>
+<div class="w-6 h-6 rounded-full bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<div>
+<div class="text-lg font-headline font-extrabold text-on-surface tracking-tight leading-none">850</div>
+<div class="text-[10px] font-label font-medium text-secondary mt-1">Indexed & Verified</div>
+</div>
+</div>
+<!-- 2. Pending Sync -->
+<div class="rounded-xl bg-surface-container p-3.5 flex flex-col justify-between space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label font-bold uppercase text-on-surface-variant tracking-wider">Pending Sync</span>
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[16px]">cloud_upload</span>
+</div>
+</div>
+<div>
+<div class="text-lg font-headline font-extrabold text-on-surface tracking-tight leading-none">451 items</div>
+<div class="text-[10px] font-label font-medium text-on-surface-variant mt-1">In upload buffer</div>
+</div>
+</div>
+<!-- 3. Cloud Mirror -->
+<div class="rounded-xl bg-surface-container p-3.5 flex flex-col justify-between space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label font-bold uppercase text-on-surface-variant tracking-wider">Cloud Mirror</span>
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+</div>
+<div>
+<div class="text-sm font-headline font-extrabold text-on-surface tracking-tight leading-none truncate">AES-256-GCM</div>
+<div class="text-[10px] font-label font-medium text-on-surface-variant mt-1">Local key sealed</div>
+</div>
+</div>
+<!-- 4. Last Complete -->
+<div class="rounded-xl bg-surface-container p-3.5 flex flex-col justify-between space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label font-bold uppercase text-on-surface-variant tracking-wider">Last Sync</span>
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">history</span>
+</div>
+</div>
+<div>
+<div class="text-sm font-headline font-extrabold text-on-surface tracking-tight leading-none">06:45 AM</div>
+<div class="text-[10px] font-label font-medium text-on-surface-variant mt-1">4h 12m ago</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Linked Biometric Harvesters Card -->
+<div class="rounded-xl bg-surface-container p-4 space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">monitor_heart</span>
+<span class="text-xs font-label font-bold uppercase tracking-wider text-on-surface">Linked Biometric Harvesters</span>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold bg-secondary/15 text-secondary uppercase">2 Paired</span>
+</div>
+<div class="flex flex-col space-y-2.5">
+<!-- Device 1: Polar H10 & Ultra Sensor -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-high">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[20px]">ecg_heart</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-headline font-bold text-on-surface">Polar H10 & Ultra Sensor</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-[11px] font-label text-on-surface-variant">
+<span>BLE Peripheral</span>
+<span>·</span>
+<span class="text-on-surface font-medium">89% Batt</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase bg-surface-container-lowest text-secondary">Buffered</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+</div>
+<!-- Device 2: Barbell Velocity Puck -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-high opacity-90">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface text-[20px]">fitness_center</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-headline font-bold text-on-surface">RepKinetic VBT Pod</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-[11px] font-label text-on-surface-variant">
+<span>9-Axis IMU</span>
+<span>·</span>
+<span class="text-on-surface font-medium">94% Batt</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-bold uppercase bg-surface-container-lowest text-on-surface-variant">Idle</span>
+<span class="w-2 h-2 rounded-full bg-on-surface-variant"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Transport Preferences Settings Card -->
+<div class="rounded-xl bg-surface-container p-4 space-y-3.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">tune</span>
+<span class="text-xs font-label font-bold uppercase tracking-wider text-on-surface">Transport Preferences</span>
+</div>
+<!-- Toggle 1: Background Auto-Sync -->
+<div class="flex items-center justify-between">
+<div class="pr-2">
+<div class="text-xs font-headline font-bold text-on-surface">Background Auto-Sync</div>
+<div class="text-[11px] font-label text-on-surface-variant">Syncs after completed set & rest timer intervals</div>
+</div>
+<button aria-pressed="true" class="w-12 h-7 rounded-full bg-secondary p-1 flex items-center justify-end transition-colors active:scale-95" id="toggle-auto-sync">
+<div class="w-5 h-5 rounded-full bg-on-secondary shadow-md transform transition-transform"></div>
+</button>
+</div>
+<!-- Toggle 2: Sync on Wi-Fi Only -->
+<div class="flex items-center justify-between">
+<div class="pr-2">
+<div class="text-xs font-headline font-bold text-on-surface">Sync on Wi-Fi Only</div>
+<div class="text-[11px] font-label text-on-surface-variant">Restricts cellular bandwidth usage in gym venues</div>
+</div>
+<button aria-pressed="false" class="w-12 h-7 rounded-full bg-surface-container-highest p-1 flex items-center justify-start transition-colors active:scale-95" id="toggle-wifi-only">
+<div class="w-5 h-5 rounded-full bg-outline shadow-md transform transition-transform"></div>
+</button>
+</div>
+<!-- End-to-End Key Hardware Enclave -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-high">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<div>
+<div class="text-xs font-headline font-bold text-on-surface">End-to-End Key Verification</div>
+<div class="text-[10px] font-label text-on-surface-variant">ECDSA-P256 hardware enclave sealed</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-label font-bold bg-secondary text-on-secondary uppercase tracking-wider">
+        VERIFIED
+      </span>
+</div>
+</div>
+<!-- Primary Action Controls -->
+<div class="flex flex-col gap-2.5 pt-1">
+<button class="w-full h-12 rounded-xl bg-secondary text-on-secondary font-headline font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-secondary/15 active:scale-[0.98] transition-transform" id="btn-force-sync">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span>Force Immediate Re-Sync</span>
+</button>
+<button class="w-full h-12 rounded-xl bg-surface-container-high text-on-surface font-headline font-bold text-sm flex items-center justify-center gap-2 hover:bg-surface-container-highest active:scale-[0.98] transition-all" id="btn-pause-sync">
+<span class="material-symbols-outlined text-[18px]">pause</span>
+<span>Pause Current Sync</span>
+</button>
+</div>
+<!-- Zero Data Loss Security Banner -->
+<div class="rounded-xl bg-surface-container-low p-3.5 flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">security</span>
+<p class="text-[11px] font-label leading-relaxed text-on-surface-variant">
+<strong class="text-on-surface font-bold">ZERO DATA LOSS PROTOCOL:</strong> All kinetic telemetry, barbell load sets, and biometric intervals remain committed to local encrypted SQLite storage even if your network link drops mid-rep.
+    </p>
+</div>
+<div class="h-6"></div>
+</div>
+<script>
+  (function() {
+    // Interactive toggles
+    const autoSyncBtn = document.getElementById('toggle-auto-sync');
+    const wifiOnlyBtn = document.getElementById('toggle-wifi-only');
+    const pauseBtn = document.getElementById('btn-pause-sync');
+    const forceBtn = document.getElementById('btn-force-sync');
+    const progressBar = document.getElementById('sync-progress-bar');
+    const percentageBadge = document.getElementById('sync-percentage-badge');
+
+    let isAutoSync = true;
+    let isWifiOnly = false;
+    let isPaused = false;
+    let currentPct = 47;
+
+    if (autoSyncBtn) {
+      autoSyncBtn.addEventListener('click', () => {
+        isAutoSync = !isAutoSync;
+        autoSyncBtn.setAttribute('aria-pressed', isAutoSync);
+        if (isAutoSync) {
+          autoSyncBtn.className = 'w-12 h-7 rounded-full bg-secondary p-1 flex items-center justify-end transition-colors active:scale-95';
+          autoSyncBtn.firstElementChild.className = 'w-5 h-5 rounded-full bg-on-secondary shadow-md transform transition-transform';
+        } else {
+          autoSyncBtn.className = 'w-12 h-7 rounded-full bg-surface-container-highest p-1 flex items-center justify-start transition-colors active:scale-95';
+          autoSyncBtn.firstElementChild.className = 'w-5 h-5 rounded-full bg-outline shadow-md transform transition-transform';
+        }
+      });
+    }
+
+    if (wifiOnlyBtn) {
+      wifiOnlyBtn.addEventListener('click', () => {
+        isWifiOnly = !isWifiOnly;
+        wifiOnlyBtn.setAttribute('aria-pressed', isWifiOnly);
+        if (isWifiOnly) {
+          wifiOnlyBtn.className = 'w-12 h-7 rounded-full bg-secondary p-1 flex items-center justify-end transition-colors active:scale-95';
+          wifiOnlyBtn.firstElementChild.className = 'w-5 h-5 rounded-full bg-on-secondary shadow-md transform transition-transform';
+        } else {
+          wifiOnlyBtn.className = 'w-12 h-7 rounded-full bg-surface-container-highest p-1 flex items-center justify-start transition-colors active:scale-95';
+          wifiOnlyBtn.firstElementChild.className = 'w-5 h-5 rounded-full bg-outline shadow-md transform transition-transform';
+        }
+      });
+    }
+
+    if (pauseBtn) {
+      pauseBtn.addEventListener('click', () => {
+        isPaused = !isPaused;
+        const label = pauseBtn.querySelector('span:last-child');
+        const icon = pauseBtn.querySelector('.material-symbols-outlined');
+        if (isPaused) {
+          label.textContent = 'Resume Sync';
+          icon.textContent = 'play_arrow';
+          pauseBtn.classList.add('text-secondary');
+        } else {
+          label.textContent = 'Pause Current Sync';
+          icon.textContent = 'pause';
+          pauseBtn.classList.remove('text-secondary');
+        }
+      });
+    }
+
+    if (forceBtn) {
+      forceBtn.addEventListener('click', () => {
+        currentPct = Math.min(100, currentPct + 12);
+        if (progressBar) progressBar.style.width = currentPct + '%';
+        if (percentageBadge) percentageBadge.textContent = currentPct + '% COMPLETE';
+        
+        forceBtn.classList.add('scale-95');
+        setTimeout(() => forceBtn.classList.remove('scale-95'), 150);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.3)]" data-active-classes="text-secondary font-bold"><div class="h-16 px-2 flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 transition-colors group text-secondary font-bold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="live-workout" href="#"><span class="material-symbols-outlined text-[22px]">fitness_center</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Workout</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="planner" href="#"><span class="material-symbols-outlined text-[22px]">calendar_month</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Planner</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="analytics" href="#"><span class="material-symbols-outlined text-[22px]">insights</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">Analyze</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-11 px-1 text-on-surface-variant transition-colors group" data-path="system-hub" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="text-[10px] font-label font-medium tracking-tight mt-0.5">More</span></a></div></nav></body></html>
