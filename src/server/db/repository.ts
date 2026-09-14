@@ -149,15 +149,27 @@ export function saveProfile(profile: Partial<Profile>): Profile {
 export function getSettings(): AppSettings {
   const row = getDb().prepare('SELECT data FROM settings WHERE id = 1').get() as { data: string } | undefined;
   const raw = { ...emptySettings(), ...(row ? JSON.parse(row.data) : {}) } as AppSettings;
+  // Settings backups can move between Windows user profiles or machines. A machine-local
+  // encryption key cannot read those old integration secrets, but that must never stop
+  // workouts and records from loading. Treat only the unreadable secret as disconnected.
+  const readSecret = (value: string | undefined, label: string) => {
+    try {
+      return decryptSecret(value || '');
+    } catch {
+      console.warn(`[settings] ${label} could not be decrypted and needs to be connected again.`);
+      return '';
+    }
+  };
   return {
     ...raw,
-    appPassword: decryptSecret(raw.appPassword || ''),
-    aiApiKey: decryptSecret(raw.aiApiKey || ''),
-    openRouterApiKey: decryptSecret(raw.openRouterApiKey || ''),
-    nvidiaNimApiKey: decryptSecret(raw.nvidiaNimApiKey || ''),
-    braveSearchApiKey: decryptSecret(raw.braveSearchApiKey || ''),
-    googleClientSecret: decryptSecret(raw.googleClientSecret || ''),
-    googleRefreshToken: decryptSecret(raw.googleRefreshToken || ''),
+    appPassword: readSecret(raw.appPassword, 'Email app password'),
+    aiApiKey: readSecret(raw.aiApiKey, 'AI API key'),
+    openRouterApiKey: readSecret(raw.openRouterApiKey, 'OpenRouter API key'),
+    nvidiaNimApiKey: readSecret(raw.nvidiaNimApiKey, 'NVIDIA API key'),
+    braveSearchApiKey: readSecret(raw.braveSearchApiKey, 'Brave Search API key'),
+    googleClientSecret: readSecret(raw.googleClientSecret, 'Google OAuth secret'),
+    googleRefreshToken: readSecret(raw.googleRefreshToken, 'Google Fit connection'),
+    gdriveRefreshToken: readSecret(raw.gdriveRefreshToken, 'Google Drive connection'),
     recipients: Array.isArray(raw.recipients) ? raw.recipients : [],
   };
 }

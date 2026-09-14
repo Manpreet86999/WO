@@ -2,7 +2,7 @@
 [Setup]
 AppId={{A7C3E8F1-4B2D-4E9A-9C1F-8D6B5A0E2F73}}
 AppName=Body OS
-AppVersion=4.5.4
+AppVersion=4.5.5
 DefaultDirName={pf}\Body OS
 DefaultGroupName=Body OS
 OutputDir=release
