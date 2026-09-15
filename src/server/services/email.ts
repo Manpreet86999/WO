@@ -321,7 +321,7 @@ export async function sendMail(
     host: 'smtp.gmail.com',
     port: 465,
     secure: true,
-    auth: { user: settings.senderEmail, pass: settings.appPassword },
+    auth: { user: settings.senderEmail.trim(), pass: settings.appPassword.replace(/\s+/g, '') },
   });
   await transporter.sendMail({
     from: `"${settings.senderName}" <${settings.senderEmail}>`,
@@ -341,10 +341,16 @@ import puppeteer from 'puppeteer';
 
 export async function generateReportEmailPayload(session: Session, coachData?: CoachResult): Promise<{ html: string; attachments: any[] }> {
   let htmlStr = reportHtml(session, coachData);
+  // Never send a generic report as an AI report. The delivery service only reaches this
+  // point after validated analysis, and this visible section makes recommendations clear.
+  const recommendations = String(session.aiOverallSummary || '').split(/\n|(?<=[.!?])\s+(?=[A-Z])/).map((line) => line.replace(/^[-•\d.\s]+/, '').trim()).filter(Boolean).slice(0, 5);
+  if (recommendations.length) {
+    htmlStr = htmlStr.replace('</main>', `<section style="margin:24px 0;padding:24px;border-radius:16px;background:#152031;border:1px solid #c3f400;color:#fff"><h2 style="margin:0 0 12px;color:#c3f400">AI recommendations</h2><ul style="margin:0;padding-left:20px;line-height:1.7">${recommendations.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section></main>`);
+  }
   if (!htmlStr.includes('cdn.tailwindcss.com')) {
       htmlStr = htmlStr.replace('<head>', '<head><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>');
   }
-  const browser = await puppeteer.launch({
+  try { const browser = await puppeteer.launch({
     executablePath: 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
     headless: true
   });
@@ -368,5 +374,8 @@ await new Promise(r => setTimeout(r, 2000));
     };
   } finally {
     await browser.close();
+  } } catch {
+    // Chromium is optional. Raw, fully styled HTML remains a dependable email fallback.
+    return { html: htmlStr, attachments: [] };
   }
 }

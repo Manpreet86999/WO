@@ -1,5 +1,5 @@
 /** App version string used for update checks (keep in sync with package.json). */
-export const APP_VERSION = '4.5.5';
+export const APP_VERSION = '4.5.6';
 
 /** Normalize tags like "v2.2.0" → "2.2.0" */
 export function normalizeVersion(v: string): string {

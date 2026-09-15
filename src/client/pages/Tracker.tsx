@@ -362,8 +362,6 @@ export function Tracker() {
               Open Records
             </button>
           </div>
-          <button type="button" className="btn btn-hot btn-xl w-full" disabled={busySaving} onClick={async()=>{setBusySaving(true);try{const endedAt=new Date().toISOString();const result=await app.api.saveSession({...tracker,endedAt,localOnly:true});setLastSessionId(result.session.id);setTracker(null);setSessionPrs([]);await app.refresh();toast.push('Workout saved on this device.','ok');setPage('Records');}catch(error){toast.push((error as Error).message,'err');}finally{setBusySaving(false);}}}>{busySaving?'Saving…':'Save workout locally'}</button>
-          <p className="subtle">No AI service or cloud account needed. Reports are optional.</p>
           <button
             type="button"
             className="btn btn-good btn-xl w-full"
@@ -393,10 +391,10 @@ export function Tracker() {
                 setSessionPrs([]);
                 await app.refresh();
                 toast.push(
-                  sessionPrs.length
-                    ? `Saved! ${sessionPrs.length} PR(s) this session.`
-                    : 'Report generated, saved, and sent!',
-                  'ok',
+                  data.delivery?.ok
+                    ? (sessionPrs.length ? `Saved and sent with ${sessionPrs.length} PR(s).` : 'Saved, analysed by AI, and emailed.')
+                    : `Workout saved. AI report is queued for retry: ${data.delivery?.error || 'delivery needs attention.'}`,
+                  data.delivery?.ok ? 'ok' : 'info',
                 );
                 setPage('Reports');
               } catch (e) {
@@ -407,7 +405,7 @@ export function Tracker() {
               }
             }}
           >
-            {busySaving ? 'Generating AI Report & Sending...' : 'Save & send report (optional)'}
+            {busySaving ? 'Saving, analysing & sending…' : 'Save & send AI report'}
           </button>
           <button type="button" className="btn btn-ghost w-full mt-3" onClick={() => setPage('Dashboard')}>
             Exit without saving

@@ -27,6 +27,9 @@ export function Dashboard() {
   const [missionDismissed,setMissionDismissed]=useState(false);
   const [readinessForm, setReadinessForm] = useState<any>({});
   const [flexWeekName, setFlexWeekName] = useState('');
+  const [pendingReports, setPendingReports] = useState<Array<{ sessionId: string; attempts: number; lastError: string }>>([]);
+
+  useEffect(() => { void fetch('/api/reports/pending').then((response) => response.ok ? response.json() : { reports: [] }).then((data) => setPendingReports(data.reports || [])).catch(() => {}); }, []);
 
   useEffect(() => {
     if (app.db && app.settings) {
@@ -78,6 +81,16 @@ export function Dashboard() {
     .find((item) => item.type !== 'rest' || item.exercises.length > 0);
   const ctaLabel = record ? 'Open record' : ready ? 'Start session' : 'Log readiness';
   const isAiEnabled = settings.hasAiApiKey || settings.aiProvider === 'ollama';
+
+  async function retryReports() {
+    try {
+      const response = await fetch('/api/reports/pending/retry', { method: 'POST' });
+      const data = await response.json();
+      const failed = (data.results || []).filter((item: any) => !item.ok).length;
+      setPendingReports(failed ? await fetch('/api/reports/pending').then((r) => r.json()).then((x) => x.reports || []) : []);
+      toast.push(failed ? `${failed} report(s) still need attention.` : 'Pending AI reports sent.', failed ? 'info' : 'ok');
+    } catch (error) { toast.push(error instanceof Error ? error.message : 'Could not retry reports.', 'err'); }
+  }
 
   async function saveReadiness(values: Record<string, any>) {
     const fd = {get: (key: string) => values[key]};
@@ -252,6 +265,7 @@ export function Dashboard() {
 
   return (
     <div className="fade dash">
+      {pendingReports.length ? <section className="dash-panel" style={{ borderColor: 'var(--warn, #eab308)' }}><div className="row" style={{ justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' }}><div><span className="dash-eyebrow">REPORT DELIVERY NEEDS ATTENTION</span><h3 style={{ margin: '4px 0' }}>{pendingReports.length} AI report{pendingReports.length === 1 ? '' : 's'} waiting</h3><p className="subtle" style={{ margin: 0 }}>Your workouts are saved. {pendingReports[0]?.lastError}</p></div><button type="button" className="btn btn-hot" onClick={() => void retryReports()}>Retry reports</button></div></section> : null}
       <HealthReadings />
       <Modal
         open={!week.missionObjective && !missionDismissed}

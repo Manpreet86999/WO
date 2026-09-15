@@ -25,7 +25,7 @@ export function Settings() {
     recipients: (settings?.recipients || []).join(', '),
     streakStartDate: settings?.streakStartDate || '',
     aiProvider: settings?.aiProvider || 'openrouter',
-    aiModel: settings?.aiModel || 'google/gemma-4-31b-it:free',
+    aiModel: settings?.aiModel || 'openrouter/free',
     aiApiKey: '',
     profileName: settings?.profileName || '',
     gender: settings?.gender || 'male',
@@ -44,7 +44,7 @@ export function Settings() {
   const [aiStatus, setAiStatus] = useState('');
   const [benchStatus, setBenchStatus] = useState('');
   const [aiModels, setAiModels] = useState<{openRouter: any[], nvidia: any[]}>({ openRouter: [], nvidia: [] });
-  const [recommended, setRecommended] = useState('google/gemma-4-31b-it:free');
+  const [recommended, setRecommended] = useState('openrouter/free');
   const [restoreJson, setRestoreJson] = useState('');
   const [aiBusy, setAiBusy] = useState(false);
   const [resetModal, setResetModal] = useState(false);
@@ -62,6 +62,17 @@ export function Settings() {
   const [feedbackReplyTo, setFeedbackReplyTo] = useState('');
   const [feedbackBusy, setFeedbackBusy] = useState(false);
   const [flexibleModeDialog, setFlexibleModeDialog] = useState(false);
+  const [helpService, setHelpService] = useState<'google' | 'email' | 'ai' | null>(null);
+
+  async function importGoogleCredential(file: File) {
+    try {
+      const raw = JSON.parse(await file.text());
+      const credential = raw.installed || raw.web;
+      if (!credential?.client_id || !credential?.client_secret) throw new Error('Choose the OAuth client JSON downloaded from Google Cloud Console.');
+      setForm((current) => ({ ...current, googleClientId: credential.client_id, googleClientSecret: credential.client_secret }));
+      toast.push('Google credential loaded. Save it once, then connect each service separately.', 'ok');
+    } catch (error) { toast.push(error instanceof Error ? error.message : 'Could not read the credential JSON.', 'err'); }
+  }
 
   useEffect(() => {
     void app.api.getAiModels()
@@ -373,7 +384,7 @@ export function Settings() {
         </div>
 
         <div className="page-panel stack" style={{ display: section === 'integrations' ? undefined : 'none' }}>
-          <div className="row"><h3 style={{ margin: 0 }}>Email delivery</h3><span className={`chip ${settings.hasAppPassword ? 'ready-ok' : ''}`}>{settings.hasAppPassword ? 'Connected' : 'Not connected'}</span></div><p className="subtle">Report sender and recipients. This is separate from your Body OS account email.</p>
+          <div className="row"><h3 style={{ margin: 0 }}>Email delivery <button type="button" className="btn btn-ghost btn-sm" onClick={() => setHelpService('email')}>?</button></h3><span className={`chip ${settings.hasAppPassword ? 'ready-ok' : ''}`}>{settings.hasAppPassword ? 'Connected' : 'Not connected'}</span></div><p className="subtle">Report sender and recipients. This is separate from your Body OS account email. Gmail App Password spaces are cleaned automatically.</p>
           <input className="input" value={form.senderName} onChange={(e) => setForm({ ...form, senderName: e.target.value })} placeholder="Sender name" /><input className="input" value={form.senderEmail} onChange={(e) => setForm({ ...form, senderEmail: e.target.value })} placeholder="Gmail report sender" /><input className="input" type="password" value={form.appPassword} onChange={(e) => setForm({ ...form, appPassword: e.target.value })} placeholder={settings.hasAppPassword ? 'App password saved — enter to change' : 'Gmail App Password'} /><textarea className="input" value={form.recipients} onChange={(e) => setForm({ ...form, recipients: e.target.value })} placeholder="Report recipients, comma-separated" />
           <div className="row"><button className="btn btn-hot" onClick={() => void save()}>Save email</button><button className="btn btn-soft" onClick={async () => { try { await app.api.saveSettings(form); const res = await app.api.sendDummyEmail(); toast.push(`Test sent to ${res.sentTo.join(', ')}`, 'ok'); } catch (error) { toast.push((error as Error).message, 'err'); } }}>Send test</button></div>
         </div>
@@ -438,8 +449,9 @@ export function Settings() {
             <h3 style={{ margin: 0 }}>Google Fit Sync</h3>
             {settings.hasGoogleFit ? <span className="chip ready-ok">Connected</span> : null}
           </div>
-          <p className="subtle">Automatically sync your body weight from Google Fit.</p>
-          <input className="input" type="text" placeholder={settings.hasGoogleFit ? "Client ID (Saved, enter to change)" : "Google OAuth Client ID"} value={form.googleClientId} onChange={(e) => setForm({ ...form, googleClientId: e.target.value })} />
+          <p className="subtle">Use the same Google OAuth JSON once for Drive and Google Fit. Each service still needs its own Google approval.</p>
+          <input className="input" type="file" accept="application/json,.json" onChange={(e) => { const file = e.target.files?.[0]; if (file) void importGoogleCredential(file); }} />
+          <input className="input" type="text" placeholder={settings.hasGoogleFit ? "Shared Google client ID (saved)" : "Shared Google OAuth Client ID"} value={form.googleClientId} onChange={(e) => setForm({ ...form, googleClientId: e.target.value })} />
           <input className="input" type="password" placeholder={settings.hasGoogleFit ? "Client Secret (Saved, enter to change)" : "Google OAuth Client Secret"} value={form.googleClientSecret} onChange={(e) => setForm({ ...form, googleClientSecret: e.target.value })} />
           <div className="row mt-2">
             <button className="btn btn-dark" type="button" onClick={async () => {
@@ -454,7 +466,7 @@ export function Settings() {
               } catch (e) {
                 toast.push((e as Error).message, 'err');
               }
-            }}>Authorize & Connect</button>
+            }}>Authorize & Connect</button><button type="button" className="btn btn-ghost btn-sm" onClick={() => setHelpService('google')}>?</button>
             <button className="btn btn-soft" type="button" disabled={!settings.hasGoogleFit} onClick={async () => {
               try {
                 toast.push('Syncing Google Fit...', 'info');
@@ -470,8 +482,8 @@ export function Settings() {
         </div>
 
         <div className="page-panel stack" style={{ display: section === 'integrations' ? undefined : 'none' }}>
-          <div className="row"><h3 style={{ margin: 0 }}>Google Drive</h3><span className={`chip ${settings.hasGdrive ? 'ready-ok' : ''}`}>{settings.hasGdrive ? 'Connected' : 'Not connected'}</span></div>
-          <p className="subtle">Private Drive storage is used for backups and recovery only.</p>
+          <div className="row"><h3 style={{ margin: 0 }}>Google Drive <button type="button" className="btn btn-ghost btn-sm" onClick={() => setHelpService('google')}>?</button></h3><span className={`chip ${settings.hasGdrive ? 'ready-ok' : ''}`}>{settings.hasGdrive ? 'Connected' : 'Not connected'}</span></div>
+          <p className="subtle">Private Drive storage is used for backups and recovery only. It uses the shared Google credential above.</p>
           <button className="btn btn-soft" type="button" onClick={() => settings.hasGdrive ? setSection('data') : handleGdriveAuth()}>{settings.hasGdrive ? 'Open backup details' : 'Connect Google Drive'}</button>
         </div>
 
@@ -528,7 +540,7 @@ export function Settings() {
         </div>
 
         <div className="page-panel stack" style={{ display: section === 'integrations' ? undefined : 'none' }}>
-          <h3>AI engine</h3>
+          <h3>AI engine <button type="button" className="btn btn-ghost btn-sm" onClick={() => setHelpService('ai')}>?</button></h3>
           <p className="subtle">
             Backend coach runs on your PC and calls AI APIs. Keys are encrypted at rest and never shown back to the browser.
             Get a free key at openrouter.ai or build.nvidia.com.
@@ -543,30 +555,9 @@ export function Settings() {
             <option value="openrouter">OpenRouter (free models)</option>
             <option value="nvidia">NVIDIA</option>
           </select>
-          {form.aiProvider === 'ollama' ? (
-            <input
-              className="input"
-              value={form.aiModel}
-              onChange={(e) => setForm({ ...form, aiModel: e.target.value })}
-              placeholder="Ollama model (e.g. llama3)"
-            />
-          ) : (
-            <select
-              className="input"
-              value={form.aiModel}
-              onChange={(e) => setForm({ ...form, aiModel: e.target.value })}
-            >
-              { (form.aiProvider === 'nvidia' ? aiModels.nvidia : aiModels.openRouter).length ? (
-                (form.aiProvider === 'nvidia' ? aiModels.nvidia : aiModels.openRouter).map((m) => (
-                  <option key={m.id} value={m.id}>
-                    {m.label}
-                  </option>
-                ))
-              ) : (
-                <option value={form.aiModel || recommended}>{form.aiModel || recommended}</option>
-              )}
-            </select>
-          )}
+          <input className="input" list="body-os-ai-models" value={form.aiModel} onChange={(e) => setForm({ ...form, aiModel: e.target.value.trim() })} placeholder={form.aiProvider === 'nvidia' ? 'Example: meta/llama-3.1-8b-instruct' : 'Example: openrouter/free'} />
+          <datalist id="body-os-ai-models">{(form.aiProvider === 'nvidia' ? aiModels.nvidia : aiModels.openRouter).slice(0, 5).map((model) => <option key={model.id} value={model.id}>{model.label}</option>)}</datalist>
+          <p className="subtle">Enter a model ID yourself if your provider supports it. OpenRouter format: <code>publisher/model</code> or <code>publisher/model:free</code>. NVIDIA format: <code>publisher/model-name</code>. Test before saving a workout report.</p>
           {form.aiProvider !== 'ollama' && (
             <input
               className="input"
@@ -1004,6 +995,9 @@ export function Settings() {
 
       <Modal open={flexibleModeDialog} title="Start flexible training" onClose={() => setFlexibleModeDialog(false)}>
         <div className="stack"><p className="subtle">Choose where this Monday–Sunday flexible week begins. Your imported plan stays unchanged.</p>{([['today','Start today'],['monday','Start this Monday'],['next-monday','Start next Monday']] as const).map(([strategy, label]) => <button key={strategy} className="btn btn-hot" onClick={async () => { try { await app.api.saveTrainingConfig({ preplannedWeekMode: false }); await app.api.startFlexibleWeek(strategy); await refresh(); setFlexibleModeDialog(false); toast.push(`Flexible mode starts ${label.toLowerCase().replace('start ', '')}.`, 'ok'); } catch (error) { toast.push((error as Error).message, 'err'); } }}>{label}</button>)}</div>
+      </Modal>
+      <Modal open={Boolean(helpService)} title={helpService === 'google' ? 'Connect a Google service' : helpService === 'email' ? 'Set up Gmail delivery' : 'Set up the AI engine'} onClose={() => setHelpService(null)}>
+        {helpService === 'google' ? <div className="stack"><p>In Google Cloud Console, create an <strong>OAuth client</strong> and download its JSON file. Upload that one file in Google Fit. It is shared with Google Drive, but you must approve each service separately.</p><p className="subtle">Add these redirect URLs to the OAuth client: <code>http://127.0.0.1:10000/api/google-fit/callback</code> and <code>http://127.0.0.1:10000/api/gdrive/callback</code>. If your Body OS port is different, replace 10000 with the address shown in its terminal.</p></div> : helpService === 'email' ? <div className="stack"><p>Use a Gmail account with 2-Step Verification enabled. In Google Account → Security → App passwords, create one called “Body OS” and paste its 16-character password here.</p><p className="subtle">Sender is the Gmail account that sends reports. Recipient is where reports arrive. Use Send test after saving; Body OS now shows the real SMTP error instead of pretending delivery succeeded.</p></div> : <div className="stack"><p>Choose OpenRouter, NVIDIA, or local Ollama. Paste the provider key and a model ID, then use Test AI. Only a successful AI response can send an AI workout report.</p><p className="subtle">For OpenRouter use <code>openrouter/free</code> or a current model ID from OpenRouter. For NVIDIA use a model listed in NVIDIA Build. Model availability changes, so a typed model plus Test AI is more reliable than a long hard-coded list.</p></div>}
       </Modal>
 
     </div>

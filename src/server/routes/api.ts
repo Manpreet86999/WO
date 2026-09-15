@@ -41,6 +41,7 @@ import * as queue from '../services/queue.js';
 import * as telegram from '../services/telegram.js';
 import * as pdf from '../services/reports.js';
 import * as googleFit from '../services/googleFit.js';
+import * as reportDelivery from '../services/report-delivery.js';
 import type { AppDb, FlexibleDayState, PlannedExercise, Session, Week } from '../../shared/types.js';
 import { SKIN_PRODUCT_TEMPLATE } from '../../shared/skin.js';
 import {
@@ -786,54 +787,17 @@ apiRouter.post('/sessions/finish-and-send', async (req, res, next) => {
       originalDate: req.body.originalDate || undefined,
     };
 
-    // 1. Generate AI Report
-    if (appSettings.aiProvider && (appSettings.aiApiKey || appSettings.aiProvider === 'ollama')) {
-      const aiRes = await generateSessionReport(data, appSettings, session);
-      if (aiRes.ok && aiRes.report) {
-        session.aiOverallSummary = aiRes.report.overallSummary;
-        for (const log of session.logs) {
-           if (log.status === 'completed' && aiRes.report.exerciseComments[log.name]) {
-              log.aiCoachComment = aiRes.report.exerciseComments[log.name];
-           }
-        }
-      }
-    }
-
-    // 2. Save Session
+    // Save before contacting outside services: the workout is never lost.
     repo.saveSession(session);
     repo.logEvent('session.finish_and_send', { id: session.id });
-
-    // 3 & 4. Send Reports (PDF + Email)
-    if (session.logs.length > 0) {
-      const pdfBuffer = await pdf.generateDailyReportHtml(session.id).catch(err => {
-        console.error('[api] failed to generate PDF', err);
-        return null;
-      });
-
-      if (pdfBuffer && appSettings.telegramBotToken && appSettings.telegramChatId) {
-        telegram.sendTelegramDocument(`daily-report-${session.date}.html`, pdfBuffer, `Detailed Daily Report: ${session.name} - ${session.date}`)
-          .catch(err => console.error('[api] failed to send Telegram daily report', err));
-      }
-
-      if (appSettings.senderEmail && appSettings.appPassword && appSettings.recipients && appSettings.recipients.length > 0) {
-        
-        generateReportEmailPayload(session).then(payload => {
-          sendMail(appSettings, {
-            to: appSettings.recipients,
-            subject: `Body OS: Session Report - ${session.name} - ${session.date}`,
-            html: payload.html,
-            attachments: payload.attachments
-          }).catch(err => console.error('[api] failed to send Email daily report', err));
-        })
-.catch(err => console.error('[api] failed to send Email daily report', err));
-      }
-    }
+    const delivery = session.logs.length ? await reportDelivery.deliverSessionAiReport(session.id) : { ok: true as const, sentTo: [] };
 
     const nextDb = repo.loadAppDb();
     res.json({
       session,
       analytics: computeMetrics(nextDb, appSettings),
       coach: localCoach(nextDb, appSettings),
+      delivery,
     });
   } catch (e) {
     next(e);
@@ -1200,6 +1164,9 @@ apiRouter.post('/settings', (req, res) => {
   res.json(repo.publicSettings());
 });
 
+apiRouter.get('/reports/pending', (_req, res) => res.json({ reports: reportDelivery.pendingReports() }));
+apiRouter.post('/reports/pending/retry', async (_req, res) => res.json({ results: await reportDelivery.retryPendingReports() }));
+
 apiRouter.get('/google-fit/auth', (req, res) => {
   const s = repo.getSettings();
   if (!s.googleClientId) {
@@ -1422,15 +1389,9 @@ apiRouter.post(
         ? `Week ${session.weekNumber}`
         : session.weekName || 'Training Week';
       
-      const payload = await generateReportEmailPayload(session, localCoach(data, s));
-      await sendMail(s, {
-        to,
-        subject: `Body OS ${weekPart} Report - ${session.name || 'Athlete'} - ${session.date || ''}`,
-        html: payload.html,
-        attachments: payload.attachments
-      });
-
-      res.json({ ok: true, sentTo: to });
+      const delivery = await reportDelivery.deliverSessionAiReport(session.id);
+      if (!delivery.ok) return res.status(202).json(delivery);
+      res.json({ ok: true, sentTo: delivery.sentTo });
     } catch (e) {
       next(e);
     }
