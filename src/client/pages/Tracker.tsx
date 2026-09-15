@@ -257,6 +257,7 @@ export function Tracker() {
           match = { id: exerciseId, name, muscles: [target] } as any;
         } catch (error) { return toast.push((error as Error).message, 'err'); }
       }
+      if (!match) return toast.push(`Could not add ${name} to your Library.`, 'err');
       exercises.push({ name: match.name, target: match.muscles?.[0] || target, vol: '3 x 8-12', cue: '', exerciseId: match.id, trackingMode: match.trackingMode });
     }
     setTracker({ ...tracker, exercises: [...tracker.exercises, ...exercises], index: tracker.exercises.length });

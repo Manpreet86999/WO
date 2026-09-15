@@ -329,7 +329,8 @@ apiRouter.post('/setup/activate-product-key', async (req, res) => {
 });
 
 apiRouter.get('/bootstrap', (_req, res) => {
-  const data = repo.loadAppDb();
+  let data = repo.loadAppDb();
+  if (reconcileFlexibleWeekStates(data)) data = repo.loadAppDb();
   const appSettings = repo.getSettings();
   const analytics = computeMetrics(data, appSettings);
   const coach = localCoach(data, appSettings);
@@ -587,6 +588,55 @@ function priorFlexibleDaysDone(week: Week, dayKey: string) {
   });
 }
 
+/** Marks the saved flexible workout complete and unlocks exactly the next day.
+ * Both regular saves and "Save & send AI report" must use this path. */
+function advanceFlexibleWeekAfterSession(data: AppDb, session: Session) {
+  const flexibleWeek = data.weeks.find((week) => week.id === session.weekId && week.mode === 'flexible');
+  if (!flexibleWeek || !FLEX_DAYS.includes(session.dayKey)) return;
+  const nextKey = FLEX_DAYS[FLEX_DAYS.indexOf(session.dayKey) + 1];
+  const dayStates: Record<string, FlexibleDayState> = {
+    ...(flexibleWeek.dayStates || {}),
+    [session.dayKey]: { ...(flexibleWeek.dayStates?.[session.dayKey] || {}), status: 'workout', date: session.date, completedAt: new Date().toISOString() },
+  };
+  if (nextKey && dayStates[nextKey]?.status === 'locked') {
+    dayStates[nextKey] = { ...dayStates[nextKey], status: 'ready' };
+  }
+  repo.upsertWeek({ ...flexibleWeek, dayStates });
+}
+
+/** Repairs draft weeks created by builds that saved a session but did not
+ * advance its day state. This runs on bootstrap so an update immediately
+ * unlocks the correct next day without asking the athlete to edit records. */
+function reconcileFlexibleWeekStates(data: AppDb): boolean {
+  let changed = false;
+  for (const week of data.weeks.filter((item) => item.mode === 'flexible' && item.status === 'draft')) {
+    let weekChanged = false;
+    const sessions = data.sessions.filter((item) => item.weekId === week.id && item.status === 'finished');
+    if (!sessions.length) continue;
+    const dayStates: Record<string, FlexibleDayState> = { ...(week.dayStates || {}) };
+    for (const session of sessions) {
+      if (!FLEX_DAYS.includes(session.dayKey)) continue;
+      const state = dayStates[session.dayKey];
+      if (state?.status !== 'workout') {
+        dayStates[session.dayKey] = { ...state, status: 'workout', date: session.date, completedAt: state?.completedAt || session.endedAt || session.createdAt };
+        changed = true;
+        weekChanged = true;
+      }
+    }
+    const nextKey = FLEX_DAYS.find((key) => {
+      const status = dayStates[key]?.status;
+      return status !== 'workout' && status !== 'rest' && status !== 'not_in_week';
+    });
+    if (nextKey && dayStates[nextKey]?.status !== 'ready') {
+      dayStates[nextKey] = { ...dayStates[nextKey], status: 'ready' };
+      changed = true;
+      weekChanged = true;
+    }
+    if (weekChanged) repo.upsertWeek({ ...week, dayStates });
+  }
+  return changed;
+}
+
 apiRouter.post('/flexible-weeks/start', (req, res) => {
   const strategy = String(req.body?.strategy || 'today');
   if (!['today', 'monday', 'next-monday'].includes(strategy)) return res.status(400).json({ error: 'Choose today, this Monday, or next Monday.' });
@@ -709,19 +759,7 @@ apiRouter.post('/sessions', (req, res) => {
   }
   repo.saveSession(session);
   // A flexible workout is also the completion record for that calendar day.
-  const flexibleWeek = data.weeks.find((w) => w.id === session.weekId && w.mode === 'flexible');
-  if (flexibleWeek) {
-    const nextKey = FLEX_DAYS[FLEX_DAYS.indexOf(session.dayKey) + 1];
-    const dayStates: Record<string, FlexibleDayState> = {
-      ...(flexibleWeek.dayStates || {}),
-      [session.dayKey]: { status: 'workout', date: session.date, completedAt: new Date().toISOString() },
-    };
-    if (nextKey && dayStates[nextKey]?.status === 'locked') dayStates[nextKey] = { ...dayStates[nextKey], status: 'ready' };
-    repo.upsertWeek({
-      ...flexibleWeek,
-      dayStates,
-    });
-  }
+  advanceFlexibleWeekAfterSession(data, session);
   repo.logEvent('session.create', { id: session.id });
   const next = repo.loadAppDb();
   const appSettings = repo.getSettings();
@@ -785,10 +823,16 @@ apiRouter.post('/sessions/finish-and-send', async (req, res, next) => {
       durationMinutes: req.body.durationMinutes != null ? Number(req.body.durationMinutes) : undefined,
       originalDayKey: req.body.originalDayKey || undefined,
       originalDate: req.body.originalDate || undefined,
+      mode: req.body.mode === 'flexible' ? 'flexible' : 'planned',
+      targetMuscles: Array.isArray(req.body.targetMuscles) ? req.body.targetMuscles.map(String) : undefined,
     };
 
     // Save before contacting outside services: the workout is never lost.
+    if (repo.findDuplicateSession(session.weekId, session.dayKey)) {
+      return res.status(409).json({ error: 'This day already has a saved record for the selected week. Open Records to edit it instead.' });
+    }
     repo.saveSession(session);
+    advanceFlexibleWeekAfterSession(data, session);
     repo.logEvent('session.finish_and_send', { id: session.id });
     const delivery = session.logs.length ? await reportDelivery.deliverSessionAiReport(session.id) : { ok: true as const, sentTo: [] };
 

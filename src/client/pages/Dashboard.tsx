@@ -35,7 +35,7 @@ export function Dashboard() {
     if (app.db && app.settings) {
       const w = dashboardWeek(app.db);
       const readyDay = w.mode === 'flexible' ? ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].find((key) => w.dayStates?.[key]?.status === 'ready') : undefined;
-      const d = w.days.find((d) => d.key === (readyDay || activeDay)) || w.days[0];
+      const d = w.days.find((d: any) => d.key === (readyDay || activeDay)) || w.days[0];
       const r = app.db.readiness.find((x) => x.weekId === w.id && x.dayKey === d.key);
       if (r) {
         setReadinessForm({
@@ -54,8 +54,8 @@ export function Dashboard() {
 
   const plannedWeek = db.weeks.find((w) => w.id === db.meta.activeWeekId) || db.weeks[0];
   const flexibleMode = db.trainingConfig?.preplannedWeekMode === false;
-  const flexibleWeek = flexibleMode ? db.weeks.find((item) => item.mode === 'flexible' && item.status === 'draft' && item.flexibleStartDate <= today() && item.flexibleEndDate >= today()) : undefined;
-  const scheduledFlexibleWeek = flexibleMode ? db.weeks.find((item) => item.mode === 'flexible' && item.status === 'draft' && item.flexibleStartDate > today()) : undefined;
+  const flexibleWeek = flexibleMode ? db.weeks.find((item) => item.mode === 'flexible' && item.status === 'draft' && item.flexibleStartDate && item.flexibleEndDate && item.flexibleStartDate <= today() && item.flexibleEndDate >= today()) : undefined;
+  const scheduledFlexibleWeek = flexibleMode ? db.weeks.find((item) => item.mode === 'flexible' && item.status === 'draft' && item.flexibleStartDate && item.flexibleStartDate > today()) : undefined;
   const week = flexibleWeek || plannedWeek;
   const flexibleActiveDay = flexibleWeek ? ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].find((key) => flexibleWeek.dayStates?.[key]?.status === 'ready') : undefined;
   const day = week.days.find((d) => d.key === (flexibleActiveDay || activeDay)) || week.days[0];
