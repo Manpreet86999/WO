@@ -18,7 +18,7 @@ function dashboardWeek(db: any) {
 export function Dashboard() {
   const app = useApp();
   const toast = useToast();
-  const { db, analytics, coach, programming, activeDay, setActiveDay, setManualDay, setPage, setTracker, settings } = app;
+  const { db, analytics, coach, programming, activeDay, setActiveDay, manualDay, setManualDay, setPage, setTracker, settings } = app;
   const [editReady, setEditReady] = useState(false);
   const [brief, setBrief] = useState('');
   const [briefModel, setBriefModel] = useState('');
@@ -35,7 +35,10 @@ export function Dashboard() {
     if (app.db && app.settings) {
       const w = dashboardWeek(app.db);
       const readyDay = w.mode === 'flexible' ? ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].find((key) => w.dayStates?.[key]?.status === 'ready') : undefined;
-      const d = w.days.find((d: any) => d.key === (readyDay || activeDay)) || w.days[0];
+      // Keep a deliberate day-tab selection visible. The unlocked flexible day
+      // is only the default; it must not replace Monday when the user opens it.
+      const selectedDayKey = w.mode === 'flexible' && manualDay ? activeDay : (readyDay || activeDay);
+      const d = w.days.find((d: any) => d.key === selectedDayKey) || w.days[0];
       const r = app.db.readiness.find((x) => x.weekId === w.id && x.dayKey === d.key);
       if (r) {
         setReadinessForm({
@@ -48,7 +51,7 @@ export function Dashboard() {
         setReadinessForm({});
       }
     }
-  }, [activeDay, app.db, app.settings, editReady]);
+  }, [activeDay, manualDay, app.db, app.settings, editReady]);
 
   if (!db || !analytics || !coach || !settings) return null;
 
@@ -58,7 +61,10 @@ export function Dashboard() {
   const scheduledFlexibleWeek = flexibleMode ? db.weeks.find((item) => item.mode === 'flexible' && item.status === 'draft' && item.flexibleStartDate && item.flexibleStartDate > today()) : undefined;
   const week = flexibleWeek || plannedWeek;
   const flexibleActiveDay = flexibleWeek ? ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].find((key) => flexibleWeek.dayStates?.[key]?.status === 'ready') : undefined;
-  const day = week.days.find((d) => d.key === (flexibleActiveDay || activeDay)) || week.days[0];
+  // A saved day remains reviewable: clicking its tab must show its own
+  // readiness and record instead of the next unlocked flexible day.
+  const selectedDayKey = flexibleWeek && manualDay ? activeDay : (flexibleActiveDay || activeDay);
+  const day = week.days.find((d) => d.key === selectedDayKey) || week.days[0];
   const ready = db.readiness.find((r) => r.weekId === week.id && r.dayKey === day.key);
   const doneThisWeek = db.sessions.filter((s) => s.weekId === week.id && s.status === 'finished').length;
   const status = flexibleWeek ? (() => { const states = Object.values(flexibleWeek.dayStates || {}) as Array<any>; const total = states.filter((item) => item.status !== 'not_in_week').length; const done = states.filter((item) => item.status === 'workout' || item.status === 'rest').length; return { total, done, complete: total > 0 && total === done }; })() : weekStatus(week, db.sessions);
