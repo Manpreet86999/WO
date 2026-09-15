@@ -99,7 +99,9 @@ export async function benchmarkFreeModels(apiKey: string, limit = 5) {
 }
 
 export async function testAiConnection(settings: AppSettings) {
-  const configuredKey = settings.aiProvider === 'nvidia' ? (settings.nvidiaNimApiKey || settings.aiApiKey) : (settings.openRouterApiKey || settings.aiApiKey);
+  // aiApiKey is the key currently selected in Settings. It must win over an older
+  // provider-specific key left from a previous configuration.
+  const configuredKey = settings.aiApiKey || (settings.aiProvider === 'nvidia' ? settings.nvidiaNimApiKey : settings.openRouterApiKey);
   if (!settings.aiProvider || (!configuredKey && settings.aiProvider !== 'ollama')) {
     return {
       ok: false as const,
@@ -115,9 +117,11 @@ export async function testAiConnection(settings: AppSettings) {
     // Prefer full chat path with fallback so test mirrors production coach
     const chat = await chatCompletion({
       provider,
-      apiKey: configuredKey,
+      apiKey: configuredKey || '',
       model,
-      useFallback: false,
+      // A selected free model can be temporarily capacity-limited. The official
+      // OpenRouter free router is the next attempt, so testing reflects delivery.
+      useFallback: provider === 'openrouter',
       temperature: 0.2,
       maxTokens: 80,
       messages: [
@@ -143,7 +147,7 @@ export async function testAiConnection(settings: AppSettings) {
     };
   }
 
-  const probe = await probeModel(configuredKey, model, 'nvidia');
+  const probe = await probeModel(configuredKey || '', model, 'nvidia');
   if (!probe.ok) return { ok: false as const, error: probe.error, model };
   return {
     ok: true as const,

@@ -97,10 +97,20 @@ async function oneShot(
       choices?: Array<{ message?: { content?: string, tool_calls?: any[] } }>;
     };
     if (!response.ok) {
+      const rawError = payload.error?.message || payload.message || `HTTP ${response.status}`;
+      const hint = response.status === 401 || response.status === 403
+        ? ' Check that the API key belongs to this provider and was copied completely.'
+        : response.status === 402
+          ? ' This provider needs available credit or an eligible free-model allowance.'
+          : response.status === 429
+            ? ' You reached the provider rate limit. Wait a few minutes and try again.'
+            : response.status === 400 && /provider returned error/i.test(rawError)
+              ? ' The provider has no available route for this model right now. Retry, or choose a current :free model from the provider catalogue.'
+              : '';
       return {
         ok: false,
         status: response.status,
-        error: payload.error?.message || payload.message || `HTTP ${response.status}`,
+        error: `${provider} · ${model} · HTTP ${response.status}: ${rawError}.${hint}`,
       };
     }
     const msg = payload.choices?.[0]?.message;

@@ -63,6 +63,7 @@ export function Settings() {
   const [feedbackBusy, setFeedbackBusy] = useState(false);
   const [flexibleModeDialog, setFlexibleModeDialog] = useState(false);
   const [helpService, setHelpService] = useState<'google' | 'email' | 'ai' | null>(null);
+  const [replaceGoogleCredential, setReplaceGoogleCredential] = useState(false);
 
   async function importGoogleCredential(file: File) {
     try {
@@ -85,6 +86,11 @@ export function Settings() {
       })
       .catch(() => {});
   }, []);
+  useEffect(() => {
+    const refreshOnFocus = () => { void refresh(); };
+    window.addEventListener('focus', refreshOnFocus);
+    return () => window.removeEventListener('focus', refreshOnFocus);
+  }, [refresh]);
 
   if (!settings) return null;
 
@@ -450,9 +456,7 @@ export function Settings() {
             {settings.hasGoogleFit ? <span className="chip ready-ok">Connected</span> : null}
           </div>
           <p className="subtle">Use the same Google OAuth JSON once for Drive and Google Fit. Each service still needs its own Google approval.</p>
-          <input className="input" type="file" accept="application/json,.json" onChange={(e) => { const file = e.target.files?.[0]; if (file) void importGoogleCredential(file); }} />
-          <input className="input" type="text" placeholder={settings.hasGoogleFit ? "Shared Google client ID (saved)" : "Shared Google OAuth Client ID"} value={form.googleClientId} onChange={(e) => setForm({ ...form, googleClientId: e.target.value })} />
-          <input className="input" type="password" placeholder={settings.hasGoogleFit ? "Client Secret (Saved, enter to change)" : "Google OAuth Client Secret"} value={form.googleClientSecret} onChange={(e) => setForm({ ...form, googleClientSecret: e.target.value })} />
+          {settings.hasGoogleOAuthConfig && !replaceGoogleCredential ? <div className="row" style={{ justifyContent: 'space-between', flexWrap: 'wrap' }}><span className="chip ready-ok">OAuth credential saved</span><button type="button" className="btn btn-ghost btn-sm" onClick={() => setReplaceGoogleCredential(true)}>Replace credential JSON</button></div> : <><input className="input" type="file" accept="application/json,.json" onChange={(e) => { const file = e.target.files?.[0]; if (file) void importGoogleCredential(file); }} /><input className="input" type="text" placeholder="Shared Google OAuth Client ID" value={form.googleClientId} onChange={(e) => setForm({ ...form, googleClientId: e.target.value })} /><input className="input" type="password" placeholder="Shared Google OAuth Client Secret" value={form.googleClientSecret} onChange={(e) => setForm({ ...form, googleClientSecret: e.target.value })} /></>}
           <div className="row mt-2">
             <button className="btn btn-dark" type="button" onClick={async () => {
               if (form.googleClientId || form.googleClientSecret) {
@@ -466,7 +470,7 @@ export function Settings() {
               } catch (e) {
                 toast.push((e as Error).message, 'err');
               }
-            }}>Authorize & Connect</button><button type="button" className="btn btn-ghost btn-sm" onClick={() => setHelpService('google')}>?</button>
+            }}>{settings.hasGoogleFit ? 'Reconnect Google Fit' : 'Authorize & Connect'}</button><button type="button" className="btn btn-ghost btn-sm" onClick={() => setHelpService('google')}>?</button>
             <button className="btn btn-soft" type="button" disabled={!settings.hasGoogleFit} onClick={async () => {
               try {
                 toast.push('Syncing Google Fit...', 'info');
@@ -548,7 +552,15 @@ export function Settings() {
           <select
             className="input"
             value={form.aiProvider}
-            onChange={(e) => setForm({ ...form, aiProvider: e.target.value })}
+            onChange={(e) => {
+              const aiProvider = e.target.value;
+              setForm((current) => ({
+                ...current,
+                aiProvider,
+                // Replace legacy model defaults when returning to OpenRouter.
+                aiModel: aiProvider === 'openrouter' && (!current.aiModel || current.aiModel === 'google/gemma-4-31b-it:free') ? 'openrouter/free' : current.aiModel,
+              }));
+            }}
           >
             <option value="">Local coach only (no network)</option>
             <option value="ollama">Ollama (Local Server)</option>
@@ -997,7 +1009,7 @@ export function Settings() {
         <div className="stack"><p className="subtle">Choose where this Monday–Sunday flexible week begins. Your imported plan stays unchanged.</p>{([['today','Start today'],['monday','Start this Monday'],['next-monday','Start next Monday']] as const).map(([strategy, label]) => <button key={strategy} className="btn btn-hot" onClick={async () => { try { await app.api.saveTrainingConfig({ preplannedWeekMode: false }); await app.api.startFlexibleWeek(strategy); await refresh(); setFlexibleModeDialog(false); toast.push(`Flexible mode starts ${label.toLowerCase().replace('start ', '')}.`, 'ok'); } catch (error) { toast.push((error as Error).message, 'err'); } }}>{label}</button>)}</div>
       </Modal>
       <Modal open={Boolean(helpService)} title={helpService === 'google' ? 'Connect a Google service' : helpService === 'email' ? 'Set up Gmail delivery' : 'Set up the AI engine'} onClose={() => setHelpService(null)}>
-        {helpService === 'google' ? <div className="stack"><p>In Google Cloud Console, create an <strong>OAuth client</strong> and download its JSON file. Upload that one file in Google Fit. It is shared with Google Drive, but you must approve each service separately.</p><p className="subtle">Add these redirect URLs to the OAuth client: <code>http://127.0.0.1:10000/api/google-fit/callback</code> and <code>http://127.0.0.1:10000/api/gdrive/callback</code>. If your Body OS port is different, replace 10000 with the address shown in its terminal.</p></div> : helpService === 'email' ? <div className="stack"><p>Use a Gmail account with 2-Step Verification enabled. In Google Account → Security → App passwords, create one called “Body OS” and paste its 16-character password here.</p><p className="subtle">Sender is the Gmail account that sends reports. Recipient is where reports arrive. Use Send test after saving; Body OS now shows the real SMTP error instead of pretending delivery succeeded.</p></div> : <div className="stack"><p>Choose OpenRouter, NVIDIA, or local Ollama. Paste the provider key and a model ID, then use Test AI. Only a successful AI response can send an AI workout report.</p><p className="subtle">For OpenRouter use <code>openrouter/free</code> or a current model ID from OpenRouter. For NVIDIA use a model listed in NVIDIA Build. Model availability changes, so a typed model plus Test AI is more reliable than a long hard-coded list.</p></div>}
+        {helpService === 'google' ? <div className="stack"><p>In Google Cloud Console, create an <strong>OAuth client</strong> and download its JSON file. Upload that one file in Google Fit. It is shared with Google Drive, but you must approve each service separately.</p><p className="subtle">Add these exact redirect URLs to the OAuth client: <code>http://127.0.0.1:10000/api/google-fit/callback</code> and <code>http://localhost:10000/api/gdrive/callback</code>. If your Body OS port is different, replace 10000 with the address shown in its terminal.</p></div> : helpService === 'email' ? <div className="stack"><p>Use a Gmail account with 2-Step Verification enabled. In Google Account → Security → App passwords, create one called “Body OS” and paste its 16-character password here.</p><p className="subtle">Sender is the Gmail account that sends reports. Recipient is where reports arrive. Use Send test after saving; Body OS now shows the real SMTP error instead of pretending delivery succeeded.</p></div> : <div className="stack"><p>Choose OpenRouter, NVIDIA, or local Ollama. Paste the provider key and a model ID, then use Test AI. Only a successful AI response can send an AI workout report.</p><p className="subtle">For OpenRouter use <code>openrouter/free</code> or a current model ID from OpenRouter. For NVIDIA use a model listed in NVIDIA Build. Model availability changes, so a typed model plus Test AI is more reliable than a long hard-coded list.</p></div>}
       </Modal>
 
     </div>

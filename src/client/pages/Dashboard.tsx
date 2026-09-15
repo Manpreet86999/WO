@@ -116,7 +116,7 @@ export function Dashboard() {
       });
       await app.refresh();
       setEditReady(false);
-      toast.push('Readiness saved — training unlocked', 'ok');
+      toast.push(`Readiness saved for ${day.key} — training unlocked`, 'ok');
     } catch (err) {
       toast.push((err as Error).message, 'err');
       throw err;
@@ -176,14 +176,15 @@ export function Dashboard() {
     const result = await response.json();
     if (!response.ok) throw new Error(result.error || 'Google Fit could not provide readiness data.');
     const metrics = result.dailyMetrics?.[today()] || {};
-    const imported = {
+    const values = {
       sleepHours: metrics.sleepHours ? String(Math.round(Number(metrics.sleepHours) * 10) / 10) : '',
       restingHeartRate: metrics.hrCount ? String(Math.round(Number(metrics.hrSum || 0) / Number(metrics.hrCount))) : '',
       steps: metrics.steps ? String(Math.round(Number(metrics.steps))) : '',
     };
-    if (!Object.values(imported).some(Boolean)) throw new Error('No sleep, heart-rate, or step data was available from Google Fit for today.');
+    if (!Object.values(values).some(Boolean)) throw new Error('No sleep, heart-rate, or step data was available from Google Fit for today.');
+    const labels = [values.sleepHours && 'sleep', values.restingHeartRate && 'heart rate', values.steps && 'steps'].filter(Boolean) as string[];
     toast.push('Google Fit readings added. Review them, then finish your check-in.', 'ok');
-    return imported;
+    return { values, labels };
   }
 
   if (flexibleMode && !flexibleWeek && scheduledFlexibleWeek) {

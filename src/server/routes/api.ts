@@ -31,7 +31,7 @@ import {
   runSkinBuildRoutine,
 } from '../ai/engine.js';
 import { DEFAULT_OPENROUTER_MODEL } from '../ai/models.js';
-import { reportHtml, sendMail, welcomeEmailHtml, generateReportEmailPayload } from '../services/email.js';
+import { reportHtml, sendMail, welcomeEmailHtml, generateReportEmailPayload, emailDeliveryMessage } from '../services/email.js';
 import { computeMetrics } from '../services/metrics.js';
 import { buildProgression } from '../services/progression.js';
 import { normalizeReadiness, readinessModifier } from '../services/readiness.js';
@@ -1137,6 +1137,9 @@ apiRouter.post('/settings', (req, res) => {
     aiApiKey: body.aiApiKey,
     ...(body.openRouterApiKey !== undefined ? { openRouterApiKey: body.openRouterApiKey } : {}),
     ...(body.nvidiaNimApiKey !== undefined ? { nvidiaNimApiKey: body.nvidiaNimApiKey } : {}),
+    // Keep the selected key available to the matching provider as well. This prevents
+    // a later provider switch from resurrecting an old key.
+    ...(body.aiApiKey ? (aiProvider === 'nvidia' ? { nvidiaNimApiKey: body.aiApiKey } : aiProvider === 'openrouter' ? { openRouterApiKey: body.aiApiKey } : {}) : {}),
     ...(aiModel !== undefined ? { aiModel } : {}),
     ...(body.telegramBotToken !== undefined ? { telegramBotToken: body.telegramBotToken } : {}),
     ...(body.telegramChatId !== undefined ? { telegramChatId: body.telegramChatId } : {}),
@@ -1169,8 +1172,8 @@ apiRouter.post('/reports/pending/retry', async (_req, res) => res.json({ results
 
 apiRouter.get('/google-fit/auth', (req, res) => {
   const s = repo.getSettings();
-  if (!s.googleClientId) {
-    return res.status(400).json({ error: 'Google Client ID not configured.' });
+  if (!s.googleClientId || !s.googleClientSecret) {
+    return res.status(400).json({ error: 'Upload and save the Google OAuth credential JSON before authorizing Google Fit.' });
   }
   const redirectUri = `http://127.0.0.1:${PORT}/api/google-fit/callback`;
   const url = googleFit.getGoogleAuthUrl(s.googleClientId, redirectUri);
@@ -1187,9 +1190,11 @@ apiRouter.get('/google-fit/callback', async (req, res) => {
   const redirectUri = `http://127.0.0.1:${PORT}/api/google-fit/callback`;
   try {
     const tokens = await googleFit.exchangeGoogleCode(s.googleClientId, s.googleClientSecret, code, redirectUri);
-    if (tokens.refresh_token) {
-      repo.saveSettings({ googleRefreshToken: tokens.refresh_token });
+    if (!tokens.refresh_token) {
+      return res.status(400).send('Google did not provide a reusable connection. Remove Body OS from your Google Account permissions, then choose Authorize & Connect again.');
     }
+    const saved = repo.saveSettings({ googleRefreshToken: tokens.refresh_token });
+    if (!saved.googleRefreshToken) throw new Error('Body OS could not save the Google Fit connection. Reopen Body OS and authorize again.');
     res.send('<script>window.close();</script><h2>Successfully connected to Google Fit! You can close this window.</h2>');
   } catch (e: any) {
     res.status(500).send(`Error: ${e.message}`);
@@ -1216,6 +1221,7 @@ apiRouter.post('/google-fit/sync', async (req, res) => {
     
     // Fetch advanced metrics
     const sleepData = await googleFit.fetchGoogleFitDataByType(accessToken, startTimeNs, endTimeNs, 'com.google.sleep.segment');
+    const sleepSessions = await googleFit.fetchGoogleFitSleepSessions(accessToken, startTime, endTime);
     const hrData = await googleFit.fetchGoogleFitDataByType(accessToken, startTimeNs, endTimeNs, 'com.google.heart_rate.bpm');
     const stepData = await googleFit.fetchGoogleFitDataByType(accessToken, startTimeNs, endTimeNs, 'com.google.step_count.delta');
     const hydrationData = await googleFit.fetchGoogleFitDataByType(accessToken, startTimeNs, endTimeNs, 'com.google.hydration');
@@ -1225,7 +1231,19 @@ apiRouter.post('/google-fit/sync', async (req, res) => {
 
     const getDayKey = (nanos: string) => new Date(parseInt(nanos) / 1000000).toISOString().split('T')[0];
 
-    if (sleepData?.point) {
+    // Prefer the documented sleep-session data: an overnight session belongs to the
+    // day it ended, which is the day the user completes morning readiness.
+    if (sleepSessions?.session?.length) {
+      sleepSessions.session.forEach((session) => {
+        const endMs = Number(session.endTimeMillis);
+        const startMs = Number(session.startTimeMillis);
+        if (!Number.isFinite(startMs) || !Number.isFinite(endMs) || endMs <= startMs) return;
+        const dKey = new Date(endMs).toISOString().split('T')[0];
+        if (!dailyMetrics[dKey]) dailyMetrics[dKey] = {};
+        const durationHours = (endMs - startMs) / 3_600_000;
+        dailyMetrics[dKey].sleepHours = Math.round(((dailyMetrics[dKey].sleepHours || 0) + durationHours) * 10) / 10;
+      });
+    } else if (sleepData?.point) {
       sleepData.point.forEach((pt: any) => {
         const dKey = getDayKey(pt.startTimeNanos);
         if (!dailyMetrics[dKey]) dailyMetrics[dKey] = {};
@@ -1360,7 +1378,7 @@ apiRouter.post('/google-fit/sync', async (req, res) => {
     if (!preview) {
       console.log('[DEBUG] Google Fit sync dailyMetrics:', JSON.stringify(dailyMetrics, null, 2));
       const fs = await import('node:fs');
-      fs.writeFileSync('google-fit-debug.json', JSON.stringify({ dailyMetrics, sleepData, stepData, hrData, hydrationData }, null, 2));
+      fs.writeFileSync('google-fit-debug.json', JSON.stringify({ dailyMetrics, sleepSessions, sleepData, stepData, hrData, hydrationData }, null, 2));
     }
     res.json({ ok: true, preview, metricsUpdated: readinessUpdated, weightAdded: added, dailyMetrics });
   } catch (e) {
@@ -1414,7 +1432,9 @@ apiRouter.post(
       });
       res.json({ ok: true, sentTo: to });
     } catch (e) {
-      next(e);
+      // Do not pass the raw SMTP response through the generic redactor: it turns a
+      // useful Gmail setup problem into the unhelpful “Request failed”.
+      res.status(400).json({ error: emailDeliveryMessage(e) });
     }
   },
 );

@@ -12,7 +12,7 @@ export const emptySettings = (): AppSettings => ({
   openRouterApiKey: '',
   nvidiaNimApiKey: '',
   /** Best free OpenRouter coaching model */
-  aiModel: 'google/gemma-4-31b-it:free',
+  aiModel: 'openrouter/free',
   pinHash: '',
   secretsSalt: '',
   telegramBotToken: '',

@@ -379,3 +379,16 @@ await new Promise(r => setTimeout(r, 2000));
     return { html: htmlStr, attachments: [] };
   }
 }
+
+/** Converts SMTP failures into setup guidance without ever returning a credential. */
+export function emailDeliveryMessage(error: unknown): string {
+  const value = error as { code?: string; responseCode?: number; message?: string };
+  if (value?.code === 'EAUTH' || value?.responseCode === 535 || /username and password|authentication|invalid login/i.test(value?.message || '')) {
+    return 'Gmail rejected the sign-in. Confirm this is a Gmail App Password (not your normal Gmail password), created after enabling 2-Step Verification. Save it again, then test.';
+  }
+  if (value?.code === 'ETIMEDOUT' || value?.code === 'ECONNECTION' || value?.code === 'ESOCKET') {
+    return 'Body OS could not reach Gmail SMTP. Check your internet, firewall, antivirus, or proxy, then try again.';
+  }
+  if (value?.code === 'ENOTFOUND') return 'Gmail SMTP could not be found. Check your internet or DNS connection, then try again.';
+  return 'Email test failed. Confirm the sender Gmail, its App Password, and at least one valid recipient, then try again.';
+}

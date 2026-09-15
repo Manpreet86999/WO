@@ -34,7 +34,7 @@ CloseApplications=yes
 RestartApplications=no
 
 [Files]
-Source: "*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "node_modules\\*,release\\*,dist\\*,backups\\*,data\\*,scratch\\*,apps\\*,design\\*,installer\\*,.git\\*,.github\\*,.build-tools\\*,.gradle-user-home\\*,.pnpm-store\\*,test-results\\*,tests\\*,docs\\*,*.log,*.sqlite,*.db,*.exe,unins*.dat,setup.iss,console.log*"
+Source: "*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "node_modules\\*,release\\*,dist\\*,backups\\*,data\\*,scratch\\*,apps\\*,design\\*,installer\\*,.git\\*,.github\\*,.build-tools\\*,.gradle-user-home\\*,.pnpm-store\\*,test-results\\*,tests\\*,docs\\*,*.log,*.sqlite,*.db,*.exe,unins*.dat,setup.iss,console.log*,google-fit-debug.json"
 Source: "dist\\*"; DestDir: "{app}\\dist"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]

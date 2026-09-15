@@ -1,4 +1,5 @@
 import { google } from 'googleapis';
+import { PORT } from '../config.js';
 import stream from 'stream';
 import { getSettings, saveSettings, loadAppDb } from '../db/repository.js';
 import { APP_VERSION } from '../../shared/version.js';
@@ -18,7 +19,7 @@ function getOAuth2Client() {
 
   // The redirect URI must match the one configured in Google Cloud Console
   // We use a localhost port that the server runs on
-  const redirectUri = 'http://localhost:10000/api/gdrive/callback';
+  const redirectUri = `http://localhost:${PORT}/api/gdrive/callback`;
   
   const oauth2Client = new google.auth.OAuth2(
     settings.googleClientId,

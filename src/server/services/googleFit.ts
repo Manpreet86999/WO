@@ -16,7 +16,9 @@ export function getGoogleAuthUrl(clientId: string, redirectUri: string): string 
     response_type: 'code',
     scope: scopes,
     access_type: 'offline',
-    prompt: 'consent'
+    // Request a long-lived token every time a user deliberately connects Fit.
+    prompt: 'consent select_account',
+    include_granted_scopes: 'false',
   });
   
   return `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
@@ -108,6 +110,23 @@ export async function fetchGoogleFitDataByType(accessToken: string, startTimeNs:
   const dataSourceId = await findGoogleFitDataSource(accessToken, dataTypeName);
   if (!dataSourceId) return null;
   return fetchGoogleFitData(accessToken, startTimeNs, endTimeNs, dataSourceId);
+}
+
+/** Google Fit records overnight sleep as a session. Sessions are returned by end time. */
+export async function fetchGoogleFitSleepSessions(accessToken: string, startTimeMillis: number, endTimeMillis: number) {
+  const params = new URLSearchParams({
+    startTime: new Date(startTimeMillis).toISOString(),
+    endTime: new Date(endTimeMillis).toISOString(),
+    activityType: '72', // Google Fit SLEEP activity type
+  });
+  const response = await fetch(`https://www.googleapis.com/fitness/v1/users/me/sessions?${params.toString()}`, {
+    headers: { Authorization: `Bearer ${accessToken}` },
+  });
+  if (!response.ok) {
+    console.error('Failed to retrieve Google Fit sleep sessions:', await response.text());
+    return null;
+  }
+  return response.json() as Promise<{ session?: Array<{ startTimeMillis: string; endTimeMillis: string; activityType?: number }> }>;
 }
 
 export async function aggregateGoogleFitData(accessToken: string, startTimeMillis: number, endTimeMillis: number, dataTypeName: string) {
