@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 const inno = require('innosetup-compiler');
 
 const pkg = require('./package.json');
@@ -8,6 +9,18 @@ const appName = "Body OS";
 const exeName = "WorkoutOS-Setup.exe";
 const requirementsFile = path.join(__dirname, 'requirements.txt');
 const requirementsVerifier = path.join(__dirname, 'scripts', 'verify-update-requirements.cjs');
+
+// The installer must never package a stale dist folder. This was the cause of an
+// update loop when the installer label was newer than its embedded server.
+const bundledNpmCli = path.join(path.dirname(process.execPath), 'node_modules', 'npm', 'bin', 'npm-cli.js');
+const npmCommand = process.platform === 'win32' && fs.existsSync(bundledNpmCli)
+  ? process.execPath
+  : (process.platform === 'win32' ? 'npm.cmd' : 'npm');
+const npmArgs = npmCommand === process.execPath ? [bundledNpmCli, 'run', 'build'] : ['run', 'build'];
+execFileSync(npmCommand, npmArgs, {
+  cwd: __dirname,
+  stdio: 'inherit',
+});
 
 if (!fs.existsSync(requirementsFile) || !fs.existsSync(requirementsVerifier)) {
   console.error('Missing embedded update requirements files. Restore requirements.txt and scripts/verify-update-requirements.cjs before building.');
