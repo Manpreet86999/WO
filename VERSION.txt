@@ -1,4 +1,4 @@
-Body OS 2.4.0
-Built: 2026-08-20T11:34:23.073Z
+Body OS 4.5.64
+Built: 2026-09-15
 URL: http://127.0.0.1:10000
 Data safety: dual backup + SafetyVault (see docs/DATA-SAFETY-UPDATES.md)
